@@ -1,0 +1,151 @@
+    <div className="flex min-h-screen flex-col items-center bg-[#FDFDFC] p-6 text-[#1b1b18] lg:justify-center lg:p-8 dark:bg-[#0a0a0a]">
+                <header className="mb-6 w-full max-w-[335px] text-sm not-has-[nav]:hidden lg:max-w-4xl">
+                    <nav className="flex items-center justify-end gap-4">
+                        {auth.user ? (
+                            <Link
+                                href={route('dashboard')}
+                                className="inline-block rounded-sm border border-[#19140035] px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#1915014a] dark:border-[#3E3E3A] dark:text-[#EDEDEC] dark:hover:border-[#62605b]"
+                            >
+                                Dashboard
+                            </Link>
+                        ) : (
+                            <>
+                                <Link
+                                    href={route('login')}
+                                    className="inline-block rounded-sm border border-transparent px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#19140035] dark:text-[#EDEDEC] dark:hover:border-[#3E3E3A]"
+                                >
+                                    Log in
+                                </Link>
+                                <Link
+                                    href={route('register')}
+                                        className="inline-block rounded-sm border border-[#19140035] px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#1915014a] dark:border-[#3E3E3A] dark:text-[#EDEDEC] dark:hover:border-[#62605b]"
+                                    >
+                                        Register
+                                    </Link>
+                                </>
+                            )}
+                        </nav>
+                    </header>
+             
+            </div>
+               <Head title="Welcome">
+                <link rel="preconnect" href="https://fonts.bunny.net" />
+                <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
+            </Head>
+
+
+//===================================
+  const treatments = [
+        {
+            id: 1,
+            label: translations?.allergy_treatment || 'एलर्जी उपचार',
+            link: '/treatment',
+            icon: AllergyTreatment,
+            des: translations?.allergy_treatment_title || "BM Hospital offers expert care for allergy relief at BM Hospital—breathe easier with personalized treatment today.",        },
+        {
+            id: 2,
+            label: translations?.anemia_treatment || 'एनीमिया उपचार',
+            link: '/treatment',
+            icon: AnemiaTreatment,
+            desc: translations?.anemia_treatment_title || "BM Hospital offers expert anemia treatment to restore energy, improve health, and prevent complications."
+        },
+        {
+            id: 3,
+            label: translations?.asthma_and_bronchitis_treatment || 'अस्थमा और ब्रोंकाइटिस उपचार',
+            link: '/treatment',
+            icon: AsthmaandBronchitis,
+            desc: translations?.asthma_and_bronchitis_treatment_title || "BM Hospital provides expert care for asthma and bronchitis with advanced treatment and personalized support."
+        },
+        {
+            id: 4,
+            label: translations?.cold_cough_and_flu_treatment || 'सर्दी, खांसी और फ्लू उपचार',
+            link: '/treatment',
+            icon: CholesterolandLipid,
+            desc: translations?.cold_cough_and_flu_treatment_title || "BM Hospital offers effective Cold, Cough, and Flu treatment with expert care and 24/7 medical support."
+        },
+        {
+            id: 5,
+            label: translations?.cholesterol_and_lipid_disorder_treatment || 'कोलेस्ट्रॉल और लिपिड विकार उपचार',
+            link: '/treatment',
+            icon: ColdCoughandFlu,
+            desc: translations?.cholesterol_and_lipid_disorder_treatment_title || "BM Hospital provides expert care for cholesterol and lipid disorders with advanced treatment and diagnosis."
+        },
+        {
+            id: 6,
+            label: translations?.dehydration_and_iv_fluids || 'डिहाइड्रेशन और IV तरल पदार्थ',
+            link: '/treatment',
+            icon: DehydrationandIVFluids,
+            desc: translations?.dehydration_and_iv_fluids_title || "BM Hospital offers prompt dehydration care with IV fluids to restore balance and ensure quick recovery."
+        },
+        {
+            id: 7,
+            label: translations?.diabetes_treatment || 'डायबिटीज उपचार',
+            link: '/treatment',
+            icon: DiabetesManagement,
+            desc: translations?.diabetes_treatment_title || "BM Hospital provides expert diabetes care with personalized treatment plans and advanced monitoring."
+        },
+        {
+            id: 8,
+            label: translations?.fever_treatment || 'बुखार उपचार',
+            link: '/treatment',
+            icon: FeverManagement,
+            desc: translations?.fever_treatment_title || "BM Hospital offers accurate fever diagnosis and effective treatment with expert doctors and 24/7 care."
+        },
+        {
+            id: 11,
+            label: translations?.gastrointestinal_treatment || 'गैस्ट्रोइंटेस्टाइनल उपचार',
+            link: '/treatment',
+            icon: GastrointestinalTreatment,
+            desc: translations?.gastrointestinal_treatment_title || "BM Hospital provides expert care for acidity, constipation, diarrhea with advanced gastrointestinal treatment."
+        },
+        {
+            id: 12,
+            label: translations?.general_health_checkups || 'सामान्य स्वास्थ्य जांच',
+            link: '/treatment',
+            icon: GeneralHealth,
+            desc: translations?.general_health_checkups_title || "BM Hospital offers comprehensive general health check-ups for early detection and preventive care."
+        },
+        {
+            id: 13,
+            label: translations?.hypertension_treatment || 'हाइपरटेंशन (उच्च रक्तचाप) उपचार',
+            link: '/treatment',
+            icon: Hypertension,
+            desc: translations?.hypertension_treatment_title || "BM Hospital provides expert care for hypertension with accurate diagnosis and personalized treatment."
+        },
+        {
+            id: 14,
+            label: translations?.immunizations_and_vaccinations || 'टीकाकरण और वैक्सीनेशन',
+            link: '/treatment',
+            icon: ImmunizationsandVaccinations,
+            desc: translations?.immunizations_and_vaccinations_title || "BM Hospital offers essential immunizations and vaccinations for all ages to protect your health."
+        },
+        {
+            id: 15,
+            label: translations?.minor_injury_care || 'मामूली चोटों की देखभाल (काटने, जलने, मोच आने पर)',
+            link: '/treatment',
+            icon: MinorInjuryCare,
+            desc: translations?.minor_injury_care_title || "BM Hospital provides prompt care for minor injuries like cuts, burns, and sprains with expert attention."
+
+        },
+        {
+            id: 16,
+            label: translations?.nutritional_counseling || 'पोषण संबंधी परामर्श',
+            icon: NutritionalCounseling,
+            link: '/treatment',
+            desc: translations?.nutritional_counseling_title || "BM Hospital offers expert nutritional counseling to support healthy eating, wellness, and disease prevention."
+        },
+        {
+            id: 17,
+            label: translations?.pain_treatment || 'दर्द उपचार',
+            icon: PainManagement,
+            link: '/treatment',
+            desc: translations?.pain_treatment_title || "BM Hospital provides expert pain treatment for headaches, body pain, and migraines with lasting relief."
+        },
+        {
+            id: 18,
+            label: "More Treatment →",
+            link: '/treatment',
+            icon: "https://static.vecteezy.com/system/resources/previews/020/291/170/non_2x/see-more-icon-see-more-typography-logo-vector.jpg",
+            desc: translations?.more_treatment_title || "Read about more treatments →"
+        },
+    ];

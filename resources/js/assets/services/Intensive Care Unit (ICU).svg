@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-2 {
+        mask: url(#mask-1);
+      }
+
+      .cls-3 {
+        fill: #1b667a;
+      }
+
+      .cls-4 {
+        fill: #20312b;
+      }
+
+      .cls-5 {
+        fill: #fff;
+      }
+
+      .cls-6 {
+        mask: url(#mask);
+      }
+
+      .cls-7 {
+        mix-blend-mode: hard-light;
+        opacity: .14;
+      }
+
+      .cls-8 {
+        fill: url(#linear-gradient-4);
+      }
+
+      .cls-9 {
+        fill: #bf0000;
+        font-family: FranklinGothic-Heavy, 'Franklin Gothic Heavy';
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .cls-10 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-11 {
+        fill: url(#linear-gradient-5);
+      }
+
+      .cls-12 {
+        isolation: isolate;
+      }
+
+      .cls-13 {
+        fill: #d8d8d8;
+      }
+
+      .cls-14 {
+        fill: #363636;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: .36px;
+      }
+
+      .cls-15 {
+        fill: url(#linear-gradient-8);
+      }
+
+      .cls-16 {
+        fill: #8ceada;
+      }
+
+      .cls-17 {
+        fill: url(#linear-gradient-7);
+      }
+
+      .cls-18 {
+        fill: url(#linear-gradient-9);
+      }
+
+      .cls-19 {
+        fill: url(#linear-gradient-6);
+      }
+
+      .cls-20 {
+        fill: #18aed1;
+      }
+
+      .cls-21 {
+        filter: url(#luminosity-invert-2);
+      }
+
+      .cls-22 {
+        filter: url(#luminosity-invert);
+      }
+
+      .cls-23 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="-286.18" y1="97.66" x2="-286.18" y2="20.62" gradientTransform="translate(-206.91) rotate(-180) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#747474"/>
+      <stop offset=".14" stop-color="#7a7a7a"/>
+      <stop offset=".32" stop-color="#8b8b8b"/>
+      <stop offset=".53" stop-color="#a7a7a7"/>
+      <stop offset=".76" stop-color="#cecece"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="94.45" y1="97.61" x2="94.45" y2="20.58" gradientTransform="translate(-72.75)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="32.77" y1="19.85" x2="69.43" y2="19.85" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#575757"/>
+      <stop offset=".07" stop-color="#5f6060"/>
+      <stop offset=".2" stop-color="#77797b"/>
+      <stop offset=".36" stop-color="#9da1a6"/>
+      <stop offset=".5" stop-color="#c2c8cf"/>
+      <stop offset="1" stop-color="#575757"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="50.49" y1="20.4" x2="50.49" y2="97.03" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#969696"/>
+      <stop offset=".08" stop-color="#9f9f9f"/>
+      <stop offset=".22" stop-color="#b9b9b9"/>
+      <stop offset=".39" stop-color="#e3e3e3"/>
+      <stop offset=".5" stop-color="#fff"/>
+      <stop offset=".58" stop-color="#f7f7f7"/>
+      <stop offset=".7" stop-color="#e2e2e2"/>
+      <stop offset=".85" stop-color="silver"/>
+      <stop offset="1" stop-color="#969696"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-5" x1="21.28" y1="18.87" x2="80.73" y2="18.87" gradientTransform="translate(69.48 -31.74) rotate(90)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#969696"/>
+      <stop offset=".08" stop-color="#9f9f9f"/>
+      <stop offset=".22" stop-color="#bababa"/>
+      <stop offset=".4" stop-color="#e5e5e5"/>
+      <stop offset=".5" stop-color="#fff"/>
+      <stop offset="1" stop-color="#969696"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-6" x1="20.47" y1="27.94" x2="20.47" y2="95.83" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#969696"/>
+      <stop offset=".12" stop-color="#a8a8a9"/>
+      <stop offset=".34" stop-color="#c3c3c4"/>
+      <stop offset=".56" stop-color="#d6d7d8"/>
+      <stop offset=".78" stop-color="#e2e3e4"/>
+      <stop offset="1" stop-color="#e6e7e8"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-7" x1="80.51" y1="27.94" x2="80.51" y2="95.83" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#969696"/>
+      <stop offset=".12" stop-color="#a8a8a9"/>
+      <stop offset=".34" stop-color="#c3c3c4"/>
+      <stop offset=".56" stop-color="#d6d7d8"/>
+      <stop offset=".78" stop-color="#e2e3e4"/>
+      <stop offset="1" stop-color="#e6e7e8"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-8" x1="43.16" y1="49.15" x2="30.74" y2="35.6" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#656b66"/>
+      <stop offset=".2" stop-color="#686e69"/>
+      <stop offset=".36" stop-color="#727773"/>
+      <stop offset=".51" stop-color="#828783"/>
+      <stop offset=".65" stop-color="#9a9e9b"/>
+      <stop offset=".78" stop-color="#b9bbb9"/>
+      <stop offset=".91" stop-color="#dedfde"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <filter id="luminosity-invert" x="26.92" y="32.85" width="17.76" height="16.56" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+    </filter>
+    <mask id="mask" x="26.92" y="32.85" width="17.76" height="16.56" maskUnits="userSpaceOnUse">
+      <g class="cls-22">
+        <image width="74" height="69" transform="translate(26.92 32.85) scale(.24)" xlink:href="data:image/png;base64,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"/>
+      </g>
+    </mask>
+    <linearGradient id="linear-gradient-9" x1="72.38" x2="59.96" y2="35.6" xlink:href="#linear-gradient-8"/>
+    <filter id="luminosity-invert-2" x="56.2" y="32.85" width="17.52" height="16.56" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+    </filter>
+    <mask id="mask-1" x="56.2" y="32.85" width="17.52" height="16.56" maskUnits="userSpaceOnUse">
+      <g class="cls-21">
+        <image width="73" height="69" transform="translate(56.2 32.85) scale(.24)" xlink:href="data:image/png;base64,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"/>
+      </g>
+    </mask>
+  </defs>
+  <g class="cls-12">
+    <g id="Layer_3" data-name="Layer 3">
+      <g>
+        <polygon class="cls-13" points="20.67 19.55 80.76 19.55 80.1 96.94 20.67 96.94 20.67 19.55"/>
+        <rect class="cls-3" x="47.35" y="39.26" width="5.62" height="59.41" transform="translate(-18.81 119.13) rotate(-90)"/>
+        <polygon class="cls-23" points="78.81 97.23 79.74 99.08 79.74 19.21 78.81 19.21 78.81 97.23"/>
+        <polygon class="cls-1" points="22.16 97.18 21.24 99.03 21.24 19.16 22.16 19.16 22.16 97.18"/>
+        <polygon class="cls-10" points="21.05 19.42 22.17 20.33 78.81 20.31 80 19.37 21.05 19.42"/>
+        <rect class="cls-8" x="49.52" y="19.57" width="1.94" height="77.34"/>
+        <rect class="cls-11" x="49.91" y="-11.17" width="1.41" height="60.08" transform="translate(31.74 69.48) rotate(-90)"/>
+        <rect class="cls-19" x="19.7" y="18.15" width="1.54" height="80.88"/>
+        <rect class="cls-17" x="79.74" y="18.15" width="1.54" height="80.88"/>
+        <rect class="cls-4" x="50.26" y="19.58" width=".45" height="77.39"/>
+        <ellipse class="cls-15" cx="35.77" cy="41.09" rx="7.95" ry="7.28"/>
+        <g>
+          <ellipse class="cls-16" cx="35.77" cy="41.09" rx="6.7" ry="6.13"/>
+          <g class="cls-6">
+            <g class="cls-7">
+              <ellipse cx="35.77" cy="41.09" rx="6.7" ry="6.13"/>
+            </g>
+          </g>
+        </g>
+        <rect class="cls-14" x="45.11" y="53.69" width="1.69" height="5.23" rx=".42" ry=".42"/>
+        <rect class="cls-14" x="53.65" y="53.69" width="1.69" height="5.23" rx=".42" ry=".42"/>
+        <ellipse class="cls-18" cx="64.98" cy="41.09" rx="7.95" ry="7.28"/>
+        <g>
+          <ellipse class="cls-16" cx="64.98" cy="41.09" rx="6.7" ry="6.13"/>
+          <g class="cls-2">
+            <g class="cls-7">
+              <ellipse cx="64.98" cy="41.09" rx="6.7" ry="6.13"/>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g>
+        <rect class="cls-20" x="45.5" y="-4.81" width="11.98" height="27.32" rx="1.36" ry="1.36" transform="translate(42.64 60.34) rotate(-90)"/>
+        <rect class="cls-5" x="46.1" y="-4.14" width="10.87" height="25.9" rx="1.26" ry="1.26" transform="translate(42.72 60.34) rotate(-90)"/>
+        <text class="cls-9" transform="translate(39.18 12.94) scale(1.29 1)"><tspan x="0" y="0">ICU</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>
