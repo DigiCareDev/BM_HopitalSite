@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Nav from '../components/Nav'
+import Navbar from '../components/home/navbar'
 import Footer from '../components/Footer'
 import Mangement from '../components/Mangement';
 import FAQSection from '../components/Faqs';
@@ -16,11 +16,11 @@ import Vitamin from '@/assets/Treatment/Anemia Treatment/Vitamin Therapy.svg'
 
 
 export default function AnemiaTreatment() {
-const [translations, setTranslations] = useState({});
+  const [translations, setTranslations] = useState({});
 
-    const handletranslate = (data) => {
-        setTranslations(data);
-    }
+  const handletranslate = (data) => {
+    setTranslations(data);
+  }
 
   const contentData = {
     sections: [
@@ -127,9 +127,9 @@ const [translations, setTranslations] = useState({});
     <div className='bg-white'>
       <BackToTop />
       <Subnav onTranslations={handletranslate} />
-      <Nav translations={translations} />
+      <Navbar translations={translations} />
       <Mangement contentData={contentData} />
-      <FAQSection faqItems={faqItems} translations={translations}/>
+      <FAQSection faqItems={faqItems} translations={translations} />
       <Footer translations={translations} />
     </div>
   )

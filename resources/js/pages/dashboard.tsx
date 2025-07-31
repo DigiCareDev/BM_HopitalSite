@@ -82,8 +82,8 @@ export default function Dashboard() {
                 setLoadingAppointment(false);
             });
         // ================ Contact 2============
-        // axios.get('http://emarketplace.progatetechnology.com/api/contactdata')
-         axios.get('http://localhost:8000/api/contactdata')
+        axios.get('http://emarketplace.progatetechnology.com/api/contactdata')
+        //  axios.get('http://localhost:8000/api/contactdata')
             .then(res => {
                 const firstFive = res.data.slice(0, 5);
                 setContact(res.data);

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Footer from "./components/Footer";
-import Nav from "./components/Nav";
 import Secnav from './components/secNav';
 import Homeblog from '@/pages/components/home/homeBlog';
 import Treatment from "../pages/components/home/treatment";
@@ -26,8 +25,7 @@ export default function Welcome() {
 
                 <BackToTop/>
                 <Subnav onTranslations={handletranslate}/>
-                <Nav translations={translations} />
-                {/* <Navbar translations={translations}/> */}
+                <Navbar translations={translations}/>
                 <Secnav translations={translations} />
                 {/* hero */}
                 <Hero translations={translations} />

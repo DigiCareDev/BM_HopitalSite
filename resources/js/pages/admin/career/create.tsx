@@ -50,7 +50,7 @@ export default function Create() {
                 formDataToSend.append('images[]', images[i]);
             }
 
-            const response = await fetch('http://localhost:8000/api/jobs', {
+            const response = await fetch('http://emarketplace.progatetechnology.com/api/jobs', {
                 method: 'POST',
                 body: formDataToSend,
             });

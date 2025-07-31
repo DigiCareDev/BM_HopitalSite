@@ -7,10 +7,9 @@ import Logo from '@/assets/Logo.webp'
 function HomeBlog({ translations }) {
     const blogPosts = [
         {
-            title: "AI-OCT and Precision Angioplasty: Revolutionizing Heart Care in ",
-            description:
-                "We are incredibly excited about the recent strides in cardiac care, particularly with the integration of Artificial Intelligence (AI) in diagnostic imaging.",
-            author: "BM Hospital team",
+            title: translations?.blog_title || 'एआई-ओसीटी और प्रिसिशन एंजियोप्लास्टी: हृदय देखभाल में क्रांति',
+            description: translations?.blog_description || "हम हृदय देखभाल में हालिया प्रगति को लेकर बेहद उत्साहित हैं, खासकर डायग्नोस्टिक इमेजिंग में आर्टिफिशियल इंटेलिजेंस (AI) के एकीकरण के साथ।",
+            author: translations?.blog_auther || "बीएम हॉस्पिटल टीम",
             date: "July 03, 2025",
             avatar: Logo,
             image: Heart,
@@ -18,10 +17,9 @@ function HomeBlog({ translations }) {
             redirect: "/ai-oct"
         },
         {
-            title: "Top 10 Common Childhood Illnesses Every Parent Should Know – Essential Guidance from BM Hospital ",
-            description:
-            "As parents, navigating the world of childhood illnesses can feel overwhelming. From sniffles to rashes, it's natural to worry when your little one isn't feeling their best. ",
-            author: "BM Hospital team",
+            title: translations?.blog_title1 || 'हर माता-पिता को जाननी चाहिएं ये 10 सामान्य बाल रोग – बीएम हॉस्पिटल की ज़रूरी सलाह',
+            description: translations?.blog_description1 || "माता-पिता के रूप में, बच्चों की बीमारियों को समझना कभी-कभी भारी लग सकता है। नाक बहने से लेकर चकत्तों तक, जब आपके बच्चे की तबीयत ठीक नहीं होती, तो चिंता होना स्वाभाविक है।",
+            author: translations?.blog_auther || "बीएम हॉस्पिटल टीम",
             date: "July 03, 2025",
             image: Diabetes,
             tags: ["Diabetes", "Nutrition"],
@@ -29,27 +27,15 @@ function HomeBlog({ translations }) {
             avatar: Logo,
         },
         {
-            title: "Child Vaccination Schedule You Should Follow",
-            description:
-                "Ensure your child's immunity with a complete vaccination roadmap. Stay updated with the latest immunization guidelines.",
-            author: "BM Hospital team",
+            title: translations?.blog_title2 || "सामान्य ईएनटी समस्याएं समझें: कब विशेषज्ञ से मिलना ज़रूरी है",
+            description: translations?.blog_description2 || "सुनने, सूंघने, स्वाद और संतुलन की हमारी इंद्रियां रोज़मर्रा की ज़िंदगी में अहम भूमिका निभाती हैं। बीएम हॉस्पिटल में हमारे समर्पित ईएनटी विशेषज्ञ विभिन्न समस्याओं का निदान और इलाज करते हैं ताकि आपको फिर से आराम और संतुलन मिल सके।",
+            author: translations?.blog_auther || "बीएम हॉस्पिटल टीम",
             date: "July 03, 2025",
             image: Vaccine,
             avatar: Logo,
             tags: ["Pediatrics", "Immunization"],
             redirect: "/ent-problems"
         },
-        // {
-        //     title: "Child Vaccination Schedule You Should Follow",
-        //     description:
-        //         "Ensure your child's immunity with a complete vaccination roadmap. Stay updated with the latest immunization guidelines.",
-        //     author: "BM Hospital team",
-        //     date: "July 03, 2025",
-        //     image: Vaccine, 
-        //     avatar: Logo,
-        //     tags: ["Pediatrics", "Immunization"],
-        //     redirect: "/Gynaecologist-immediately"
-        // },
     ];
     return (
         <div>
@@ -58,7 +44,7 @@ function HomeBlog({ translations }) {
                     {/* Title */}
                     <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
                         <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-blue-800 ">
-                            Latest Blog
+                            {translations?.blog_heading || 'नवीनतम स्वास्थ्य लेख'}
                         </h2>
                     </div>
 
@@ -89,7 +75,7 @@ function HomeBlog({ translations }) {
                                         className="size-8 rounded-full"
                                     />
                                     <div>
-                                        <h5 className="text-sm text-gray-900 dark:group-hover:text-[#80CAC7] font-bold ">By {post.author}</h5>
+                                        <h5 className="text-sm text-gray-900 dark:group-hover:text-[#80CAC7] font-bold "> {post.author}</h5>
                                     </div>
                                 </div>
                             </a>
@@ -100,7 +86,7 @@ function HomeBlog({ translations }) {
                             href='/blog'
                             className="inline-block mt-4 text-white bg-blue-700 hover:bg-blue-900 px-4 py-2 rounded-lg transition"
                         >
-                            Read More
+                            {translations?.read_more || 'अधिक पढ़ें'} →
                         </a>
                     </div>
 

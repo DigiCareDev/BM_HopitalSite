@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Navbar from './components/Nav';
+import Navbar from './components/home/navbar'
 import Footer from './components/Footer';
 import ContactImage from '@/assets/images/Contact.png'
 import { ImLocation2 } from "react-icons/im";
@@ -35,7 +35,7 @@ export default function Contact() {
         e.preventDefault();
 
         try {
-            const response = await fetch('http://localhost:8000/api/contactdata', {
+            const response = await fetch('http://emarketplace.progatetechnology.com/api/contactdata', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

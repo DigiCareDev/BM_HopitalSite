@@ -18,7 +18,7 @@ import SkinConditions from '@/assets/Treatment/Skin Conditions (Rashes, Eczema, 
 import SleepDisorder from '@/assets/Treatment/Sleep Disorder Management.svg';
 import ThyroidDisorder from '@/assets/Treatment/Thyroid Disorder Management.svg';
 import UrinaryTractInfection from '@/assets/Treatment/Urinary Tract Infection (UTI) Treatment.svg';
-import Nav from './components/Nav';
+import Navbar from './components/home/navbar'
 import Footer from './components/Footer';
 import BackToTop from "./components/BackToTopButton"
 import Subnav from "./components/subnav";
@@ -134,7 +134,7 @@ export default function Treatment() {
         <div className='bg-white'>
             <BackToTop />
             <Subnav onTranslations={handletranslate} />
-            <Nav translations={translations} />
+            <Navbar translations={translations}/>
             <div className="bg-white p-6">
                 <h2 className="text-3xl font-bold text-center mb-10 text-blue-800">{translations?.Our_Treatments || 'हमारे उपचार'}</h2>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">

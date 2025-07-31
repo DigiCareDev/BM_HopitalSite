@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Nav from '../components/Nav'
+import Navbar from '../components/home/navbar'
 import Footer from '../components/Footer'
 import Mangement from '../components/Mangement';
 import FAQSection from '../components/Faqs';
@@ -95,7 +95,6 @@ export default function AsthmaBronchitis() {
         ]
     };
 
-
     const faqItems = [
         {
             question: translations?.asthmabronchitis_question || 'अस्थमा और ब्रोंकाइटिस में क्या अंतर है?',
@@ -127,7 +126,7 @@ export default function AsthmaBronchitis() {
         <div className='bg-white'>
             <BackToTop />
             <Subnav onTranslations={handletranslate} />
-            <Nav translations={translations} />
+            <Navbar translations={translations}/>
             <Mangement contentData={contentData} />
             <FAQSection faqItems={faqItems} translations={translations} />
             <Footer translations={translations} />

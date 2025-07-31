@@ -2,7 +2,7 @@ import { useState } from "react";
 import devURL from '@/pages/constent/devURL';
 import Swal from 'sweetalert2';
 
-export default function HomeAppointmentFrom({ header }) {
+export default function HomeAppointmentFrom({ header, translations }) {
 
     const [appointment, setAppointment] = useState({
         name: '',

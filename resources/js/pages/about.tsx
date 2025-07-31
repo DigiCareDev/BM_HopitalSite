@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import Navbar from './components/Nav';
+import Navbar from './components/home/navbar'
 import Footer from './components/Footer';
 import ContactImage from '@/assets/images/About.png'
 import AboutHeader from '@/assets/images/aboutHeader.jpg'

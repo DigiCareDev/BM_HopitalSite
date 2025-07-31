@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Nav from '../components/Nav'
+import Navbar from '../components/home/navbar'
 import Footer from '../components/Footer'
 import Treatment from '../components/Treatment';
 import {
@@ -152,7 +152,7 @@ export default function Tpa() {
         <div>
            <BackToTop />
             <Subnav onTranslations={handletranslate} />
-            <Nav translations={translations} />
+            <Navbar translations={translations}/>
             <Treatment TreatmentData={TreatmentData} />
             <Footer translations={translations} />
         </div>

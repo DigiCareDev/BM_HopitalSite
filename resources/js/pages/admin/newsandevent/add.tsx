@@ -43,7 +43,7 @@ function Add() {
 
         try {
             // const response = await fetch(`${devURL}/api/news-events`, {
-            const response = await fetch('http://localhost:8000/api/news-events', {
+            const response = await fetch('http://emarketplace.progatetechnology.com/api/news-events', {
                 method: 'POST',
                 body: formData,
             });

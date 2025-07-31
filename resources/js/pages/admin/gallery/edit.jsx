@@ -16,7 +16,7 @@ function Edit({isOpen, onClose, galleryItem, onUpdate}) {
     
             try {
                 // const res = await fetch(`${devURL}/api/gallery/${id}`);
-                const res = await fetch(`http://localhost:8000/api/gallery/${id}`);
+                const res = await fetch(`http://emarketplace.progatetechnology.com/api/gallery/${id}`);
                 const data = await res.json();
     
                 setEditGallery({

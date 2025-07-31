@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Nav from '../components/Nav';
+import Navbar from '../components/home/navbar'
 import Footer from '../components/Footer';
-import Treatment from '../components/Treatment';
 import FAQSection from '../components/Faqs';
-import AboutHeader from '@/assets/images/aboutHeader.jpg'
 import Mangement from '../components/Mangement';
 import BackToTop from "../components/BackToTopButton"
 import Subnav from "../components/subnav";
@@ -129,7 +127,7 @@ export default function HypertensionTreatment() {
             <div className='bg-white'>
          <BackToTop />
             <Subnav onTranslations={handletranslate} />
-                <Nav translations={translations} />
+                <Navbar translations={translations}/>
                 <Mangement contentData={contentData} />
                 <FAQSection faqItems={faqItems} translations={translations} />
                 <Footer translations={translations} />

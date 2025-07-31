@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Nav from './components/Nav';
+import Navbar from './components/home/navbar'
 import Footer from './components/Footer';
 import BackToTop from "./components/BackToTopButton"
 import Subnav from "./components/subnav";
@@ -14,7 +14,7 @@ const TermsAndConditions = () => {
     <>
       <BackToTop />
       <Subnav onTranslations={handletranslate} />
-      <Nav translations={translations} />
+      <Navbar translations={translations}/>
       <div className='bg-white py-10'>
         <div className="rounded-xl shadow hover:shadow-2xl p-10 text-gray-800 px-4 py-8 max-w-5xl mx-auto">
           <h1 className="text-3xl font-bold text-blue-700 mb-6 text-center">{translations?.pp_heading || "नियम और शर्तें – बीएम अस्पताल"}</h1>

@@ -10,4 +10,4 @@ function Headline({translations}) {
     )
 }
 
-export default Headline
+export default Headline;

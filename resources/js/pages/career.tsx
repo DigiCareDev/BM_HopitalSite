@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import Nav from './components/Nav';
+import Navbar from './components/home/navbar'
 import Footer from './components/Footer';
 import CMO from '@/assets/images/CMO.png'
 import FieldOfficer from '@/assets/images/FieldOfficer.png'
@@ -57,7 +57,7 @@ export default function Career() {
         <>
             <BackToTop />
             <Subnav onTranslations={handletranslate} />
-            <Nav translations={translations} />
+            <Navbar translations={translations}/>
 
             <div className="bg-gray-50 text-gray-800">
 

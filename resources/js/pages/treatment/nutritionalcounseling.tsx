@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Nav from '../components/Nav'
+import Navbar from '../components/home/navbar'
 import Footer from '../components/Footer'
 import Mangement from '../components/Mangement';
 import FAQSection from '../components/Faqs';
-import AboutHeader from '@/assets/images/aboutHeader.jpg';
 import BackToTop from "../components/BackToTopButton"
 import Subnav from "../components/subnav";
 import Treatmenticon from '@/assets/Treatment/What Is Treatment.svg'
@@ -132,7 +131,7 @@ export default function Nutritionalcounseling() {
         <div className='bg-white'>
             <BackToTop />
             <Subnav onTranslations={handletranslate} />
-            <Nav translations={translations} />
+            <Navbar translations={translations}/>
             <Mangement contentData={contentData} />
             <FAQSection faqItems={faqItems} translations={translations} />
             <Footer translations={translations} />

@@ -23,7 +23,7 @@ export default function Newsandevent() {
 
     useEffect(() => {
         // fetch(`${devURL}/api/news-events`)
-        fetch('http://localhost:8000/api/news-events')
+        fetch('http://emarketplace.progatetechnology.com/api/news-events')
             .then(res => res.json())
             .then(data => {
                 setNewsEvent(data);

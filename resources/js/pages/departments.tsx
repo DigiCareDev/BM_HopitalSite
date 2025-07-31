@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Navbar from './components/Nav';
+import Navbar from './components/home/navbar'
 import Footer from './components/Footer';
 import {
     FaHeartbeat,
@@ -99,7 +99,7 @@ export default function Departments() {
             <div className='bg-white '>
                 <BackToTop />
                 <Subnav onTranslations={handletranslate} />
-                <Navbar translations={translations} />
+               <Navbar translations={translations}/>
                 <div className="bg-gradient-to-br from-blue-50 to-white py-10 px-4 sm:px-6 lg:px-12 min-h-screen">
                     <h2 className="text-3xl font-bold text-center text-blue-800 mb-10">
                         {translations?.Our_Departments || 'विभाग'}

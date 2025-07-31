@@ -6,33 +6,6 @@ function Blogsingle({ blogData }) {
 
     console.log('blogData', blogData)
 
-    const relatedPosts = [
-        {
-            id: 1,
-            title: 'How to Improve Your Heart Health',
-            excerpt: 'Learn simple lifestyle changes to protect your cardiovascular system...',
-            image: Logo,
-        },
-        {
-            id: 2,
-            title: 'Benefits of Regular Medical Checkups',
-            excerpt: 'Early detection can Save Lives . Here’s why routine exams matter...',
-            image: Logo,
-        },
-        {
-            id: 3,
-            title: 'Top 10 Tips for Mental Wellness',
-            excerpt: 'Balance your mind with these proven daily habits...',
-            image: Logo,
-        },
-        {
-            id: 4,
-            title: 'Top 10 Tips for Mental Wellness',
-            excerpt: 'Balance your mind with these proven daily habits...',
-            image: Logo,
-        },
-    ];
-
     return (
         <>
             <div className="bg-gray-50 text-gray-800 py-10 px-4 md:px-10">
@@ -40,7 +13,7 @@ function Blogsingle({ blogData }) {
                 <div>
                     <div className="max-w-7xl mx-auto mb-10">
                         <h1 className="text-4xl font-bold text-blue-900 mb-2">{blogData.title}</h1>
-                        <p className="text-sm text-gray-500">by {blogData.author || 'By Dr. Meera Sharma'} {blogData.date || '- Published on June 15, 2025'}</p>
+                        <p className="text-sm text-gray-500"> {blogData.author || 'By Dr. Meera Sharma'},  {blogData.date || '- Published on June 15, 2025'}</p>
                     </div>
 
                     {/* Blog Content */}
@@ -114,22 +87,6 @@ function Blogsingle({ blogData }) {
                     </div>
                 </div>
 
-                {/* Related Posts Section */}
-                <div className="max-w-7xl mx-auto mt-16">
-                    <h2 className="text-2xl font-bold text-blue-800 mb-6">Related Posts</h2>
-                    <div className="grid md:grid-cols-4 gap-6">
-                        {relatedPosts.map((post) => (
-                            <div key={post.id} className="bg-white border rounded-lg shadow hover:shadow-lg transition">
-                                <img src={post.image} alt={post.title} className="rounded-t-lg h-40 w-full object-cover" />
-                                <div className="p-4">
-                                    <h3 className="text-lg font-semibold text-blue-700">{post.title}</h3>
-                                    <p className="text-sm text-gray-600 mt-2">{post.excerpt}</p>
-                                    <a href="#" className="text-sm text-blue-600 mt-3 inline-block hover:underline">Read More →</a>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
             </div>
         </>
     )

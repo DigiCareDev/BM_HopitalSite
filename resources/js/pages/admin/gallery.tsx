@@ -31,7 +31,7 @@ function Gallery() {
     console.log('editGallery==', editGallery)
     useEffect(() => {
         // fetch(`${devURL}/api/gallery`)
-        fetch('http://localhost:8000/api/gallery')
+        fetch('http://emarketplace.progatetechnology.com/api/gallery')
             .then(res => res.json())
             .then(data => {
                 setGallery(data.data);
@@ -47,7 +47,7 @@ function Gallery() {
 
         try {
             // const res = await fetch(`${devURL}/api/gallery/${id}`);
-            const res = await fetch(`http://localhost:8000/api/gallery/${id}`);
+            const res = await fetch(`http://emarketplace.progatetechnology.com/api/gallery/${id}`);
             const data = await res.json();
 
             setEditGallery({
@@ -89,7 +89,7 @@ function Gallery() {
 
         try {
             // const res = await fetch(`${devURL}/api/gallery/${editingId}`, {
-             const res = await fetch(`http://localhost:8000/api/gallery/${editingId}`, {
+             const res = await fetch(`http://emarketplace.progatetechnology.com/api/gallery/${editingId}`, {
                 method: 'POST',
                 body: formData
             });

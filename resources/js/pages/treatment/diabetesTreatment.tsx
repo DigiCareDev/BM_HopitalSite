@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Nav from '../components/Nav';
+import Navbar from '../components/home/navbar'
 import Footer from '../components/Footer';
 import FAQSection from '../components/Faqs';
 import Mangement from '../components/Mangement';
@@ -95,7 +95,6 @@ export default function DiabetesTreatment() {
         ]
     };
 
-
     const faqItems = [
         {
             question: translations?.DiabetesTreatment_question || 'थायरॉयड विकारों के सामान्य लक्षण क्या हैं?',
@@ -129,7 +128,7 @@ export default function DiabetesTreatment() {
             <div className='bg-white'>
                 <BackToTop />
                 <Subnav onTranslations={handletranslate} />
-                <Nav translations={translations} />
+               <Navbar translations={translations}/>
                 <Mangement contentData={contentData} />
                 <FAQSection faqItems={faqItems} translations={translations} />
                 <Footer translations={translations} />

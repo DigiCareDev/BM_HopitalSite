@@ -1,48 +1,49 @@
-import React from 'react'
-import Nav from '../components/Nav'
+import React, { useState } from 'react'
+import Navbar from '../components/home/navbar'
 import Footer from '../components/Footer'
-import Heart from '@/assets/images/heart.png'
-import Diabetes from '@/assets/images/diabetes.png'
 import Vaccine from '@/assets/images/Vaccine.png'
+import Subnav from '../components/subnav'
 
 export default function Blog() {
+     const [translations, setTranslations] = useState({});
+    
+        const handletranslate = (data) => {
+            setTranslations(data);
+        }
+    
 
     const blogPosts = [
         {
-            title: "AI-OCT and Precision Angioplasty: Revolutionizing Heart Care in ",
-            description:
-                "We are incredibly excited about the recent strides in cardiac care, particularly with the integration of Artificial Intelligence (AI) in diagnostic imaging.",
-            author: "BM Hospital team",
+            title:   translations?.blog_title || 'एआई-ओसीटी और प्रिसिशन एंजियोप्लास्टी: हृदय देखभाल में क्रांति',
+            description: translations?.blog_description ||  "हम हृदय देखभाल में हालिया प्रगति को लेकर बेहद उत्साहित हैं, खासकर डायग्नोस्टिक इमेजिंग में आर्टिफिशियल इंटेलिजेंस (AI) के एकीकरण के साथ।",
+            author: translations?.blog_auther || "बीएम हॉस्पिटल टीम",
             date: "June 15, 2025",
             image: 'https://behearthealthy.in/wp-content/uploads/2024/04/artificial-intelligence-angioplasty-india-img.webp',
             tags: ["Cardiology", "Wellness"],
             redirect: "/ai-oct"
         },
         {
-            title: "Top 10 Common Childhood Illnesses Every Parent Should Know – Essential Guidance from BM Hospital ",
-            description:
-                "As parents, navigating the world of childhood illnesses can feel overwhelming. From sniffles to rashes, it's natural to worry when your little one isn't feeling their best. ",
-            author: "BM Hospital team",
+            title:   translations?.blog_title1 || 'हर माता-पिता को जाननी चाहिएं ये 10 सामान्य बाल रोग – बीएम हॉस्पिटल की ज़रूरी सलाह',
+            description: translations?.blog_description1 ||  "माता-पिता के रूप में, बच्चों की बीमारियों को समझना कभी-कभी भारी लग सकता है। नाक बहने से लेकर चकत्तों तक, जब आपके बच्चे की तबीयत ठीक नहीं होती, तो चिंता होना स्वाभाविक है।",
+            author: translations?.blog_auther || "बीएम हॉस्पिटल टीम",
             date: "June 15, 2025",
             image: 'https://continentalHospitals.com/uploads/mceu_21896820611699938032843.jpg',
             tags: ["Diabetes", "Nutrition"],
             redirect: "/common-childhood-illnesses"
         },
         {
-              title: "Understanding Common ENT Problems: When to See a Specialist",
-            description:
-                "Our senses of hearing, smell, taste, and balance play a crucial role in our daily lives. At BM Hospital, our dedicated ENT specialists diagnose and treat a wide range of conditions to restore comfort and function.",
-            author: "BM Hospital team",
+              title: translations?.blog_title2 || "सामान्य ईएनटी समस्याएं समझें: कब विशेषज्ञ से मिलना ज़रूरी है",
+            description: translations?.blog_description2 || "सुनने, सूंघने, स्वाद और संतुलन की हमारी इंद्रियां रोज़मर्रा की ज़िंदगी में अहम भूमिका निभाती हैं। बीएम हॉस्पिटल में हमारे समर्पित ईएनटी विशेषज्ञ विभिन्न समस्याओं का निदान और इलाज करते हैं ताकि आपको फिर से आराम और संतुलन मिल सके।",
+            author: translations?.blog_auther || "बीएम हॉस्पिटल टीम",
             date: "June 15, 2025",
             image: Vaccine,
             tags: ["Pediatrics", "Immunization"],
             redirect: "/ent-problems"
         },
         {
-            title: " 5 Signs You Should See a Gynecologist Immediately",
-            description:
-                "  At BM Hospital, we empower women to prioritize their health with comprehensive and compassionate gynecological care. Learn to recognize signs that should never be ignored.",
-            author: "BM Hospital team",
+            title:  translations?.blog_title3 || "5 संकेत जो बताते हैं कि आपको तुरंत स्त्री रोग विशेषज्ञ से मिलना चाहिए",
+            description:   translations?.blog_description3 ||  "बीएम हॉस्पिटल में हम महिलाओं को उनके स्वास्थ्य को प्राथमिकता देने के लिए संपूर्ण और संवेदनशील स्त्री रोग सेवाएं प्रदान करते हैं। ऐसे संकेत पहचानें जिन्हें कभी नजरअंदाज नहीं करना चाहिए।",
+            author: translations?.blog_auther || "बीएम हॉस्पिटल टीम",
             date: "June 15, 2025",
             image: Vaccine,
             tags: ["Pediatrics", "Immunization"],
@@ -52,12 +53,13 @@ export default function Blog() {
 
     return (
         <div>
-            <Nav />
+            <Subnav onTranslations={handletranslate} />
+            <Navbar translations={translations}/>
             <div>
                 <section className="bg-gray-50 py-12 px-4 sm:px-6 lg:px-16">
                     <div className="max-w-8xl mx-auto">
                         <h2 className="text-3xl font-bold text-blue-900 mb-10 text-center">
-                            Latest Health Articles
+                           {translations?.blog_heading || 'नवीनतम स्वास्थ्य लेख'}
                         </h2>
 
                         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
@@ -84,7 +86,7 @@ export default function Blog() {
                                             <span>{post.date}</span>
                                         </div>
 
-                                        <div className="flex flex-wrap gap-2 mb-3">
+                                        {/* <div className="flex flex-wrap gap-2 mb-3">
                                             {post.tags.map((tag, idx) => (
                                                 <span
                                                     key={idx}
@@ -93,13 +95,13 @@ export default function Blog() {
                                                     #{tag}
                                                 </span>
                                             ))}
-                                        </div>
+                                        </div> */}
 
                                         <a
                                             href={post.redirect}
                                             className="inline-block text-sm text-blue-600 hover:underline font-medium"
                                         >
-                                            Read More →
+                                            {translations?.read_more ||  'अधिक पढ़ें'} →
                                         </a>
                                     </div>
                                 </div>
@@ -108,7 +110,7 @@ export default function Blog() {
                     </div>
                 </section>
             </div>
-            <Footer />
+            <Footer translations={translations}/>
         </div>
     )
 }

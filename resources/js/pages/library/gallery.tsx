@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from 'react'
-import Nav from '../components/Nav'
+import Navbar from '../components/home/navbar'
 import Footer from '../components/Footer'
+import Subnav from '../components/subnav';
+import Logo from '@/assets/Logo.webp'
 
 
 export default function Gallery() {
+    const [translations, setTranslations] = useState({});
+
+    const handletranslate = (data) => {
+        setTranslations(data);
+    }
 
     const [gallery, setGallery] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // fetch(`${devURL}/api/gallery`)
-        fetch('http://localhost:8000/api/gallery')
+        fetch('http://emarketplace.progatetechnology.com/api/gallery')
             .then(res => res.json())
             .then(data => {
                 setGallery(data.data);
@@ -21,7 +27,8 @@ export default function Gallery() {
 
     return (
         <>
-            <Nav />
+            <Subnav onTranslations={handletranslate} />
+            <Navbar translations={translations} />
             <div className='bg-white'>
                 <div className="max-w-8xl mx-auto">
                     <h2 className="text-3xl font-bold text-blue-900 pt-10 text-center">
@@ -38,14 +45,14 @@ export default function Gallery() {
                                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                                     {gallery.map(item => (
                                         <div key={item.id} className="border border-blue-500 p-2 rounded-xl hover:shadow-xl transition-shadow duration-300">
-                                            <img src={`http://localhost:8000/storage/${item.image_path || Logo}`} alt={item.title} className="w-full h-60 object-cover mb-2" />
+                                            <img src={`http://emarketplace.progatetechnology.com/storage/${item.image_path || Logo}`} alt={item.title} className="w-full h-60 object-cover mb-2" />
                                             <div className='flex justify-between items-center '>
                                                 <div>
                                                     <h3 className="text-lg font-semibold text-blue-700 ">{item.title}</h3>
                                                     <p className="text-gray-600">{item.description}</p>
                                                 </div>
                                                 <div>
-                                                    <a href={`http://localhost:8000/gallery/${item.id}`} className="bg-blue-500 text-white px-4 py-2 rounded mt-3">View Details</a>
+                                                    <a href={`http://emarketplace.progatetechnology.com/gallery/${item.id}`} className="bg-blue-500 text-white px-4 py-2 rounded mt-3">View Details</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -57,7 +64,7 @@ export default function Gallery() {
 
                 </div>
             </div >
-            <Footer />
+            <Footer translations={translations} />
         </>
     )
 }

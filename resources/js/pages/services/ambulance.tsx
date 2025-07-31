@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Nav from '../components/Nav'
+import Navbar from '../components/home/navbar'
 import Footer from '../components/Footer';
 import Treatment from '../components/Treatment';
 import {
@@ -17,36 +17,6 @@ import BackToTop from "../components/BackToTopButton"
 import Subnav from "../components/subnav";
 
 
-const useTranslations = (lang) => {
-    const [translations, setTranslations] = useState({});
-    const [loading, setLoading] = useState(true);
-
-    console.log('Fetching translations for language:', lang);
-    console.log('Fetched translations:', translations);
-
-    useEffect(() => {
-        setLoading(true);
-        axios.get(`http://emarketplace.progatetechnology.com/api/translations/${lang}`)
-            .then(res => {
-                console.log('API Response:', res.data);
-                if (res.data.error) {
-                    console.error('Error fetching translations:', res.data.error);
-                    setTranslations({});
-                } else {
-                    console.log('Translations fetched successfully:', res.data.translations);
-                }
-                console.log('Setting translations:', res.data.translations || {});
-                setTranslations(res.data.translations || {});
-                setLoading(false);
-            })
-            .catch(err => {
-                console.error('Fetch error:', err);
-                setLoading(false);
-            });
-    }, [lang]);
-
-    return { translations, loading };
-};
 
 export default function Ambulance() {
       const [translations, setTranslations] = useState({});
@@ -182,7 +152,7 @@ export default function Ambulance() {
         <div>
            <BackToTop />
             <Subnav onTranslations={handletranslate} />
-            <Nav translations={translations} />
+            <Navbar translations={translations}/>
             <Treatment TreatmentData={TreatmentData} />
             <Footer translations={translations} />
         </div>

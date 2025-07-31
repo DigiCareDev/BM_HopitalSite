@@ -259,6 +259,8 @@ Route::get('/minor-injury-care', function () {
     return Inertia::render('treatment/minorinjurycare');
 })->name('minor-injury-care');
 
+///========================admin ==================
+
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
         return Inertia::render('dashboard');
