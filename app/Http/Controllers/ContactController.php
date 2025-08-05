@@ -30,11 +30,15 @@ class ContactController extends Controller
         return response()->json($contacts);
     }
 
-      public function destroy($id)
+        public function destroy($id)
     {
         $contacts = Contact::findOrFail($id);
         $contacts->delete();
 
-        return response()->json(['message' => ' Query deleted successfully']);
+        return response()->json([
+            'message' => 'Query deleted successfully',
+            'data' => $contacts,
+        ]);
     }
+
 }

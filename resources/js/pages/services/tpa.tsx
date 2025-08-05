@@ -17,6 +17,7 @@ import {
 } from "react-icons/fa";
 import BackToTop from "../components/BackToTopButton"
 import Subnav from "../components/subnav";
+import Logo from "@/assets/Logo.webp"
 
 export default function Tpa() {
        const [translations, setTranslations] = useState({});

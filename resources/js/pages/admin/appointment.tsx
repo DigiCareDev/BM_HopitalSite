@@ -5,6 +5,7 @@ import { Head } from '@inertiajs/react';
 import { useEffect, useState } from 'react';
 import devURL from '../constent/devURL';
 import { Trash2 } from 'lucide-react';
+import Swal from 'sweetalert2';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -18,11 +19,12 @@ export default function Appointment() {
     const [appointments, setAppointments] = useState([]);
     const [loading, setLoading] = useState(true)
 
-    console.log('appointments===', appointments)
+    // console.log('appointments===', appointments)
 
     useEffect(() => {
-        fetch('http://emarketplace.progatetechnology.com/api/appointments')
+        // fetch('http://emarketplace.progatetechnology.com/api/appointments')
         // fetch('http://localhost:8000/api/appointments')
+        fetch(`${devURL}/api/appointments`)
             .then(res => res.json())
             .then(data => {
                 setAppointments(data);
@@ -33,29 +35,46 @@ export default function Appointment() {
     }, [])
 
     const deleteContact = async (id) => {
-        if (!window.confirm('Are you sure you want to delete this contact?')) return;
+        const result = await Swal.fire({
+        title: 'Are you sure?',
+        text: "This action cannot be undone!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!',
+    });
+
+    if (!result.isConfirmed) return;
 
         try {
-            const res = await fetch(`http://emarketplace.progatetechnology.com/api/appointments/${id}`, {
+            // const res = await fetch(`http://emarketplace.progatetechnology.com/api/appointments/${id}`, {
+            const res = await fetch(`${devURL}/api/appointments/${id}`, {
                 method: 'DELETE',
             });
 
             if (res.ok) {
                 setAppointments(prev => prev.filter(appointments => appointments.id !== id));
-                alert(res.message || 'Donation query deleted  successfully!');
+                Swal.fire({
+                title: 'Deleted!',
+                text: 'Appointment deleted successfully.',
+                icon: 'success',
+                timer: 2000,
+                showConfirmButton: false,
+            });
             } else {
                 const error = await res.json();
-                alert('Failed to delete: ' + error.message);
+                 Swal.fire('Failed', error.message || 'Failed to delete appointment.', 'error');
             }
         } catch (err) {
             console.error('Delete failed:', err);
-            alert('Error deleting contact');
+             Swal.fire('Error', 'Something went wrong while deleting.', err);
         }
     };
 
     const handleDownloadCSV = () => {
         if (!appointments.length) {
-            alert("No data to download.");
+             Swal.fire("No data to download.");;
             return;
         }
 

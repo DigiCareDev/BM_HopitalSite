@@ -34,7 +34,7 @@ export default function Single({ Job }) {
     
     const Details = Job;
     
-    console.log('job--------', Details)
+    // console.log('job--------', Details)
     return (
         <>
             <Nav />

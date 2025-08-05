@@ -1,4 +1,6 @@
 import React from 'react'
+import Swal from 'sweetalert2';
+import devURL from '../../constent/devURL';
 
 function Edit({isOpen, onClose, galleryItem, onUpdate}) {
         const [editingId, setEditingId] = useState(null);
@@ -15,7 +17,7 @@ function Edit({isOpen, onClose, galleryItem, onUpdate}) {
             setEditingId(id);
     
             try {
-                // const res = await fetch(`${devURL}/api/gallery/${id}`);
+                const res = await fetch(`${devURL}/api/gallery/${id}`);
                 const res = await fetch(`http://emarketplace.progatetechnology.com/api/gallery/${id}`);
                 const data = await res.json();
     
@@ -58,8 +60,8 @@ function Edit({isOpen, onClose, galleryItem, onUpdate}) {
             }
     
             try {
-                // const res = await fetch(`${devURL}/api/gallery/${editingId}`, {
-                 const res = await fetch(`http://localhost:8000/api/gallery/${editingId}`, {
+                const res = await fetch(`${devURL}/api/gallery/${editingId}`, {
+                //  const res = await fetch(`http://localhost:8000/api/gallery/${editingId}`, {
                     method: 'POST',
                     body: formData
                 });
@@ -76,24 +78,24 @@ function Edit({isOpen, onClose, galleryItem, onUpdate}) {
                         data = JSON.parse(responseText);
                     } catch (jsonErr) {
                         console.error("❌ Invalid JSON response", responseText);
-                        alert("Server returned an unreadable JSON response.");
+                        Swal.fire("Server returned an unreadable JSON response.");
                         return;
                     }
                 } else {
                     console.error("❌ Expected JSON but got:", responseText);
-                    alert("Unexpected server response (not JSON). Check console.");
+                    Swal.fire("Unexpected server response (not JSON). Check console.");
                     return;
                 }
     
                 if (res.ok) {
-                    alert(data.message || "Gallery updated!");
+                    Swal.fire(data.message || "Gallery updated!");
                     setEditModalOpen(false); 
                             } else {
-                    alert("❌ Failed to update: " + (data.message || "Unknown error."));
+                    Swal.fire("❌ Failed to update: " + (data.message || "Unknown error."));
                 }
             } catch (err) {
                 console.error("🌐 Network or server error:", err);
-                alert("Update failed due to a network or server issue.");
+                Swal.fire("Update failed due to a network or server issue.");
             }
         };
 

@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import devURL from '../constent/devURL';
 import { Trash2 } from 'lucide-react';
 
+
 const breadcrumbs: BreadcrumbItem[] = [
     {
         title: 'Other Queries',
@@ -17,8 +18,9 @@ function Other() {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        fetch('http://emarketplace.progatetechnology.com/api/other')
+        // fetch('http://emarketplace.progatetechnology.com/api/other')
         //  fetch('http://localhost:8000/api/other')
+        fetch(`${devURL}/api/other`)
             .then(res => res.json())
             .then(data => {
                 setOther(data);
@@ -32,7 +34,8 @@ function Other() {
         if (!window.confirm('Are you sure you want to delete this contact?')) return;
 
         try {
-            const res = await fetch(`http://emarketplace.progatetechnology.com/api/other/${id}`, {
+            // const res = await fetch(`http://emarketplace.progatetechnology.com/api/other/${id}`, {
+             const res = await fetch(`${devURL}/api/other/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',

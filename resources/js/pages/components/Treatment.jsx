@@ -6,7 +6,7 @@ function Treatment({ TreatmentData }) {
 
     const data = TreatmentData[0];
 
-    console.log('TreatmentData', data)
+    // console.log('TreatmentData', data)
     return (
         <>
             <div className='bg-white'>

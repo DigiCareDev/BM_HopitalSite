@@ -17,6 +17,7 @@ import { MdMedicalServices } from "react-icons/md";
 import { RiTeamFill } from "react-icons/ri";
 import BackToTop from "../components/BackToTopButton"
 import Subnav from "../components/subnav";
+import Logo from "@/assets/Logo.webp"
 
 
 export default function Pediatricintensivecareunit() {

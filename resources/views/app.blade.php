@@ -51,10 +51,11 @@
     @viteReactRefresh
     @vite(['resources/js/app.tsx', "resources/js/pages/{$page['component']}.tsx"])
     @inertiaHead
+    
+    <!-- <script src="{{ asset('ckeditor/build/ckeditor.js') }}"></script> -->
 </head>
 
 <body class="font-sans antialiased">
     @inertia
 </body>
-
 </html>

@@ -4,7 +4,12 @@ import { RiXingLine } from 'react-icons/ri';
 
 function Blogsingle({ blogData }) {
 
-    console.log('blogData', blogData)
+    // console.log('blogData', blogData)
+    // dangerouslySetInnerHTML={{ __html: blogData.description }}
+//     return Inertia::render('career/cmo', [
+//     'job' => $job,
+//     'translations' => $translations,
+// ]);
 
     return (
         <>

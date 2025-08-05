@@ -41,8 +41,15 @@ const useTranslations = (lang) => {
 
 const TopNotificationBar = ({ onTranslations }) => {
   const [languageDropdown, setLanguageDropdown] = useState(false);
-  const [language, setLanguage] = useState('hi');
+  // const [language, setLanguage] = useState('hi');
+  const [language, setLanguage] = useState(localStorage.getItem('selectedLanguage') || 'hi'); // Use a default like 'en' if not found
   const { translations, loading } = useTranslations(language);
+
+  const setAndStoreLanguage = (newLang) => {
+    setLanguage(newLang);
+    localStorage.setItem('selectedLanguage', newLang); 
+};
+
 
   useEffect(() => {
     if (translations && onTranslations) {
@@ -112,11 +119,11 @@ const TopNotificationBar = ({ onTranslations }) => {
 
             {/* Dropdown */}
             {languageDropdown && (
-              <ul className="absolute right-0 mt-2 w-40 bg-white border rounded shadow-md z-50 text-left">
-                <button onClick={() => setLanguage('hi')} className="block px-3 py-1.5   text-sm text-blue-800 hover:bg-gray-100">हिन्दी (Hindi) </button>
-                 <button onClick={() => setLanguage('bn')} className="block px-3 py-1.5  text-sm text-blue-800 hover:bg-gray-100">বাংলা (Bangali)</button>
-                <button onClick={() => setLanguage('en')} className="block px-3 py-1.5   text-sm text-blue-800 hover:bg-gray-100">English (English)</button>
-                <button onClick={() => setLanguage('ori')} className="block px-3 py-1.5  text-sm text-blue-800 hover:bg-gray-100">ওডিয়া (Odia) </button>
+              <ul className="absolute right-0 mt-2 w-45 bg-white border rounded shadow-md z-50 text-left">
+                <button onClick={() => setLanguage('en')} className="block px-4 py-2 text-sm text-blue-800 hover:bg-gray-100">English (English)</button>
+                 <button onClick={() => setLanguage('bn')} className="block px-4 py-2 text-sm text-blue-800 hover:bg-gray-100">বাংলা (Bangali)</button>
+                <button onClick={() => setLanguage('hi')} className="block px-4 py-2 text-sm text-blue-800 hover:bg-gray-100">हिन्दी (Hindi) </button>
+                <button onClick={() => setLanguage('ori')} className="block px-4 py-2 text-sm text-blue-800 hover:bg-gray-100"> ଓଡ଼ିଆ(Odia) </button>
               </ul>
             )}
           </div>

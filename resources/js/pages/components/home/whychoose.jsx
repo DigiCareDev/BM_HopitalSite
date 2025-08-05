@@ -11,10 +11,10 @@ function Whychoose({translations}) {
                 <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="lg:text-center">
                         <h3 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-blue-800 sm:text-4xl sm:leading-10">
-                           {translations?.why_choose || ' Why Choose <span className="text-[#80CAC7]">BM</span> Hospital ?'}
+                           {translations?.why_choose || 'क्यों चुनें बीएम अस्पताल ?'}
                         </h3>
                         <p className="mt-4 max-w-2xl text-xl leading-7 text-gray-500 lg:mx-auto">
-                           {translations?.why_choose_title || ' Trusted Healthcare, Compassionate Approach — The BM Hospital Difference'}
+                           {translations?.why_choose_title || 'विश्वसनीय स्वास्थ्य सेवा, करुणामय दृष्टिकोण - बीएम अस्पताल का अंतर'}
                         </p>
                     </div>
 
@@ -26,10 +26,10 @@ function Whychoose({translations}) {
                                     <img src={ExpertMedical} alt="" className="h-20 w-24 rounded-xl hover:shadow-lg " />
                                     <div className="ml-4">
                                         <h4 className="text-lg leading-6 text-blue-800 font-bold">
-                                            {translations?.expert_medical_team || 'Expert Medical Team'}
+                                            {translations?.expert_medical_team || 'विशेषज्ञ चिकित्सा दल'}
                                         </h4>
                                         <p className="mt-2 text-base leading-6 text-gray-500">
-                                             {translations?.expert_medical_team_title || 'BM Hospital is staffed with highly qualified specialists offering advanced care across multiple disciplines for accurate diagnosis and treatment.'}   
+                                             {translations?.expert_medical_team_title || 'बीएम अस्पताल में उच्च योग्यता प्राप्त विशेषज्ञ कार्यरत हैं जो सटीक निदान और उपचार के लिए विभिन्न विषयों में उन्नत देखभाल प्रदान करते हैं।'}   
                                         </p>
                                     </div>
                                 </div>
@@ -41,10 +41,10 @@ function Whychoose({translations}) {
                                     <img src={Facilities} alt="" className="h-20 w-20 rounded-xl hover:shadow-lg" />
                                     <div className="ml-4">
                                         <h4 className="text-lg leading-6 text-blue-800 font-bold">
-                                            {translations?.state_of_the_art_facilities || 'State-of-the-Art Facilities'}
+                                            {translations?.state_of_the_art_facilities || 'हमारी अत्याधुनिक सुविधाएं उन्नत तकनीक '}
                                         </h4>
                                         <p className="mt-2 text-base leading-6 text-gray-500">
-                                            {translations?.state_of_the_art_facilities_title || 'We provide modern infrastructure, cutting-edge technology, and well-equipped ICUs, OT, NICU, and PICU for superior healthcare delivery.'}
+                                            {translations?.state_of_the_art_facilities_title ||  'हम बेहतर स्वास्थ्य सेवा प्रदान करने के लिए आधुनिक बुनियादी ढांचा, अत्याधुनिक प्रौद्योगिकी और अच्छी तरह से सुसज्जित आईसीयू, ओटी, एनआईसीयू और पीआईसीयू प्रदान करते हैं।'}
                                         </p>
                                     </div>
                                 </div>
@@ -56,10 +56,10 @@ function Whychoose({translations}) {
                                     <img src={PatientCentered} alt="" className="h-20 w-20  rounded-xl hover:shadow-lg" />
                                     <div className="ml-4">
                                         <h4 className="text-lg leading-6 text-blue-800 font-bold">
-                                            {translations?.patient_centered_care || 'Patient-Centered Care'}
+                                            {translations?.patient_centered_care || 'रोगी-केंद्रित देखभाल'}
                                         </h4>
                                         <p className="mt-2 text-base leading-6 text-gray-500">
-                                            {translations?.patient_centered_care_title || 'Our philosophy, "Every Life is Invaluable", ensures personalized treatment plans and compassionate support for every patient and family.'}
+                                            {translations?.patient_centered_care_title || 'हमारा दर्शन, "प्रत्येक जीवन अमूल्य है", प्रत्येक रोगी और परिवार के लिए व्यक्तिगत उपचार योजना और दयालु समर्थन सुनिश्चित करता है।'}
                                         </p>
                                     </div>
                                 </div>
@@ -71,10 +71,10 @@ function Whychoose({translations}) {
                                     <img src={EmergencyServices24} alt="" className="h-20 w-20 rounded-xl hover:shadow-lg" />
                                     <div className="ml-4">
                                         <h4 className="text-lg leading-6 text-blue-800 font-bold">
-                                            {translations?.emergency_services || '24/7 Emergency Services'}
+                                            {translations?.emergency_services ||  '24/7 आपातकालीन सेवाएं'}
                                         </h4>
                                         <p className="mt-2 text-base leading-6 text-gray-500">
-                                            {translations?.emergency_services_title || 'With a fully functional emergency department and ambulance support, BM Hospital ensures immediate care when every second counts.'}
+                                            {translations?.emergency_services_title || 'पूर्णतः कार्यात्मक आपातकालीन विभाग और एम्बुलेंस सहायता के साथ, बीएम अस्पताल हर सेकंड महत्वपूर्ण होने पर तत्काल देखभाल सुनिश्चित करता है।'}
                                         </p>
                                     </div>
                                 </div>

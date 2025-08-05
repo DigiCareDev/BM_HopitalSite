@@ -13,14 +13,16 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\NewsEventController;
 use App\Http\Controllers\JobApplicationController;
-use App\Http\Controllers\JobController;
+use App\Http\Controllers\OtherController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CareerPostController;
+
 
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
 Route::get('/translations/{lang}', [TranslationController::class, 'index']);
-
 // =========Donation all form =============
 Route::get('/donations', [DonationController::class, 'index']);
 Route::post('/donations', [DonationController::class, 'store']);
@@ -59,22 +61,24 @@ Route::post('/gallery', [GalleryController::class, 'store']);
 Route::get('/gallery/{id}', [GalleryController::class, 'show']);
 Route::post('/gallery/{id}', [GalleryController::class, 'update']);
 Route::delete('/gallery/{id}', [GalleryController::class, 'destroy']);
-// ========= Admin crud api ====================
+// ========= crud api ====================
 Route::get('/news-events', [NewsEventController::class, 'index']);
 Route::post('/news-events', [NewsEventController::class, 'store']);
 Route::get('/news-events/{id}', [NewsEventController::class, 'show']);
 Route::post('/news-events/{id}', [NewsEventController::class, 'update']);
 Route::delete('/news-events/{id}', [NewsEventController::class, 'destroy']);
-//=================================================
-Route::get('blog', [BlogController::class, 'index']);
-Route::post('blog', [BlogController::class, 'store']);
-Route::get('blog/{id}', [BlogController::class, 'show']);
-Route::post('blog/{id}', [BlogController::class, 'update']);
-Route::delete('blog/{id}', [BlogController::class, 'destroy']); 
-//=====================================================
-Route::get('/jobs', [JobController::class, 'index']);
-Route::post('/jobs', [JobController::class, 'store']);
-Route::get('/jobs/{id}', [JobController::class, 'show']);
-Route::post('/jobs/{id}', [JobController::class, 'update']);
-Route::delete('/jobs/{id}', [JobController::class, 'destroy']);
-
+//================== crud api ===============================
+Route::get('/jobs', [CareerPostController::class, 'index']);
+Route::post('/jobs', [CareerPostController::class, 'store']);
+Route::get('/jobs/{id}', [CareerPostController::class, 'show']);
+// Route::put('/jobs/{id}', [CareerPostController::class, 'update']);
+Route::match(['put', 'post'], '/jobs/{id}', [CareerPostController::class, 'update']);
+// Route::post('/jobs/{id}', [CareerPostController::class, 'update']);
+Route::delete('/jobs/{id}', [CareerPostController::class, 'destroy']);
+//=================== crud api ==================================
+Route::get('/blogs', [BlogController::class, 'index']);
+Route::post('/blogs', [BlogController::class, 'store']);
+Route::get('/blogs/{id}', [BlogController::class, 'show']);
+// Route::post('/blogs/{id}', [BlogController::class, 'update']);
+Route::match(['put', 'post'], '/blogs/{id}', [BlogController::class, 'update']);
+Route::delete('/blogs/{id}', [BlogController::class, 'destroy']); 

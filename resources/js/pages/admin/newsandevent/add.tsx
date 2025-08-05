@@ -3,6 +3,8 @@ import AppLayout from '@/layouts/app-layout';
 import { type BreadcrumbItem } from '@/types';
 import { Head } from '@inertiajs/react';
 import devURL from '@/pages/constent/devURL';
+import CKEditorComponent from '@/components/CKEditorManual';
+import Swal from 'sweetalert2';
 
 
 const breadcrumbs: BreadcrumbItem[] = [
@@ -38,12 +40,13 @@ function Add() {
         const formData = new FormData();
         formData.append('title', form.title);
         formData.append('category', form.category);
-        formData.append('description', form.description);  
+        formData.append('description', form.description);
         formData.append('image', form.image);
 
         try {
-            // const response = await fetch(`${devURL}/api/news-events`, {
-            const response = await fetch('http://emarketplace.progatetechnology.com/api/news-events', {
+            // const response = await fetch('http://emarketplace.progatetechnology.com/api/news-events', {
+            // const response = await fetch('http://localhost:8000/api/news-events', {
+             const response = await fetch(`${devURL}/api/news-events`, {
                 method: 'POST',
                 body: formData,
             });
@@ -51,15 +54,21 @@ function Add() {
             const data = await response.json();
 
             if (response.ok) {
-                alert(data.message || 'News/Event added successfully!');
+                Swal.fire({
+                    title: 'Deleted!',
+                    text: data.message || 'News/Event added successfully!',
+                    icon: 'success',
+                    timer: 2000,
+                    showConfirmButton: false,
+                });
                 // Reset form if needed
                 setForm({ title: '', category: '', description: '', image: null });
             } else {
-                alert(data.message || 'Failed to add News/Event.');
+                Swal.fire(data.message || 'Failed to add News/Event.');
             }
         } catch (error) {
             console.error('Submit error:', error);
-            alert('An error occurred. Please try again.');
+            Swal.fire('An error occurred. Please try again.');
         }
     };
 
@@ -103,8 +112,12 @@ function Add() {
 
                         {/* Description - Full Width */}
                         <div className="col-span-2">
-                            <label className="block mb-1 font-medium">Description</label>
-                              <QuillEditor value={form.description} onChange={(value) => setForm({ ...form, description: value })} />
+                            <label className="block mb-2 font-medium text-gray-700">Description</label>
+                            <CKEditorComponent
+                                value={form.description}
+                                onChange={(value) => setForm({ ...form, description: value })}
+                                className="block w-full text-sm text-gray-700 border border-gray-300 rounded px-3 py-2"
+                            />
                         </div>
 
                         <div className="mt-15">

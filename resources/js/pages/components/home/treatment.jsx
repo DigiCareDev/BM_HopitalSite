@@ -25,91 +25,91 @@ function treatment({translations}) {
             label: translations?.anemia_treatment || 'एनीमिया उपचार',
             link: '/treatment',
             icon: AnemiaTreatment,
-            desc: translations?.anemia_treatment_title || "BM Hospital offers expert anemia treatment to restore energy, improve health, and prevent complications."
+            desc: translations?.anemia_treatment_title || 'बीएम अस्पताल ऊर्जा बहाल करने, स्वास्थ्य में सुधार करने और जटिलताओं को रोकने के लिए विशेषज्ञ एनीमिया उपचार प्रदान करता है।',
         },
         {
             id: 3,
             label: translations?.asthma_and_bronchitis_treatment || 'अस्थमा और ब्रोंकाइटिस उपचार',
             link: '/treatment',
             icon: AsthmaandBronchitis,
-            desc: translations?.asthma_and_bronchitis_treatment_title || "BM Hospital provides expert care for asthma and bronchitis with advanced treatment and personalized support."
+            desc: translations?.asthma_and_bronchitis_treatment_title || 'बीएम अस्पताल अस्थमा और ब्रोंकाइटिस के लिए उन्नत उपचार और व्यक्तिगत सहायता के साथ विशेषज्ञ देखभाल प्रदान करता है।',
         },
         {
             id: 4,
             label: translations?.cold_cough_fever_and_pain_relief || 'सर्दी, खांसी और फ्लू उपचार',
             link: '/treatment',
             icon: ColdCoughandFlu,
-            desc: translations?.cold_cough_fever_and_pain_relief_title || "BM Hospital offers effective Cold, Cough, and Flu treatment with expert care and 24/7 medical support."
+            desc: translations?.cold_cough_fever_and_pain_relief_title || 'बीएम अस्पताल विशेषज्ञ देखभाल और 24/7 चिकित्सा सहायता के साथ प्रभावी सर्दी, खांसी और फ्लू का उपचार प्रदान करता है।',
         },
         {
             id: 5,
             label: translations?.cholesterol_diabetes_and_hypertension_care || 'कोलेस्ट्रॉल और लिपिड विकार उपचार',
             link: '/treatment',
             icon: CholesterolandLipid,
-            desc: translations?.cholesterol_diabetes_and_hypertension_care_title || "BM Hospital provides expert care for cholesterol and lipid disorders with advanced treatment and diagnosis."
+            desc: translations?.cholesterol_diabetes_and_hypertension_care_title || 'बीएम अस्पताल उन्नत उपचार और निदान के साथ कोलेस्ट्रॉल और लिपिड विकारों के लिए विशेषज्ञ देखभाल प्रदान करता है।',
         },
         {
             id: 6,
             label: translations?.dehydration_and_iv_fluids || 'डिहाइड्रेशन और IV तरल पदार्थ',
             link: '/treatment',
             icon: DehydrationandIVFluids,
-            desc: translations?.dehydration_and_iv_fluids_title || "BM Hospital offers prompt dehydration care with IV fluids to restore balance and ensure quick recovery."
+            desc: translations?.dehydration_and_iv_fluids_title ||  'बीएम अस्पताल संतुलन बहाल करने और शीघ्र स्वास्थ्य लाभ सुनिश्चित करने के लिए IV तरल पदार्थ के साथ त्वरित निर्जलीकरण देखभाल प्रदान करता है।',
         },
         {
             id: 7,
-            label: translations?.diabetes_treatment || 'डायबिटीज उपचार',
+            label: translations?.diabetes_treatment || 'मधुमेह (डायबिटीज) उपचार',
             link: '/treatment',
             icon: DiabetesManagement,
-            desc: translations?.diabetes_treatment_title || "BM Hospital provides expert diabetes care with personalized treatment plans and advanced monitoring."
+            desc: translations?.diabetes_treatment_title ||'बीएम अस्पताल व्यक्तिगत उपचार योजनाओं और उन्नत निगरानी के साथ विशेषज्ञ मधुमेह देखभाल प्रदान करता है।',
         },
         {
             id: 8,
             label: translations?.fever_treatment || 'बुखार उपचार',
             link: '/treatment',
             icon: FeverManagement,
-            desc: translations?.fever_treatment_title || "BM Hospital offers accurate fever diagnosis and effective treatment with expert doctors and 24/7 care."
+            desc: translations?.fever_treatment_title || 'बीएम अस्पताल विशेषज्ञ डॉक्टरों और 24/7 देखभाल के साथ सटीक बुखार निदान और प्रभावी उपचार प्रदान करता है।',
         },
          {
             id: 10,
             label: translations?.allergy_treatment || 'एलर्जी उपचार',
             link: '/treatment',
             icon: AllergyTreatment,
-            des: translations?.allergy_treatment_title || "BM Hospital offers expert care for allergy relief at BM Hospital—breathe easier with personalized treatment today.",        
+            des: translations?.allergy_treatment_title ||  'बीएम अस्पताल में एलर्जी से राहत के लिए विशेषज्ञ देखभाल—आज ही व्यक्तिगत उपचार के साथ बेहतर सांस लें।',
         },
         {
             id: 11,
-            label: translations?.gastrointestinal_treatment || 'गैस्ट्रोइंटेस्टाइनल उपचार',
+            label: translations?.gastrointestinal_treatment || 'जठरांत्र(गैस्ट्रोइंटेस्टाइनल) उपचार',
             link: '/treatment',
             icon: GastrointestinalTreatment,
-            desc: translations?.gastrointestinal_treatment_title || "BM Hospital provides expert care for acidity, constipation, diarrhea with advanced gastrointestinal treatment."
+            desc: translations?.gastrointestinal_treatment_title || 'बीएम अस्पताल उन्नत गैस्ट्रोइंटेस्टाइनल उपचार के साथ एसिडिटी, कब्ज, दस्त के लिए विशेषज्ञ देखभाल प्रदान करता है।',
         },
         {
             id: 12,
             label: translations?.general_health_checkups || 'सामान्य स्वास्थ्य जांच',
             link: '/treatment',
             icon: GeneralHealth,
-            desc: translations?.general_health_checkups_title || "BM Hospital offers comprehensive general health check-ups for early detection and preventive care."
+            desc: translations?.general_health_checkups_title || 'बीएम अस्पताल शीघ्र पहचान और निवारक देखभाल के लिए व्यापक सामान्य स्वास्थ्य जांच प्रदान करता है।',
         },
         {
             id: 13,
             label: translations?.hypertension_high_blood_pressure_treatment || 'हाइपरटेंशन (उच्च रक्तचाप) उपचार',
             link: '/treatment',
             icon: Hypertension,
-            desc: translations?.hypertension_high_blood_pressure_treatment_title || "BM Hospital provides expert care for hypertension with accurate diagnosis and personalized treatment."
+            desc: translations?.hypertension_high_blood_pressure_treatment_title ||  'बीएम अस्पताल सटीक निदान और व्यक्तिगत उपचार के साथ उच्च रक्तचाप के लिए विशेषज्ञ देखभाल प्रदान करता है।',
         },
         {
             id: 14,
             label: translations?.immunizations_and_vaccinations || 'टीकाकरण और वैक्सीनेशन',
             link: '/treatment',
             icon: ImmunizationsandVaccinations,
-            desc: translations?.immunizations_and_vaccinations_title || "BM Hospital offers essential immunizations and vaccinations for all ages to protect your health."
+            desc: translations?.immunizations_and_vaccinations_title ||  'बीएम अस्पताल आपके स्वास्थ्य की रक्षा के लिए सभी उम्र के लोगों के लिए आवश्यक टीकाकरण और टीकाकरण प्रदान करता है।',
         },
         {
             id: 15,
             label: translations?.minor_injury_care || 'मामूली चोटों की देखभाल (काटने, जलने, मोच आने पर)',
             link: '/treatment',
             icon: MinorInjuryCare,
-            desc: translations?.minor_injury_care_title || "BM Hospital provides prompt care for minor injuries like cuts, burns, and sprains with expert attention."
+            desc: translations?.minor_injury_care_title ||  'बीएम अस्पताल कटने, जलने और मोच जैसी छोटी चोटों के लिए विशेषज्ञ ध्यान के साथ त्वरित देखभाल प्रदान करता है।',
 
         },
         {
@@ -117,21 +117,21 @@ function treatment({translations}) {
             label: translations?.nutritional_counseling || 'पोषण संबंधी परामर्श',
             icon: NutritionalCounseling,
             link: '/treatment',
-            desc: translations?.nutritional_counseling_title || "BM Hospital offers expert nutritional counseling to support healthy eating, wellness, and disease prevention."
+            desc: translations?.nutritional_counseling_title || 'बीएम अस्पताल स्वस्थ आहार, स्वास्थ्य और रोग निवारण के लिए विशेषज्ञ पोषण परामर्श प्रदान करता है।',
         },
         {
             id: 17,
             label: translations?.pain_management || 'दर्द उपचार',
             icon: PainManagement,
             link: '/treatment',
-            desc: translations?.pain_management_title || "BM Hospital provides expert pain treatment for headaches, body pain, and migraines with lasting relief."
+            desc: translations?.pain_management_title ||'बीएम अस्पताल सिरदर्द, शरीर दर्द और माइग्रेन के लिए स्थायी राहत के साथ विशेषज्ञ दर्द उपचार प्रदान करता है।',
         },
         {
             id: 18,
             label: "More Treatment →",
             link: '/treatment',
             icon: "https://static.vecteezy.com/system/resources/previews/020/291/170/non_2x/see-more-icon-see-more-typography-logo-vector.jpg",
-            desc: translations?.more_treatment_title || "Read about more treatments →"
+            desc: translations?.more_treatment_title || 'अधिक उपचारों के बारे में पढ़ें →',
         },
         
     ];

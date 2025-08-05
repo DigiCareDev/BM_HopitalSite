@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import devURL from '../constent/devURL';
 import { Edit, Trash2, Image, Plus } from 'lucide-react';
 import Logo from '../../assets/Logo.webp'
+import Swal from 'sweetalert2';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -28,10 +29,10 @@ function Gallery() {
     const [gallery, setGallery] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    console.log('editGallery==', editGallery)
+    // console.log('editGallery==', editGallery)
     useEffect(() => {
-        // fetch(`${devURL}/api/gallery`)
-        fetch('http://emarketplace.progatetechnology.com/api/gallery')
+        fetch(`${devURL}/api/gallery`)
+        // fetch('http://emarketplace.progatetechnology.com/api/gallery')
             .then(res => res.json())
             .then(data => {
                 setGallery(data.data);
@@ -46,8 +47,8 @@ function Gallery() {
         setEditingId(id);
 
         try {
-            // const res = await fetch(`${devURL}/api/gallery/${id}`);
-            const res = await fetch(`http://emarketplace.progatetechnology.com/api/gallery/${id}`);
+            const res = await fetch(`${devURL}/api/gallery/${id}`);
+            // const res = await fetch(`http://emarketplace.progatetechnology.com/api/gallery/${id}`);
             const data = await res.json();
 
             setEditGallery({
@@ -58,10 +59,10 @@ function Gallery() {
                 imagePreview: `${devURL}/storage/${data.image_path}`,
             });
             
-            console.log('data', editGallery)
+            // console.log('data', editGallery)
         } catch (error) {
             console.error("❌ Failed to fetch item:", error);
-            alert("Failed to load gallery item.");
+            Swal.fire("Failed to load gallery item.");
         }
     };
 
@@ -88,8 +89,8 @@ function Gallery() {
         }
 
         try {
-            // const res = await fetch(`${devURL}/api/gallery/${editingId}`, {
-             const res = await fetch(`http://emarketplace.progatetechnology.com/api/gallery/${editingId}`, {
+            const res = await fetch(`${devURL}/api/gallery/${editingId}`, {
+            //  const res = await fetch(`http://emarketplace.progatetechnology.com/api/gallery/${editingId}`, {
                 method: 'POST',
                 body: formData
             });
@@ -106,30 +107,40 @@ function Gallery() {
                     data = JSON.parse(responseText);
                 } catch (jsonErr) {
                     console.error("❌ Invalid JSON response", responseText);
-                    alert("Server returned an unreadable JSON response.");
+                    Swal.fire("Server returned an unreadable JSON response.");
                     return;
                 }
             } else {
                 console.error("❌ Expected JSON but got:", responseText);
-                alert("Unexpected server response (not JSON). Check console.");
+                Swal.fire("Unexpected server response (not JSON). Check console.");
                 return;
             }
 
             if (res.ok) {
-                alert(data.message || "Gallery updated!");
+                Swal.fire(data.message || "Gallery updated!");
                 setEditModalOpen(false); 
                         } else {
-                alert("❌ Failed to update: " + (data.message || "Unknown error."));
+                Swal.fire("❌ Failed to update: " + (data.message || "Unknown error."));
             }
         } catch (err) {
             console.error("🌐 Network or server error:", err);
-            alert("Update failed due to a network or server issue.");
+            Swal.fire("Update failed due to a network or server issue.");
         }
     };
 
     // ========delete contect ===============
     const deleteContact = async (id) => {
-        if (!window.confirm('Are you sure you want to delete this contact?')) return;
+           const result = await Swal.fire({
+               title: 'Are you sure?',
+               text: "This action cannot be undone!",
+               icon: 'warning',
+               showCancelButton: true,
+               confirmButtonColor: '#3085d6',
+               cancelButtonColor: '#d33',
+               confirmButtonText: 'Yes, delete it!',
+           });
+       
+           if (!result.isConfirmed) return;
 
         try {
             const res = await fetch(`${devURL}/api/gallery/${id}`, {
@@ -144,13 +155,19 @@ function Gallery() {
 
             if (res.ok) {
                 setGallery(prev => prev.filter(gallery => gallery.id !== id));
-                alert(data.message || 'Deleted successfully');
+                   Swal.fire({
+                                title: 'Deleted!',
+                                text: data.message || 'Deleted successfully',
+                                icon: 'success',
+                                timer: 2000,
+                                showConfirmButton: false,
+                            });
             } else {
-                alert('Failed to delete: ' + data.message);
+                Swal.fire('Failed to delete: ' + data.message);
             }
         } catch (err) {
             console.error('Delete failed:', err);
-            alert('Error deleting contact');
+            Swal.fire('Error deleting contact');
         }
     };
 

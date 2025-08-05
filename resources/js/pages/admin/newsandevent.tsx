@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import devURL from '../constent/devURL';
 import { Edit, Trash2, Plus } from 'lucide-react';
 import Logo from '../../assets/Logo.webp'
+import Swal from 'sweetalert2';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -21,25 +22,56 @@ export default function Newsandevent() {
     const [loading, setLoading] = useState(true);
     const [newsEvent, setNewsEvent] = useState([]);
 
+    
     useEffect(() => {
-        // fetch(`${devURL}/api/news-events`)
-        fetch('http://emarketplace.progatetechnology.com/api/news-events')
-            .then(res => res.json())
-            .then(data => {
-                setNewsEvent(data);
-                setLoading(false);
-            })
-            .catch(err => console.log('Fail', err))
+        // fetch('http://localhost:8000/api/news-events')
+        fetch(`${devURL}/api/news-events`)
+        .then(res => res.json())
+        .then(data => {
+            setNewsEvent(data);
+            setLoading(false);
+        })
+        .catch(err => console.log('Fail', err))
     }, [])
-
-    const editNewsEvent = (id) => {
-
-    };
-
-    const deleteNewsEvent = (id) => {
-
-    };
-
+    
+    const deleteNewsEvent = async (id) => {
+            const result = await Swal.fire({
+            title: 'Are you sure?',
+            text: "This action cannot be undone!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!',
+        });
+    
+        if (!result.isConfirmed) return;
+    
+            try {
+                // const res = await fetch(`http://emarketplace.progatetechnology.com/api/news-events/${id}`, {
+                const res = await fetch(`${devURL}/api/news-events/${id}`, {
+                    method: 'DELETE',
+                });
+    
+                if (res.ok) {
+                    setNewsEvent(prev => prev.filter(newsevents => newsevents.id !== id));
+                    Swal.fire({
+                    title: 'Deleted!',
+                    text: ' deleted successfully.',
+                    icon: 'success',
+                    timer: 2000,
+                    showConfirmButton: false,
+                });
+                } else {
+                    const error = await res.json();
+                     Swal.fire('Failed', error.message || 'Failed to delete .', 'error');
+                }
+            } catch (err) {
+                console.error('Delete failed:', err);
+                 Swal.fire('Error', 'Something went wrong while deleting.', err);
+            }
+        };
+    
     return (
         <div>
             <AppLayout breadcrumbs={breadcrumbs}>
@@ -75,7 +107,7 @@ export default function Newsandevent() {
                                 </div>
                             ) : newsEvent === 0 ? (
                                 <div>
-                                    <td className="text-center text-gray-500 py-4">No contact found.</td>
+                                    <div className="text-center text-gray-900 py-4">No contact found.</div>
                                 </div>
                             ) : (
                                 newsEvent.map((item, i) => (
@@ -83,15 +115,15 @@ export default function Newsandevent() {
                                         <td className="px-3 py-2 font-semibold text-blue-600"> {i + 1}</td>
                                         <td className="px-3 py-2">
                                             <img
-                                                src={`${devURL}/storage/${item.image_path || Logo}`}
-                                                // src={`http://localhost:8000/storage/${item.image_path || Logo}`}
+                                                // src={`${devURL}/storage/${item.image_path || Logo}`}
+                                                src={item.image ? `http://localhost:8000/storage/${item.image}` : Logo}
                                                 alt={item.title}
                                                 className="w-10 h-10 object-cover"
                                             />
                                         </td>
-                                        <td className="px-3 py-2">{item.title}</td>
+                                        <td className="px-3 py-2 w-1/4">{item.title}</td>
                                         <td className="px-3 py-2 capitalize">{item.category}</td>
-                                        <td className="px-3 py-2 w-1/2">{item.description}</td>
+                                       <td className="px-3 py-2 w-1/2 max-h-[200px] overflow-y-auto"   dangerouslySetInnerHTML={{ __html: item.description }} />
                                         <td className="px-3 py-2 capitalize">{new Date(item.created_at).toLocaleDateString()}</td>
                                         <td className="px-3 py-2 text-center space-x-2">
                                             <button

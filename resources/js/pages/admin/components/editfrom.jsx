@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import Swal from 'sweetalert2';
+import devURL from '../../constent/devURL';
 
 function Editfrom() {
 
@@ -41,11 +43,17 @@ function Editfrom() {
             const data = await res.json();
 
             if (res.ok) {
-                alert("Gallery updated!");
+                Swal.fire({
+                    title: 'updated!',
+                    text: 'Gallery deleted successfully.',
+                    icon: 'success',
+                    timer: 2000,
+                    showConfirmButton: false,
+                });
                 setEditModalOpen(false);
                 fetchGalleryList(); // Refresh table
             } else {
-                alert("Failed to update.");
+                Swal.fire("Failed to update.");
             }
         } catch (err) {
             console.error("Update error", err);

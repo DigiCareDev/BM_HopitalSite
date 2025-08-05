@@ -35,12 +35,12 @@ const mainNavItems: NavItem[] = [
         icon: CalendarClock,
     },
     {
-        title: 'Blog Management (pending)',
+        title: 'Blog Management',
         href: '/blog-manage',
         icon: Newspaper,
     },
     {
-        title: 'Careers Management(pending)',
+        title: 'Careers Management',
         href: '/career-manage',
         icon: Briefcase,
     },
@@ -80,7 +80,7 @@ const mainNavItems: NavItem[] = [
         icon: HelpCircle, 
     },
     {
-        title: 'News and events (pending)',
+        title: 'News and events',
         href: '/news-and-event-manage',
         icon: Wrench,
     },

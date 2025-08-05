@@ -3,6 +3,7 @@ import { type BreadcrumbItem } from '@/types';
 import { Head } from '@inertiajs/react';
 import { useEffect, useState } from 'react';
 import devURL from '../../constent/devURL';
+import Swal from 'sweetalert2';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -58,7 +59,13 @@ const AddGalleryImage = () => {
                 console.log("✅ Parsed JSON Response:", data);
 
                 if (res.ok) {
-                    alert(data.message || "Image uploaded successfully!");
+                    Swal.fire({
+                        title: 'Deleted!',
+                        text: data.message || "Image uploaded successfully!",
+                        icon: 'success',
+                        timer: 2000,
+                        showConfirmButton: false,
+                    });
                     setGallery({
                         title: '',
                         category: '',
@@ -67,16 +74,16 @@ const AddGalleryImage = () => {
                     });
                     setPreview(null);
                 } else {
-                    alert("❌ Failed: " + (data.message || "Something went wrong."));
+                    Swal.fire("❌ Failed: " + (data.message || "Something went wrong."));
                 }
             } catch (parseError) {
                 console.error("❗ Error parsing JSON:", parseError);
                 console.log("📄 Response looked like:", text);
-                alert("Server returned an invalid response.");
+                Swal.fire("Server returned an invalid response.");
             }
         } catch (networkError) {
             console.error("🌐 Network or Fetch Error:", networkError);
-            alert("Could not connect to the server.");
+            Swal.fire("Could not connect to the server.");
         } finally {
             setLoading(false); // ✅ Always stop loading
         }

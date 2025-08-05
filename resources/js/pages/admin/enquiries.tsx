@@ -4,6 +4,7 @@ import { Head } from '@inertiajs/react';
 import React, { useEffect, useState } from 'react';
 import devURL from '@/pages/constent/devURL';
 import { Trash2 } from 'lucide-react';
+import Swal from 'sweetalert2';
 
 
 const breadcrumbs: BreadcrumbItem[] = [
@@ -20,8 +21,9 @@ function Enquiries() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://emarketplace.progatetechnology.com/api/enquiries')
+        // fetch('http://emarketplace.progatetechnology.com/api/enquiries')
         // fetch('http://localhost:8000/api/enquiries')
+         fetch(`${devURL}/api/enquiries`)
             .then(res => res.json())
             .then(data => {
                 setEnquiries(data);
@@ -31,10 +33,19 @@ function Enquiries() {
     }, []);
 
     const deleteContact = async (id) => {
-        if (!window.confirm('Are you sure you want to delete this contact?')) return;
+        const result = await Swal.fire({
+                title: 'Are you sure?',
+                text: "This action cannot be undone!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!',
+            });
 
         try {
-            const res = await fetch(`http://emarketplace.progatetechnology.com/api/enquiries/${id}`, {
+            // const res = await fetch(`http://emarketplace.progatetechnology.com/api/enquiries/${id}`, {
+             const res = await fetch(`${devURL}/api/enquiries/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
@@ -45,19 +56,25 @@ function Enquiries() {
 
             if (res.ok) {
                 setEnquiries((prev) => prev.filter((item) => item.id !== id));
-                alert(data.message || 'Deleted successfully');
+                 Swal.fire({
+                                title: 'Deleted!',
+                                text: data.message || 'Deleted successfully',
+                                icon: 'success',
+                                timer: 2000,
+                                showConfirmButton: false,
+                            });
             } else {
-                alert('Failed to delete: ' + data.message);
+                Swal.fire('Failed to delete: ' + data.message);
             }
         } catch (err) {
             console.error('Delete failed:', err);
-            alert('Error deleting contact');
+            Swal.fire('Error deleting contact');
         }
     };
 
     const handleDownloadCSV = () => {
         if (!enquiries.length) {
-            alert("No enquiries to download.");
+            Swal.fire("No enquiries to download.");
             return;
         }
 

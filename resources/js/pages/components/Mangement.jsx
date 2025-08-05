@@ -4,7 +4,7 @@ function Mangement({ contentData }) {
 
     const data = contentData.sections;
 
-    console.log('contentData', data)
+    // console.log('contentData', data)
 
     return (
         <div>

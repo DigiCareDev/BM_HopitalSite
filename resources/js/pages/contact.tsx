@@ -12,9 +12,9 @@ import Subnav from "./components/subnav";
 
 
 export default function Contact() {
-        const [translations, setTranslations] = useState({});
+    const [translations, setTranslations] = useState({});
 
-    const handletranslate =(data)=> {
+    const handletranslate = (data) => {
         setTranslations(data);
     }
 
@@ -98,13 +98,13 @@ export default function Contact() {
 
     return (
         <>
-         <Subnav onTranslations={handletranslate}/>
+            <Subnav onTranslations={handletranslate} />
             <Navbar translations={translations} />
             <div className="relative w-full h-40 bg-gray-100">
                 <img src={ContactImage} alt="Illustration" className="w-full h-full object-cover rounded-xl px-1" />
                 <div className="absolute inset-0 bg-opacity-40 flex items-center justify-center">
                     <p className="text-white text-xl sm:text-2xl md:text-3xl font-semibold text-left px-4">
-                    {translations?.contact_heading || "हम यहां संपर्क करने के लिए हैं - किसी भी समय संपर्क करें।"}
+                        {translations?.contact_heading || "हम यहां संपर्क करने के लिए हैं - किसी भी समय संपर्क करें।"}
                     </p>
                 </div>
             </div>
@@ -115,7 +115,7 @@ export default function Contact() {
                             {translations?.Contact || 'हमसे संपर्क करें'}
                         </h1>
                         <p className="mt-1 text-gray-600 dark:text-gray-900">
-                           { translations?.contact_title || 'हम इस बारे में बात करना चाहेंगे कि हम आपकी किस प्रकार मदद कर सकते हैं।'}
+                            {translations?.contact_title || 'हम इस बारे में बात करना चाहेंगे कि हम आपकी किस प्रकार मदद कर सकते हैं।'}
                         </p>
                     </div>
 
@@ -123,7 +123,7 @@ export default function Contact() {
                         {/* Form Card */}
                         <div className="flex flex-col border border-gray-200 rounded-xl p-4 sm:p-6 lg:p-8 dark:border-blue-700">
                             <h2 className="mb-4 text-xl font-semibold text-gray-800 dark:text-blue-800">
-                        {translations?.Get_In_Touch || "संपर्क करें"}
+                                {translations?.Get_In_Touch || "संपर्क करें"}
                             </h2>
 
                             <form onSubmit={handleContactSubmit}>
@@ -163,7 +163,7 @@ export default function Contact() {
                                             onChange={handleContactChange}
                                             name="email"
                                             id="email"
-                                            placeholder= {translations?.Email || 'ईमेल'}
+                                            placeholder={translations?.Email || 'ईमेल'}
                                             autoComplete="email"
                                             className="py-2.5 sm:py-3 px-4 block w-full  rounded sm:text-sm focus:border-blue-500 focus:ring-blue-500 border-blue-800 border-b dark:border-blue-700 dark:text-blue-400 dark:placeholder-blue-500"
                                         />
@@ -183,13 +183,13 @@ export default function Contact() {
                                     </div>
 
                                     <div>
-                                        <label htmlFor="details" className="sr-only"> {translations?.message|| 'संदेश'}</label>
+                                        <label htmlFor="details" className="sr-only"> {translations?.message || 'संदेश'}</label>
                                         <textarea
                                             name="message"
                                             value={contactData.message}
                                             onChange={handleContactChange}
                                             id="message"
-                                            placeholder={translations?.message|| 'संदेश'}
+                                            placeholder={translations?.message || 'संदेश'}
                                             className="py-2.5 sm:py-3 px-4 block w-full  rounded sm:text-sm focus:border-blue-500 focus:ring-blue-500 border-blue-800 border-b dark:border-blue-700 dark:text-blue-400 dark:placeholder-blue-500"
                                         ></textarea>
                                     </div>
@@ -200,7 +200,7 @@ export default function Contact() {
                                         type="submit"
                                         className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded border border-transparent bg-blue-600 text-white hover:bg-blue-700"
                                     >
-                                       { translations?.Send_Inquiry || 'जांच भेजें' }
+                                        {translations?.Send_Inquiry || 'जांच भेजें'}
                                     </button>
                                 </div>
                             </form>
@@ -272,7 +272,7 @@ export default function Contact() {
                     className='rounded-xl'
                 ></iframe>
             </div>
-            <Footer translations={translations}/>
+            <Footer translations={translations} />
         </>
     );
 };

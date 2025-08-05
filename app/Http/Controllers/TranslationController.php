@@ -18,5 +18,9 @@ class TranslationController extends Controller
             'lang' => $lang,
             'translations' => $translations,
         ]);
+
+        // $locale = $request->input('locale');
+        // Session::put('locale', $locale); 
+        // return redirect()->back();
     }
 }

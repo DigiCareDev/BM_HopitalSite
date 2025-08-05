@@ -15,16 +15,25 @@ export default function NewsAndEvent() {
     const [newsEvent, setNewsEvent] = useState([]);
     const [isLoading, setLoading] = useState(true);
 
+    console.log('newsEvent===', newsEvent)
+
     useEffect(() => {
-        axios.get('http://emarketplace.progatetechnology.com/api/news-events')
+        // axios.get('http://emarketplace.progatetechnology.com/api/news-events')
+        axios.get('http://localhost:8000/api/news-events')
             .then(res => {
-                console.log('News and Events:', res.data);
+                // console.log('News and Events:', res.data);
                 setNewsEvent(res.data);
                 setLoading(false);
             })
             .catch(err => console.error('Error fetching news and events:', err));
         setLoading(false);
     }, []);
+
+    const stripHtml = (html) => {
+        const div = document.createElement("div");
+        div.innerHTML = html;
+        return div.textContent || div.innerText || "";
+    };
 
     return (
         <>
@@ -35,7 +44,7 @@ export default function NewsAndEvent() {
                     <section className="bg-white py-12 px-4 sm:px-6 lg:px-8">
                         <div className="max-w-7xl mx-auto">
                             {/* Main Heading */}
-                            <h2 className="text-3xl font-bold text-blue-900 mb-8">{translations?.news_events_top_heading ||  'समाचार और कार्यक्रम'}</h2>
+                            <h2 className="text-3xl font-bold text-blue-900 mb-8">{translations?.news_events_top_heading || 'समाचार और कार्यक्रम'}</h2>
 
                             {/* Featured and Side Posts */}
                             <div className="grid lg:grid-cols-3 gap-8">
@@ -62,21 +71,30 @@ export default function NewsAndEvent() {
                                     {newsEvent.map((item, idx) => (
                                         <div key={idx} className="flex items-start space-x-3">
                                             <img
-                                                src={`http://emarketplace.progatetechnology.com/storage/${item.image_path || Logo}`}
+                                                src={item.image_path
+                                                    ? `http://localhost:8000/storage/${item.image_path}`
+                                                    : Logo}
                                                 className="w-20 h-20 object-cover rounded-md"
                                                 alt="side-news"
                                             />
                                             <div>
                                                 <div className='flex justify-between items-center'>
                                                     <h4 className="text-md font-medium text-gray-900">{item.title}</h4>
-                                                    <span className="text-sm text-gray-500">{new Date(item.created_at).toLocaleDateString()}</span>
+                                                    <span className="text-sm text-gray-500">
+                                                        {new Date(item.created_at).toLocaleDateString()}
+                                                    </span>
                                                 </div>
-                                                <p className="text-sm text-gray-600 mt-1">{item.description.slice(0, 100)}...</p>
-                                                <a href={`/news-event/${item.id}`} className="text-blue-600 text-sm font-medium hover:underline mt-1">Read More</a>
+                                                <p className="text-sm text-gray-600 mt-1">
+                                                    {stripHtml(item.description).slice(0, 100)}...
+                                                </p>
+                                                <a href={`/news-event/${item.id}`} className="text-blue-600 text-sm font-medium hover:underline mt-1">
+                                                    Read More
+                                                </a>
                                             </div>
                                         </div>
                                     ))}
                                 </div>
+
                             </div>
 
                             {/* Trending News Section */}
@@ -128,7 +146,7 @@ export default function NewsAndEvent() {
 
                 </div>
             </div >
-            <Footer translations={translations}/>
+            <Footer translations={translations} />
         </>
     )
 }

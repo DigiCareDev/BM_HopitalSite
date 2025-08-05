@@ -5,6 +5,7 @@ import { Head } from '@inertiajs/react';
 import axios from 'axios';
 import devURL from '../constent/devURL';
 import { Trash2 } from 'lucide-react';
+import Swal from 'sweetalert2';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -32,26 +33,42 @@ function Job() {
     }, []);
 
     const deleteContact = async (id) => {
-        if (!window.confirm('Are you sure you want to delete this application?')) return;
+      const result = await Swal.fire({
+             title: 'Are you sure?',
+             text: "This action cannot be undone!",
+             icon: 'warning',
+             showCancelButton: true,
+             confirmButtonColor: '#3085d6',
+             cancelButtonColor: '#d33',
+             confirmButtonText: 'Yes, delete it!',
+         });
+     
+         if (!result.isConfirmed) return;
 
         try {
             const res = await axios.delete(`${devURL}/api/job-application/${id}`);
 
             if (res.status === 200) {
                 setApplications(prev => prev.filter(app => app.id !== id));
-                alert(res.data.message || 'Deleted successfully');
+                  Swal.fire({
+                                title: 'Deleted!',
+                                text: res.data.message || 'Deleted successfully',
+                                icon: 'success',
+                                timer: 2000,
+                                showConfirmButton: false,
+                            });
             } else {
-                alert('Failed to delete: ' + res.data.message);
+                Swal.fire('Failed to delete: ' + res.data.message);
             }
         } catch (err) {
             console.error('❌ Delete failed:', err);
-            alert('Error deleting application');
+            Swal.fire('Error deleting application');
         }
     };
 
     const handleDownloadCSV = () => {
         if (!applications.length) {
-            alert("No data to download.");
+            Swal.fire("No data to download.");
             return;
         }
 

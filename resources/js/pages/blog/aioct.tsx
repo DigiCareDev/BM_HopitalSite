@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
 import Footer from '../components/Footer';
 import Single from '../components/blog-single';
 import Subnav from '../components/subnav';
 import Navbar from '../components/home/navbar';
+import { useState } from 'react';
 
 function Aioct() {
   const [translations, setTranslations] = useState({});
@@ -10,6 +10,7 @@ function Aioct() {
   const handletranslate = (data) => {
     setTranslations(data);
   }
+
 
   const blogData = {
     title: translations?.blog_title || 'ओसीटी और प्रिसिशन एंजियोप्लास्टी: हृदय देखभाल में क्रांति',
@@ -78,7 +79,7 @@ return (
   <div>
     <Subnav onTranslations={handletranslate} />
     <Navbar translations={translations} />
-    <Single blogData={blogData} />
+    <Single blogData={job} />
     <Footer translations={translations} />
   </div>
 )

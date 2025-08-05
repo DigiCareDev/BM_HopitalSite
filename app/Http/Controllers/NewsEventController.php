@@ -30,7 +30,7 @@ class NewsEventController extends Controller
         return response()->json([
             'message' => 'News/Event created successfully',
             'data' => $newsEvent,
-        ]);
+        ], 201);
     }
 
     public function index() {

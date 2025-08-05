@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Models\CareerPost;
+use App\Http\Controllers\BlogController;
 
 Route::get('/', function () {
     return Inertia::render('welcome');
@@ -31,9 +33,12 @@ Route::get('/privacy-policy', function () {
     return Inertia::render('privacy-policy');
 })->name('privacy-policy');
 
-Route::get('/cmo', function () {
-    return Inertia::render('career/cmo');
-})->name('cmo');
+Route::get('/cmo/{id}', function ($id) {
+    $job = CareerPost::findOrFail($id);
+    return Inertia::render('career/cmo', [
+        'job' => $job,
+    ]);
+})->name('cmo.show');
 
 Route::get('/field-officer', function () {
     return Inertia::render('career/fieldofficer');
@@ -46,7 +51,6 @@ Route::get('/pharmacist', function () {
 Route::get('/resident-doctors', function () {
     return Inertia::render('career/residentdoctors');
 })->name('resident-doctors');
-
 
 Route::get('/careers-details', function () {
     return Inertia::render('components/single');
@@ -105,6 +109,9 @@ Route::get('/picu', function () {
 Route::get('/blog', function () {
     return Inertia::render('library/blog');
 })->name('blog');
+ Route::get('/blogs', [BlogController::class, 'index']);
+ Route::get('/blogs/{id}/edit', [BlogController::class, 'edit'])->name('blogs.edit');
+Route::put('/blogs/{id}', [BlogController::class, 'update'])->name('blogs.update');
 
 Route::get('/free-medical-camp', function () {
     return Inertia::render('library/newsandevent/freemedicalcamp');

@@ -5,6 +5,7 @@ import { Head } from '@inertiajs/react';
 import { useEffect, useState } from 'react';
 import devURL from '../constent/devURL';
 import { Trash2 } from 'lucide-react';
+import Swal from 'sweetalert2';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -19,8 +20,9 @@ export default function Donation() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://emarketplace.progatetechnology.com/api/donations')
+        // fetch('http://emarketplace.progatetechnology.com/api/donations')
         // fetch('http://localhost:8000/api/donations')
+        fetch(`${devURL}/api/donations`)
             .then(res => res.json())
             .then(data => {
                 setDonations(data);
@@ -30,29 +32,46 @@ export default function Donation() {
     }, [])
 
     const deleteContact = async (id) => {
-        if (!window.confirm('Are you sure you want to delete this contact?')) return;
+         const result = await Swal.fire({
+                title: 'Are you sure?',
+                text: "This action cannot be undone!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!',
+            });
+        
+            if (!result.isConfirmed) return;
 
         try {
-            const res = await fetch(`http://emarketplace.progatetechnology.com/api/donations/${id}`, {
+            // const res = await fetch(`http://emarketplace.progatetechnology.com/api/donations/${id}`, {
+             const res = await fetch(`${devURL}/api/donations/${id}`, {
                 method: 'DELETE',
             });
 
             if (res.ok) {
                 setDonations(prev => prev.filter(donations => donations.id !== id));
-                alert(res.message || 'Donation query deleted  successfully!');
+                Swal.fire({
+                                title: 'Deleted!',
+                                text: res.message || 'Donation query deleted  successfully!',
+                                icon: 'success',
+                                timer: 2000,
+                                showConfirmButton: false,
+                            });
             } else {
                 const error = await res.json();
-                alert('Failed to delete: ' + error.message);
+                Swal.fire('Failed to delete: ' + error.message);
             }
         } catch (err) {
             console.error('Delete failed:', err);
-            alert('Error deleting contact');
+            Swal.fire('Error deleting contact');
         }
     };
 
     const handleDownloadCSV = () => {
         if (!donations.length) {
-            alert("No data to download.");
+            Swal.fire("No data to download.");
             return;
         }
 

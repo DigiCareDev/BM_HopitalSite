@@ -4,6 +4,7 @@ import { type BreadcrumbItem } from '@/types';
 import { Head } from '@inertiajs/react';
 import devURL from '../constent/devURL';
 import { Trash2 } from 'lucide-react';
+import Swal from 'sweetalert2';
 
 
 const breadcrumbs: BreadcrumbItem[] = [
@@ -19,8 +20,9 @@ function Feedback() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://emarketplace.progatetechnology.com/api/feedback')
-        // fetch('http://localhost:8000/api/feedback')
+        // fetch('http://emarketplace.progatetechnology.com/api/feedback')
+            // fetch('http://localhost:8000/api/feedback')
+             fetch(`${devURL}/api/feedback`)
             .then(res => res.json())
             .then(data => {
                 setFeedback(data);
@@ -30,10 +32,21 @@ function Feedback() {
     }, []);
 
     const deleteContact = async (id) => {
-        if (!window.confirm('Are you sure you want to delete this contact?')) return;
+        const result = await Swal.fire({
+            title: 'Are you sure?',
+            text: "This action cannot be undone!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!',
+        });
+
+        if (!result.isConfirmed) return;
 
         try {
-            const res = await fetch(`http://emarketplace.progatetechnology.com/api/feedback/${id}`, {
+            // const res = await fetch(`http://emarketplace.progatetechnology.com/api/feedback/${id}`, {
+             const res = await fetch(`${devURL}/api/feedback/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
@@ -45,51 +58,57 @@ function Feedback() {
 
             if (res.ok) {
                 setFeedback(prev => prev.filter(contact => contact.id !== id));
-                alert(data.message || 'Deleted successfully');
+                Swal.fire({
+                    title: 'Deleted!',
+                    text: data.message || 'Deleted successfully',
+                    icon: 'success',
+                    timer: 2000,
+                    showConfirmButton: false,
+                });
             } else {
-                alert('Failed to delete: ' + data.message);
+                Swal.fire('Failed to delete: ' + data.message);
             }
         } catch (err) {
             console.error('Delete failed:', err);
-            alert('Error deleting contact');
+            Swal.fire('Error deleting contact');
         }
     };
 
-  const handleDownloadCSV = () => {
-    if (!feedback.length) {
-        alert("No feedback data to download.");
-        return;
-    }
+    const handleDownloadCSV = () => {
+        if (!feedback.length) {
+            Swal.fire("No feedback data to download.");
+            return;
+        }
 
-    const headers = ["#", "Message", "Name", "Email", "Phone"];
+        const headers = ["#", "Message", "Name", "Email", "Phone"];
 
-    const escapeCSV = (value) => {
-        if (typeof value !== 'string') value = String(value ?? '');
-        return `"${value.replace(/"/g, '""')}"`;
+        const escapeCSV = (value) => {
+            if (typeof value !== 'string') value = String(value ?? '');
+            return `"${value.replace(/"/g, '""')}"`;
+        };
+
+        const rows = feedback.map((item, index) => [
+            index + 1,
+            escapeCSV(item.message || 'N/A'),
+            escapeCSV(item.name || 'N/A'),
+            escapeCSV(item.email || 'N/A'),
+            escapeCSV(item.phone || 'N/A'),
+        ]);
+
+        const csvContent = [
+            headers.join(","),        // Header row
+            ...rows.map(row => row.join(","))  // Data rows
+        ].join("\n");
+
+        const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.setAttribute("download", "feedbacks.csv");
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     };
-
-    const rows = feedback.map((item, index) => [
-        index + 1,
-        escapeCSV(item.message || 'N/A'),
-        escapeCSV(item.name || 'N/A'),
-        escapeCSV(item.email || 'N/A'),
-        escapeCSV(item.phone || 'N/A'),
-    ]);
-
-    const csvContent = [
-        headers.join(","),        // Header row
-        ...rows.map(row => row.join(","))  // Data rows
-    ].join("\n");
-
-    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.setAttribute("download", "feedbacks.csv");
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-};
 
 
 

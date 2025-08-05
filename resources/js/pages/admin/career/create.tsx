@@ -1,7 +1,10 @@
+import CKEditorComponent from '@/components/CKEditorManual';
 import AppLayout from '@/layouts/app-layout';
+import devURL from '@/pages/constent/devURL';
 import { type BreadcrumbItem } from '@/types';
 import { Head } from '@inertiajs/react';
 import { useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -12,15 +15,15 @@ const breadcrumbs: BreadcrumbItem[] = [
 
 export default function Create() {
 
-    const [images, setImages] = useState([]);
     const [loading, setLoading] = useState(false);
     const [form, setForm] = useState({
         title: '',
         deadline: '',
         location: '',
-        jobType: 'Full-time',
+        job_type: '',
         description: '',
         requirements: '',
+        image: null
     });
 
     const handleChange = (e) => {
@@ -29,7 +32,8 @@ export default function Create() {
     };
 
     const handleImageChange = (e) => {
-        setImages([...e.target.files]);
+        const file = e.target.files[0];
+        setForm((prev) => ({ ...prev, image: file }));
     };
 
     const handleSubmit = async (e) => {
@@ -41,30 +45,36 @@ export default function Create() {
             formDataToSend.append('title', form.title);
             formDataToSend.append('deadline', form.deadline);
             formDataToSend.append('location', form.location);
-            formDataToSend.append('job_type', form.jobType);
+            formDataToSend.append('job_type', form.job_type);
             formDataToSend.append('description', form.description);
             formDataToSend.append('requirements', form.requirements);
+            formDataToSend.append('image', form.image);
 
-            // Append multiple images
-            for (let i = 0; i < images.length; i++) {
-                formDataToSend.append('images[]', images[i]);
-            }
 
-            const response = await fetch('http://emarketplace.progatetechnology.com/api/jobs', {
+            // const response = await fetch('http://localhost:8000/api/jobs', {
+             const response = await fetch(`${devURL}/api/jobs`, {
                 method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                },
                 body: formDataToSend,
             });
 
             const data = await response.json();
 
             if (response.ok) {
-                alert('Job posted successfully!');
-                // reset form or redirect
+                Swal.fire({
+                    title: 'Posted!',
+                    text: 'Job posted successfully!',
+                    icon: 'success',
+                    timer: 2000,
+                    showConfirmButton: false,
+                });
             } else {
-                alert(data.message || 'Something went wrong');
+                Swal.fire(data.message || 'Something went wrong');
             }
         } catch (error) {
-            alert('Error submitting form');
+            Swal.fire('Error submitting form: ' + error.message);
             console.error(error);
         } finally {
             setLoading(false);
@@ -72,13 +82,12 @@ export default function Create() {
     };
 
 
+
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Create Career Post" />
             <form onSubmit={handleSubmit} className="min-h-screen space-y-4 bg-white text-blue-700 p-6 shadow">
-
                 <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
-
                     <div>
                         <label className="block mb-1 font-medium">Job Title</label>
                         <input
@@ -122,10 +131,11 @@ export default function Create() {
                         <label className="block mb-1 font-medium">Job Type</label>
                         <select
                             name="job_type"
-                            value={form.jobType}
+                            value={form.job_type}
                             onChange={handleChange}
                             className="w-full border rounded px-3 py-2"
                         >
+                            <option>Select option</option>
                             <option value="Full-time">Full-time</option>
                             <option value="Part-time">Part-time</option>
                             <option value="Contract">Contract</option>
@@ -148,50 +158,52 @@ export default function Create() {
 
                 <div>
                     <label className="block mb-1 font-medium">Requirements</label>
-                    <textarea
-                        name="requirements"
+                    <CKEditorComponent
                         value={form.requirements}
-                        onChange={handleChange}
-                        rows="3"
-                        placeholder='Enter job requirements'
-                        required
-                        className="w-full border rounded px-3 py-2"
+                        onChange={(value) => setForm({ ...form, requirements: value })}
+                        className="block w-full text-sm text-gray-700 border border-gray-300 rounded px-3 py-2"
                     />
                 </div>
 
-                <div>
-                    <label className="block mb-1 font-medium">Upload Images</label>
-                    <input
-                        type="file"
-                        name="images"
-                        accept="image/*"
-                        multiple
-                        onChange={handleImageChange}
-                        className="w-full border rounded px-3 py-2"
-                    />
-                    {images.length > 0 && (
-                        <div className="mt-2">
-                            {images.map((image, index) => (
-                                <div key={index} className="flex items-center">
-                                    <img src={URL.createObjectURL(image)} alt={`Uploaded Preview ${index}`} className="w-16 h-16 object-cover rounded mr-2" />
-                                    <span className="text-sm">{image.name}</span>
-                                </div>
-                            ))}
-                        </div>
-                    )}
+                <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+                    <div>
+                        <label className="block mb-1 font-medium">Upload Images</label>
+                        <input
+                            type="file"
+                            name="images"
+                            accept="image/*"
+                            multiple
+                            onChange={handleImageChange}
+                            className="w-full border rounded px-3 py-2"
+                        />
+                        {form.image ? (
+                            <img src={URL.createObjectURL(form.image)} alt="Preview" className='h-30 mt-2' />
+                        ) : null}
+                    </div>
+                    <div>
+                        <label className="block mb-1 font-medium">Location</label>
+                        <input
+                            type="text"
+                            name="location"
+                            value={form.location}
+                            onChange={handleChange}
+                            required
+                            placeholder='Enter job location'
+                            className="w-full border rounded px-3 py-2"
+                        />
+                    </div>
                 </div>
 
                 <div>
                     <button
                         type="submit"
                         disabled={loading}
-                        className={`bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition ${loading ? 'opacity-50 cursor-not-allowed' : ''
-                            }`}
+                        className={`bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
                     >
                         {loading ? 'Posting...' : 'Post Job'}
                     </button>
                 </div>
             </form>
-        </AppLayout>
+        </AppLayout >
     )
 };

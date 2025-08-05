@@ -8,7 +8,13 @@ import Pharmacist from '@/assets/images/Pharmacist 2.png'
 import ResidentDoctors from '@/assets/images/ResidentDoctors.png';
 import BackToTop from "./components/BackToTopButton"
 import Subnav from "./components/subnav";
+import { Link } from 'react-router-dom';
+import devURL from './constent/devURL';
 
+function stripHtml(html) {
+  const doc = new DOMParser().parseFromString(html, 'text/html');
+  return doc.body.textContent || '';
+}
 
 export default function Career() {
     const [translations, setTranslations] = useState({});
@@ -16,42 +22,64 @@ export default function Career() {
     const handletranslate = (data) => {
         setTranslations(data);
     }
+ 
+    const [jobs, setJobs] = useState([]);
+    const [loading, setLoading] = useState(false);
+
+    useEffect(()=>{
+        const response = async () => {
+            // await fetch('http://localhost:8000/api/jobs')
+            await fetch(`${devURL}/api/jobs`)
+            .then(res =>res.json())
+            .then(data => {
+                setJobs(data);
+                setLoading(false);
+            })
+            .then(err => {
+                console.log('failed', err)
+                setLoading(false);
+            });
+        }
+        response();
+    }, []);
+
+    // console.log('jobs==', jobs)
 
 
-    const jobs = [
-        {
-            title: translations?.Chief_Medical_Officer || 'मुख्य चिकित्सा अधिकारी',
-            location: translations?.Barabanki || 'बाराबंकी (यू. पी.)',
-            type: translations?.Full_time || 'पूरा समय',
-            description: translations?.CMO_job_title || 'हम अपने अस्पताल का नेतृत्व करने के लिए एक अत्यधिक अनुभवी और दूरदर्शी मुख्य चिकित्सा अधिकारी (सीएमओ) की तलाश कर रहे हैं।',
-            redirect: '/cmo',
-            image: CMO,
-        },
-        {
-            title: translations?.Field_Officer || 'फील्ड ऑफिसर',
-            location: translations?.Barabanki || 'बाराबंकी (यू. पी.)',
-            type: translations?.Full_time || 'पूरा समय',
-            description: translations?.Field_Officer_title || 'हम अपने अस्पताल के चिकित्सा कार्यों का नेतृत्व करने के लिए एक अत्यधिक अनुभवी और दूरदर्शी फील्ड ऑफिसर की तलाश कर रहे हैं।',
-            redirect: '/field-officer',
-            image: FieldOfficer,
-        },
-        {
-            title: translations?.Pharmacist || 'फार्मेसिस्ट',
-            location: translations?.Barabanki || 'बाराबंकी (यू. पी.)',
-            type: translations?.Full_time || 'पूरा समय',
-            description: translations?.Pharmacist_title || 'हम अपने अस्पताल के चिकित्सा कार्यों का नेतृत्व करने के लिए एक अत्यधिक अनुभवी और दूरदर्शी फार्मासिस्ट की तलाश कर रहे हैं।',
-            redirect: '/pharmacist',
-            image: Pharmacist,
-        },
-        {
-            title: translations?.Resident_Doctors || 'रेजिडेंट डॉक्टर्स',
-            location: translations?.Barabanki || 'बाराबंकी (यू. पी.)',
-            type: translations?.Full_time || 'पूरा समय',
-            description: translations?.Resident_Doctors_title || 'हम अपने अस्पताल के चिकित्सा कार्यों का नेतृत्व करने के लिए अत्यधिक अनुभवी और दूरदर्शी रेजिडेंट डॉक्टरों की तलाश कर रहे हैं।',
-            redirect: '/resident-doctors',
-            image: ResidentDoctors,
-        },
-    ];
+    // const jobs = [
+    //     {
+    //         title: translations?.Chief_Medical_Officer || 'मुख्य चिकित्सा अधिकारी',
+    //         location: translations?.Barabanki || 'बाराबंकी (यू. पी.)',
+    //         type: translations?.Full_time || 'पूरा समय',
+    //         description: translations?.CMO_job_title || 'हम अपने अस्पताल का नेतृत्व करने के लिए एक अत्यधिक अनुभवी और दूरदर्शी मुख्य चिकित्सा अधिकारी (सीएमओ) की तलाश कर रहे हैं।',
+    //         redirect: '/cmo',
+    //         image: CMO,
+    //     },
+    //     {
+    //         title: translations?.Field_Officer || 'फील्ड ऑफिसर',
+    //         location: translations?.Barabanki || 'बाराबंकी (यू. पी.)',
+    //         type: translations?.Full_time || 'पूरा समय',
+    //         description: translations?.Field_Officer_title || 'हम अपने अस्पताल के चिकित्सा कार्यों का नेतृत्व करने के लिए एक अत्यधिक अनुभवी और दूरदर्शी फील्ड ऑफिसर की तलाश कर रहे हैं।',
+    //         redirect: '/field-officer',
+    //         image: FieldOfficer,
+    //     },
+    //     {
+    //         title: translations?.Pharmacist || 'फार्मेसिस्ट',
+    //         location: translations?.Barabanki || 'बाराबंकी (यू. पी.)',
+    //         type: translations?.Full_time || 'पूरा समय',
+    //         description: translations?.Pharmacist_title || 'हम अपने अस्पताल के चिकित्सा कार्यों का नेतृत्व करने के लिए एक अत्यधिक अनुभवी और दूरदर्शी फार्मासिस्ट की तलाश कर रहे हैं।',
+    //         redirect: '/pharmacist',
+    //         image: Pharmacist,
+    //     },
+    //     {
+    //         title: translations?.Resident_Doctors || 'रेजिडेंट डॉक्टर्स',
+    //         location: translations?.Barabanki || 'बाराबंकी (यू. पी.)',
+    //         type: translations?.Full_time || 'पूरा समय',
+    //         description: translations?.Resident_Doctors_title || 'हम अपने अस्पताल के चिकित्सा कार्यों का नेतृत्व करने के लिए अत्यधिक अनुभवी और दूरदर्शी रेजिडेंट डॉक्टरों की तलाश कर रहे हैं।',
+    //         redirect: '/resident-doctors',
+    //         image: ResidentDoctors,
+    //     },
+    // ];
 
     return (
         <>
@@ -71,28 +99,27 @@ export default function Career() {
                                 {/* Image Section */}
                                 {job.image && (
                                     <img
-                                        src={job.image}
-                                        alt={job.title}
+                                        src={job.image ? `http://localhost:8000/storage/${job.image}` : Logo}
+                                        alt={job.title || 'BM hospital'}
                                         className="w-full h-60 object-cover rounded-md mb-4"
                                     />
                                 )}
 
                                 {/* Text Content */}
-                                <h3 className="text-xl font-semibold text-blue-700">{job.title}</h3>
+                                <h3 className="text-lg font-bold text-blue-700">{job.title || 'N/A'}</h3>
                                 <p className="text-sm text-gray-500 mt-1">
-                                    {job.location} | {job.type}
+                                    {job.location || 'N/A'} | {job.job_type || 'N/A'}
                                 </p>
-                                <p className="mt-4 text-sm">{job.description}</p>
+                                <p className="mt-4 text-sm">{stripHtml(job.description || 'N/A').slice(0, 145)}...</p>
 
                                 {/* Apply Button */}
                                 <a
-                                    href={job.redirect}
+                                    href={route('cmo.show', job.id)}
                                     className="mt-4 inline-block bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800 transition"
                                 >
                                     {translations?.Apply_Now || 'अभी अप्लाई करें'}
                                 </a>
                             </div>
-
                         ))}
                     </div>
                 </section>
