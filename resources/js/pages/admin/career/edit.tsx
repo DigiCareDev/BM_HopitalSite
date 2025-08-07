@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import CKEditorComponent from '@/components/CKEditorManual';
+import CKEditorComponent from '@/components/CKEditorClassic';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import devURL from '@/pages/constent/devURL';
@@ -195,7 +195,7 @@ const Edit = ({ selectCareer, onClose, onSuccess }) => {
                                 />
                                 {selectCareer.image && !form.image && (
                                     <img
-                                        src={`http://localhost:8000/storage/${selectCareer.image}`}
+                                        src={`${devURL}/storage/${selectCareer.image}`}
                                         alt="Current"
                                         className="mt-2 h-40 object-cover rounded"
                                     />

@@ -8,84 +8,83 @@ import Pharmacist from '@/assets/images/Pharmacist 2.png'
 import ResidentDoctors from '@/assets/images/ResidentDoctors.png';
 import BackToTop from "./components/BackToTopButton"
 import Subnav from "./components/subnav";
-import { Link } from 'react-router-dom';
 import devURL from './constent/devURL';
 
 function stripHtml(html) {
-  const doc = new DOMParser().parseFromString(html, 'text/html');
-  return doc.body.textContent || '';
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    return doc.body.textContent || '';
 }
 
 export default function Career() {
-    const [translations, setTranslations] = useState({});
+       const [translations, setTranslations] = useState({});
 
     const handletranslate = (data) => {
         setTranslations(data);
     }
- 
+
     const [jobs, setJobs] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    useEffect(()=>{
+    useEffect(() => {
         const response = async () => {
             // await fetch('http://localhost:8000/api/jobs')
             await fetch(`${devURL}/api/jobs`)
-            .then(res =>res.json())
-            .then(data => {
-                setJobs(data);
-                setLoading(false);
-            })
-            .then(err => {
-                console.log('failed', err)
-                setLoading(false);
-            });
+                .then(res => res.json())
+                .then(data => {
+                    setJobs(data);
+                    setLoading(false);
+                })
+                .then(err => {
+                    console.log('failed', err)
+                    setLoading(false);
+                });
         }
         response();
     }, []);
 
-    // console.log('jobs==', jobs)
+    console.log('jobs==', jobs)
 
 
-    // const jobs = [
-    //     {
-    //         title: translations?.Chief_Medical_Officer || 'मुख्य चिकित्सा अधिकारी',
-    //         location: translations?.Barabanki || 'बाराबंकी (यू. पी.)',
-    //         type: translations?.Full_time || 'पूरा समय',
-    //         description: translations?.CMO_job_title || 'हम अपने अस्पताल का नेतृत्व करने के लिए एक अत्यधिक अनुभवी और दूरदर्शी मुख्य चिकित्सा अधिकारी (सीएमओ) की तलाश कर रहे हैं।',
-    //         redirect: '/cmo',
-    //         image: CMO,
-    //     },
-    //     {
-    //         title: translations?.Field_Officer || 'फील्ड ऑफिसर',
-    //         location: translations?.Barabanki || 'बाराबंकी (यू. पी.)',
-    //         type: translations?.Full_time || 'पूरा समय',
-    //         description: translations?.Field_Officer_title || 'हम अपने अस्पताल के चिकित्सा कार्यों का नेतृत्व करने के लिए एक अत्यधिक अनुभवी और दूरदर्शी फील्ड ऑफिसर की तलाश कर रहे हैं।',
-    //         redirect: '/field-officer',
-    //         image: FieldOfficer,
-    //     },
-    //     {
-    //         title: translations?.Pharmacist || 'फार्मेसिस्ट',
-    //         location: translations?.Barabanki || 'बाराबंकी (यू. पी.)',
-    //         type: translations?.Full_time || 'पूरा समय',
-    //         description: translations?.Pharmacist_title || 'हम अपने अस्पताल के चिकित्सा कार्यों का नेतृत्व करने के लिए एक अत्यधिक अनुभवी और दूरदर्शी फार्मासिस्ट की तलाश कर रहे हैं।',
-    //         redirect: '/pharmacist',
-    //         image: Pharmacist,
-    //     },
-    //     {
-    //         title: translations?.Resident_Doctors || 'रेजिडेंट डॉक्टर्स',
-    //         location: translations?.Barabanki || 'बाराबंकी (यू. पी.)',
-    //         type: translations?.Full_time || 'पूरा समय',
-    //         description: translations?.Resident_Doctors_title || 'हम अपने अस्पताल के चिकित्सा कार्यों का नेतृत्व करने के लिए अत्यधिक अनुभवी और दूरदर्शी रेजिडेंट डॉक्टरों की तलाश कर रहे हैं।',
-    //         redirect: '/resident-doctors',
-    //         image: ResidentDoctors,
-    //     },
-    // ];
+    const jobposts = [
+        {
+            title: translations?.Chief_Medical_Officer || 'मुख्य चिकित्सा अधिकारी',
+            location: translations?.Barabanki || 'बाराबंकी (यू. पी.)',
+            type: translations?.Full_time || 'पूरा समय',
+            description: translations?.CMO_job_title || 'हम अपने अस्पताल का नेतृत्व करने के लिए एक अत्यधिक अनुभवी और दूरदर्शी मुख्य चिकित्सा अधिकारी (सीएमओ) की तलाश कर रहे हैं।',
+            redirect: '/cmo-job',
+            image: CMO,
+        },
+        {
+            title: translations?.Field_Officer || 'फील्ड ऑफिसर',
+            location: translations?.Barabanki || 'बाराबंकी (यू. पी.)',
+            type: translations?.Full_time || 'पूरा समय',
+            description: translations?.Field_Officer_title || 'हम अपने अस्पताल के चिकित्सा कार्यों का नेतृत्व करने के लिए एक अत्यधिक अनुभवी और दूरदर्शी फील्ड ऑफिसर की तलाश कर रहे हैं।',
+            redirect: '/field-officer',
+            image: FieldOfficer,
+        },
+        {
+            title: translations?.Pharmacist || 'फार्मेसिस्ट',
+            location: translations?.Barabanki || 'बाराबंकी (यू. पी.)',
+            type: translations?.Full_time || 'पूरा समय',
+            description: translations?.Pharmacist_title || 'हम अपने अस्पताल के चिकित्सा कार्यों का नेतृत्व करने के लिए एक अत्यधिक अनुभवी और दूरदर्शी फार्मासिस्ट की तलाश कर रहे हैं।',
+            redirect: '/pharmacist',
+            image: Pharmacist,
+        },
+        {
+            title: translations?.Resident_Doctors || 'रेजिडेंट डॉक्टर्स',
+            location: translations?.Barabanki || 'बाराबंकी (यू. पी.)',
+            type: translations?.Full_time || 'पूरा समय',
+            description: translations?.Resident_Doctors_title || 'हम अपने अस्पताल के चिकित्सा कार्यों का नेतृत्व करने के लिए अत्यधिक अनुभवी और दूरदर्शी रेजिडेंट डॉक्टरों की तलाश कर रहे हैं।',
+            redirect: '/resident-doctors',
+            image: ResidentDoctors,
+        },
+    ];
 
     return (
         <>
             <BackToTop />
             <Subnav onTranslations={handletranslate} />
-            <Navbar translations={translations}/>
+            <Navbar translations={translations} />
 
             <div className="bg-gray-50 text-gray-800">
 
@@ -94,37 +93,76 @@ export default function Career() {
                     <h2 className="text-4xl font-bold mb-8 text-blue-800 text-center">{translations?.Current_Openings || 'वर्तमान नौकरियाँ'}</h2>
 
                     <div className="grid md:grid-cols-4 gap-3">
-                        {jobs.map((job, index) => (
+                        {jobposts.map((job, index) => (
                             <div key={index} className="border border-gray-200 p-3 rounded-lg shadow-sm bg-white">
                                 {/* Image Section */}
                                 {job.image && (
                                     <img
-                                        src={job.image ? `http://localhost:8000/storage/${job.image}` : Logo}
-                                        alt={job.title || 'BM hospital'}
+                                        src={job.image}
+                                        alt={job.title}
                                         className="w-full h-60 object-cover rounded-md mb-4"
                                     />
                                 )}
 
                                 {/* Text Content */}
-                                <h3 className="text-lg font-bold text-blue-700">{job.title || 'N/A'}</h3>
+                                <h3 className="text-xl font-semibold text-blue-700">{job.title}</h3>
                                 <p className="text-sm text-gray-500 mt-1">
-                                    {job.location || 'N/A'} | {job.job_type || 'N/A'}
+                                    {job.location} | {job.type}
                                 </p>
-                                <p className="mt-4 text-sm">{stripHtml(job.description || 'N/A').slice(0, 145)}...</p>
+                                <p className="mt-4 text-sm">{job.description}</p>
 
                                 {/* Apply Button */}
                                 <a
-                                    href={route('cmo.show', job.id)}
+                                    href={job.redirect}
                                     className="mt-4 inline-block bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800 transition"
                                 >
                                     {translations?.Apply_Now || 'अभी अप्लाई करें'}
                                 </a>
                             </div>
+
                         ))}
                     </div>
+
+
+                    <div className="grid md:grid-cols-4 gap-3">
+                        {loading ? (
+                            <div>
+                                Loading....
+                            </div>
+                        ) : jobs.length === 0 ? (
+                            <div className="flex flex-col items-center justify-center text-center text-gray-500">
+
+                            </div>
+                        ) :
+                            jobs.map((job, index) => (
+                                <div key={index} className="border border-gray-200 p-3 rounded-lg shadow-sm bg-white">
+                                    {/* Image Section */}
+                                    {job.image && (
+                                        <img
+                                            src={job.image ? `${devURL}/storage/${job.image}` : Logo}
+                                            alt={job.title || 'BM hospital'}
+                                            className="w-full h-60 object-cover rounded-md mb-4"
+                                        />
+                                    )}
+
+                                    {/* Text Content */}
+                                    <h3 className="text-lg font-bold text-blue-700">{job.title || 'N/A'}</h3>
+                                    <p className="text-sm text-gray-500 mt-1">
+                                        {job.location || 'N/A'} | {job.job_type || 'N/A'}
+                                    </p>
+                                    <p className="mt-4 text-sm">{stripHtml(job.description || 'N/A').slice(0, 145)}...</p>
+
+                                    {/* Apply Button */}
+                                    <a
+                                        href={route('cmo.show', job.id)}
+                                        className="mt-4 inline-block bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800 transition"
+                                    >
+                                        {translations?.Apply_Now || 'अभी अप्लाई करें'}
+                                    </a>
+                                </div>
+                            ))}
+                    </div>
                 </section>
-
-
             </div>
             <Footer translations={translations} />
         </>

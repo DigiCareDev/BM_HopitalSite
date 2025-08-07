@@ -2,20 +2,19 @@ import React, { useEffect, useState } from 'react';
 import Navbar from '../components/home/navbar'
 import Treatment from '../components/Treatment';
 import Footer from '../components/Footer';
-import {
-    FaHeartbeat,
-    FaUserMd,
-    FaProcedures,
-    FaShieldVirus,
-    FaBed,
-    FaHandsHelping,
-    FaRegClock,
-    FaMicrochip,
-    FaHospitalAlt
-} from "react-icons/fa";
 import BackToTop from "../components/BackToTopButton"
 import Subnav from "../components/subnav";
-import Logo from "@/assets/Logo.webp"
+import Banner from '@/assets/services/Intensive Care Unit (ICU)/Intensive Care Unit (ICU).svg'
+import APM from '@/assets/services/Intensive Care Unit (ICU)/Advanced Patient Monitoring.svg'
+import CCS from '@/assets/services/Intensive Care Unit (ICU)/Critical Care Specialists.svg'
+import EFS from '@/assets/services/Intensive Care Unit (ICU)/Emergency Life Support.svg'
+import ICP from '@/assets/services/Intensive Care Unit (ICU)/Infection-Control Protocols.svg'
+import MOSS from '@/assets/services/Intensive Care Unit (ICU)/Multi-Organ Support Systems.svg'
+import POC from '@/assets/services/Intensive Care Unit (ICU)/Post-Operative Care.svg'
+import ALST from '@/assets/services/Intensive Care Unit (ICU)/Advanced Life-Support Technology.svg'
+import IPOM from '@/assets/services/Intensive Care Unit (ICU)/Immediate Post-Operative Monitoring.svg'
+import MCT from '@/assets/services/Intensive Care Unit (ICU)/24×7 Multidisciplinary Care Team.svg'
+import ICUS from '@/assets/services/Intensive Care Unit (ICU)/Choose BM Hospital’s Intensive Care Unit (ICU) Services.svg'
 
 export default function Icu() {
        const [translations, setTranslations] = useState({});
@@ -30,7 +29,7 @@ export default function Icu() {
             "hero": {
                 "heading": translations?.icu_heading || "बीएम अस्पताल की गहन चिकित्सा इकाई (ICU) – जीवन रक्षक देखभाल",
                 "paragraph": translations?.icu_title || "बीएम अस्पताल की गहन चिकित्सा इकाई (ICU) उन रोगियों के लिए उन्नत, जीवन रक्षक देखभाल प्रदान करती है जो गंभीर स्थिति में होते हैं और जिन्हें निरंतर निगरानी और विशेष उपचार की आवश्यकता होती है। हमारा ICU अत्याधुनिक तकनीक जैसे वेंटिलेटर, कार्डियक मॉनिटर, इन्फ्यूजन पंप और डिफिब्रिलेटर से सुसज्जित है, जो गंभीर बीमारियों से पीड़ित मरीजों को 24/7 समर्थन प्रदान करता है। यह अनुभवी इंटेंसिविस्ट, क्रिटिकल केयर नर्सों और आपातकालीन प्रतिक्रिया टीम द्वारा संचालित होता है जो कार्डियक अरेस्ट, स्ट्रोक, मल्टी-ऑर्गन फेल्योर, सांस लेने में तकलीफ और सर्जरी के बाद की जटिलताओं जैसे मामलों का प्रबंधन करते हैं।",
-                "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
+                "image": Banner,
                 "alt": "BM Hospital logo"
             },
             "ambulance_services": {
@@ -41,32 +40,32 @@ export default function Icu() {
                     {
                         title: translations?.icu_services_title || "उन्नत रोगी निगरानी",
                         desc: translations?.icu_services_desc || "ICU-ग्रेड मॉनिटरों, वेंटिलेटरों और टेलीमेट्री सिस्टम से महत्वपूर्ण संकेतों की रीयल-टाइम निगरानी सुनिश्चित की जाती है।",
-                        icon: <FaHeartbeat className="text-4xl text-[#80CAC7]" />
+                        icon: APM,
                     },
                     {
                         title: translations?.icu_services_title02 || "क्रिटिकल केयर विशेषज्ञ",
                         desc: translations?.icu_services_desc02 || "इंटेंसिविस्ट, क्रिटिकल केयर नर्स और रेस्पिरेटरी थेरेपिस्ट की समर्पित टीम हमेशा उपलब्ध रहती है।",
-                        icon: <FaUserMd className="text-4xl text-[#80CAC7]" />
+                        icon: CCS,
                     },
                     {
                         title: translations?.icu_services_title03 ||"आपातकालीन जीवन समर्थन",
                         desc: translations?.icu_services_desc03 ||"डिफिब्रिलेटर, ऑक्सीजन थेरेपी, इन्फ्यूजन पंप और उन्नत एयरवे मैनेजमेंट के साथ तेज़ पुनर्जीवन और स्थिरीकरण।",
-                        icon: <FaProcedures className="text-4xl text-[#80CAC7]" />
+                        icon: EFS,
                     },
                     {
                         title: translations?.icu_services_title04 ||  "संक्रमण नियंत्रण प्रोटोकॉल",
                         desc: translations?.icu_services_desc04 ||"कड़े स्वच्छता मानकों और नकारात्मक दबाव वाले कमरों के माध्यम से संक्रमण का जोखिम कम किया जाता है।",
-                        icon: <FaShieldVirus className="text-4xl text-[#80CAC7]" />
+                        icon: ICP,
                     },
                     {
                         title: translations?.icu_services_title05 ||  "सर्जरी के बाद देखभाल",
                         desc: translations?.icu_services_desc05 || "प्रमुख सर्जरी के बाद मॉड्यूलर ऑपरेशन थियेटर से ICU में निर्बाध ट्रांसफर और निगरानी।",
-                        icon: <FaBed className="text-4xl text-[#80CAC7]" />
+                        icon: POC,
                     },
                     {
                         title: translations?.icu_services_title06 ||  "मल्टी-ऑर्गन सपोर्ट सिस्टम",
                         desc: translations?.icu_services_desc06 ||"मल्टी-ऑर्गन फेल्योर के मामलों में डायलिसिस, कार्डियक मॉनिटरिंग और वेंटिलेटर समर्थन।",
-                        icon: <FaHandsHelping className="text-4xl text-[#80CAC7]" />
+                        icon: MOSS,
                     },
                 ],
                 "cta": {
@@ -83,21 +82,21 @@ export default function Icu() {
                     {
                         title: translations?.icu_services_title1 || "तत्काल सर्जरी के बाद की निगरानी",
                         desc: translations?.icu_services_desc1 || "हमारे मॉड्यूलर ऑपरेशन थियेटर से सीधे ICU में ट्रांसफर के साथ निरंतर निगरानी, दर्द नियंत्रण और जटिलताओं का त्वरित समाधान।",
-                        icon: <FaRegClock className="text-4xl text-[#80CAC7]" />
+                        icon: IPOM,
                     },
                     {
                         title: translations?.icu_services_title2 || "उन्नत जीवन समर्थन तकनीक",
                         desc: translations?.icu_services_desc2 || "वेंटिलेटर, कार्डियक मॉनिटर, डायलिसिस यूनिट और इन्फ्यूजन पंप के साथ गंभीर मरीजों को पूर्ण अंग समर्थन।",
-                        icon: <FaMicrochip className="text-4xl text-[#80CAC7]" />
+                        icon: ALST,
                     },
                     {
                         title: translations?.icu_services_title3 || "24x7 बहु-विषयक देखभाल टीम",
                         desc: translations?.icu_services_desc3 || "इंटेंसिविस्ट, नर्स, रेस्पिरेटरी थेरेपिस्ट और ऑन-कॉल विशेषज्ञ मिलकर व्यक्तिगत और प्रमाण-आधारित देखभाल प्रदान करते हैं।",
-                        icon: <FaHospitalAlt className="text-4xl text-[#80CAC7]" />
+                        icon: MCT,
                     }
                 ],
                 "cta": {
-                    "image": Logo,
+                    "image": ICUS,
                     "alt": 'Blood Donation',
                     "title": translations?.icu_cta_title || "बीएम अस्पताल की गहन चिकित्सा इकाई (ICU) सेवाएं चुनें",
                     "description": translations?.icu_cta_desc || "हर 2 सेकंड में किसी को रक्त की आवश्यकता होती है। रक्तदाता बनकर हमें मजबूत और सुरक्षित रक्त आपूर्ति बनाए रखने में मदद करें।",

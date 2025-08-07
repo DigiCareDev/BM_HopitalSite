@@ -2,19 +2,20 @@ import React, { useEffect, useState } from 'react';
 import Navbar from '../components/home/navbar'
 import Footer from '../components/Footer';
 import Treatment from '../components/Treatment';
-import {
-    FaTint,
-    FaVial,
-    FaUsers,
-    FaMicroscope,
-    FaHandsHelping,
-    FaHandHoldingHeart,
-    FaEnvelopeOpenText,
-    FaHospitalAlt
-} from "react-icons/fa";
 import BackToTop from "../components/BackToTopButton"
 import Subnav from "../components/subnav";
-import Logo from "@/assets/Logo.webp"
+import DBT from "@/assets/services/Blood Bank/Be a Hero. Donate Blood Today.svg";
+import BGCM from "@/assets/services/Blood Bank/Blood Grouping & Cross Matching.svg";
+import CS from "@/assets/services/Blood Bank/Component Separation.svg";
+import DB from "@/assets/services/Blood Bank/Donate Blood.svg";
+import EBS from "@/assets/services/Blood Bank/Emergency Blood Supply.svg";
+import STP from "@/assets/services/Blood Bank/Safe Transfusion Practices.svg";
+import WBC from "@/assets/services/Blood Bank/Whole Blood Collection.svg";
+import HBC from "@/assets/services/Blood Bank/Host a Blood Camp.svg";
+import RB from "@/assets/services/Blood Bank/Request Blood.svg";
+import VBD from "@/assets/services/Blood Bank/Voluntary Blood Donation.svg";
+import Banner from "@/assets/services/Blood Bank/banner.svg"
+
 
 
 export default function Bloodbank() {
@@ -30,7 +31,7 @@ export default function Bloodbank() {
             "hero": {
                 "heading": translations?.bloodbank_heading || " बीएम अस्पताल का विश्वसनीय ब्लड बैंक – हर बूंद महत्वपूर्ण, हर जीवन अमूल्य",
                 "paragraph": translations?.bloodbank_title || "बीएम अस्पताल का ब्लड बैंक एक विश्वसनीय और सुसज्जित सुविधा है जो समय पर और सुरक्षित रक्त संग्रह, भंडारण और ट्रांसफ्यूजन के माध्यम से जीवन बचाने के लिए समर्पित है। हम आरबीसी, प्लाज्मा और प्लेटलेट्स जैसे घटकों के साथ जांचे गए रक्त यूनिट्स की एक निरंतर आपूर्ति बनाए रखते हैं, जो आपात स्थितियों और सर्जरी के समय आवश्यक होती है। हमारा ब्लड बैंक सुरक्षा और गुणवत्ता की गारंटी के लिए सख्त प्रोटोकॉल और उन्नत परीक्षण विधियों का पालन करता है। हम रक्तदान शिविरों का समर्थन करते हैं, स्वैच्छिक डोनर स्वीकार करते हैं, और मरीजों तथा परिवारों से आने वाले रक्त अनुरोधों पर तुरंत प्रतिक्रिया देते हैं।",
-                "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
+                "image": Banner,
                 "alt": "BM Hospital logo"
             },
             "ambulance_services": {
@@ -40,33 +41,33 @@ export default function Bloodbank() {
                     {
                         title: translations?.bloodback_services_title || "पूर्ण रक्त संग्रह",
                         desc: translations?.bloodback_services_desc || "विभिन्न चिकित्सकीय उपयोगों के लिए सुरक्षित रक्तदान और संग्रह।",
-                        icon: <FaTint className="text-3xl text-red-600" />
+                        icon: WBC,
                     },
                     {
                         title: translations?.bloodback_services_title02 || "घटक पृथक्करण",
                         desc: translations?.bloodback_services_desc02 || "उपचार की आवश्यकता अनुसार रेड सेल्स, प्लाज्मा, प्लेटलेट्स और क्रायोप्रेसिपिटेट की सुविधा।",
-                        icon: <FaVial className="text-3xl text-yellow-500" />
+                        icon: CS,
                     },
                     {
                         title: translations?.bloodback_services_title03 || "स्वैच्छिक रक्तदान",
                         desc: translations?.bloodback_services_desc0 || "नियमित डोनर ड्राइव और जीवन रक्षक सहायता के लिए वॉक-इन विकल्प।",
-                        icon: <FaUsers className="text-3xl text-blue-500" />
+                        icon: DB,
                     },
                     {
                         title: translations?.bloodback_services_title04 ||  "आपातकालीन रक्त आपूर्ति",
                         desc: translations?.bloodback_services_desc04 || "दुर्घटना, सर्जरी या गंभीर मरीजों के लिए त्वरित प्रतिक्रिया।",
-                        icon: <FaUsers className="text-3xl text-red-500" />
+                        icon: EBS,
                     },
                     {
                         title: translations?.bloodback_services_title05 ||  "ब्लड ग्रुपिंग और क्रॉस मैचिंग",
                         desc: translations?.bloodback_services_desc05 || "सटीक परीक्षण से अनुकूलता और मरीज की सुरक्षा सुनिश्चित होती है।",
-                        icon: <FaMicroscope className="text-3xl text-purple-600" />
+                        icon: BGCM,
                     },
                     {
                         title: translations?.bloodback_services_title06 || "सुरक्षित ट्रांसफ्यूजन प्रक्रिया",
                         desc: translations?.bloodback_services_desc06 || "सभी रक्त यूनिट्स के लिए सख्त स्क्रीनिंग, स्वच्छता और भंडारण प्रोटोकॉल।",
 
-                        icon: <FaHandsHelping className="text-3xl text-green-600" />
+                        icon: STP,
                     },
                 ],
                 "cta": {
@@ -83,21 +84,21 @@ export default function Bloodbank() {
                     {
                         title: translations?.bloodbank_services_title1 || "रक्तदान करें",
                         desc: translations?.bloodbank_services_desc1 || "सुरक्षित प्रक्रिया, तेज़ प्रिक्रिया, स्वास्थ्य जांच, प्रमाणित स्टाफ, जीवन रक्षक प्रभाव।",
-                        icon: <FaHandHoldingHeart className="text-3xl text-pink-600" />
+                        icon: VBD,
                     },
                     {
                         title: translations?.bloodbank_services_title2 || "रक्त का अनुरोध करें",
                         desc: translations?.bloodbank_services_desc2 || "प्रमाणित डोनर, तेज़ मिलान, सुरक्षित हैंडलिंग, 24/7 उपलब्धता, अस्पताल समन्वय।",
-                        icon: <FaEnvelopeOpenText className="text-3xl text-blue-700" />
+                        icon: RB,
                     },
                     {
                         title:  translations?.bloodbank_services_title3 || "ब्लड कैंप आयोजित करें",
                         desc: translations?.bloodbank_services_desc3 ||  "ऑन-साइट सेटअप, मेडिकल टीम, डोनर किट्स, जागरूकता सामग्री, सहज आयोजन।",
-                        icon: <FaHospitalAlt className="text-3xl text-indigo-600" />
+                        icon: HBC,
                     }
                 ],
                 "cta": {
-                    "image": Logo,
+                    "image": DBT,
                     "alt": 'Blood Donation',
                     "title": translations?.bloodbank_cta_title || "हीरो बनें। आज ही रक्तदान करें।",
                     "description": translations?.bloodbank_cta_desc || "आपका एक परोपकारी कार्य जीवन बचा सकता है। बदलाव लाने के इस मिशन में शामिल हों।",

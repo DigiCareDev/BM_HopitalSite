@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import Logo from "@/assets/Logo.webp";
 import axios from 'axios';
 import Subnav from '../components/subnav'
+import devURL from '../constent/devURL';
 
 export default function NewsAndEvent() {
     const [translations, setTranslations] = useState({});
@@ -19,7 +20,8 @@ export default function NewsAndEvent() {
 
     useEffect(() => {
         // axios.get('http://emarketplace.progatetechnology.com/api/news-events')
-        axios.get('http://localhost:8000/api/news-events')
+        // axios.get('http://localhost:8000/api/news-events')
+        axios.get(`${devURL}/api/news-events`)
             .then(res => {
                 // console.log('News and Events:', res.data);
                 setNewsEvent(res.data);
@@ -68,26 +70,26 @@ export default function NewsAndEvent() {
 
                                 {/* Side Posts */}
                                 <div className="flex flex-col space-y-4">
-                                    {newsEvent.map((item, idx) => (
+                                    {newsEvent.map((seven, idx) => (
                                         <div key={idx} className="flex items-start space-x-3">
                                             <img
-                                                src={item.image_path
-                                                    ? `http://localhost:8000/storage/${item.image_path}`
+                                                src={seven.image_path
+                                                    ? `${devURL}/storage/${seven.image_path}`
                                                     : Logo}
                                                 className="w-20 h-20 object-cover rounded-md"
                                                 alt="side-news"
                                             />
                                             <div>
                                                 <div className='flex justify-between items-center'>
-                                                    <h4 className="text-md font-medium text-gray-900">{item.title}</h4>
+                                                    <h4 className="text-md font-medium text-gray-900">{seven.title}</h4>
                                                     <span className="text-sm text-gray-500">
-                                                        {new Date(item.created_at).toLocaleDateString()}
+                                                        {new Date(seven.created_at).toLocaleDateString()}
                                                     </span>
                                                 </div>
                                                 <p className="text-sm text-gray-600 mt-1">
-                                                    {stripHtml(item.description).slice(0, 100)}...
+                                                    {stripHtml(seven.description).slice(0, 100)}...
                                                 </p>
-                                                <a href={`/news-event/${item.id}`} className="text-blue-600 text-sm font-medium hover:underline mt-1">
+                                                <a href={route('free-medical.show', seven.id)} className="text-blue-600 text-sm font-medium hover:underline mt-1">
                                                     Read More
                                                 </a>
                                             </div>

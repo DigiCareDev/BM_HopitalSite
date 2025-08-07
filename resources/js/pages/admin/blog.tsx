@@ -9,6 +9,7 @@ import { HiEye, HiPencil, HiTrash } from 'react-icons/hi';
 import EditBlogForm from './blog/edit';
 import Swal from 'sweetalert2';
 import devURL from '../constent/devURL';
+import Show from './blog/show';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -38,7 +39,7 @@ export default function Blog() {
 
     useEffect(() => {
         // fetch('http://localhost:8000/api/blogs')
-         fetch(`${devURL}/api/blogs`)
+        fetch(`${devURL}/api/blogs`)
             .then(res => res.json())
             .then(data => {
                 setBlog(data);
@@ -123,7 +124,7 @@ export default function Blog() {
                                 className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300"
                             >
                                 <img
-                                    src={item.image ? `http://localhost:8000/storage/${item.image}` : Logo}
+                                    src={item.image ? `${devURL}/storage/${item.image}` : Logo}
                                     alt='title'
                                     className="w-full h-90 object-cover"
                                 />
@@ -184,43 +185,11 @@ export default function Blog() {
                         )))}
                     </div>
                     {isOpen && selectedBlog && (
-                        <div className="fixed inset-0  text-blue-700 flex items-center justify-center z-50">
-                            <div className="bg-white p-6 rounded-lg shadow-lg max-w-5xl w-full relative max-h-[90vh] overflow-y-auto">
-                                <button
-                                    className="absolute top-2 right-2 text-red-600 font-bold text-2xl"
-                                    onClick={() => setIsOpen(false)}
-                                >
-                                    ×
-                                </button>
-
-                                <h2 className="text-xl font-bold mb-2 text-blue-800">{selectedBlog.title}</h2>
-                                <p className="text-gray-600 mb-2">{selectedBlog.subtitle}</p>
-                                <p className="text-sm text-gray-500 mb-4">By {selectedBlog.author}</p>
-                                <div className="flex flex-wrap gap-2 mb-3">
-                                    {selectedBlog.tags &&
-                                        selectedBlog.tags.split(',').map((tag, idx) => (
-                                            <span
-                                                key={idx}
-                                                className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full"
-                                            >
-                                                {tag.trim()}
-                                            </span>
-                                        ))}
-                                </div>
-                                {selectedBlog.image && (
-                                    <img
-                                        src={`http://localhost:8000/storage/${selectedBlog.image}`}
-                                        alt="Blog"
-                                        className="w-full h-auto rounded mb-4"
-                                    />
-                                )}
-
-                                <div
-                                    className="prose max-w-none"
-                                    dangerouslySetInnerHTML={{ __html: selectedBlog.description }}
-                                />
-                            </div>
-                        </div>
+                        <Show
+                            selectedBlog={selectedBlog}
+                            onClose={() => setIsOpen(false)}
+                            onSuccess={() => setIsOpen(false)}
+                        />
                     )}
 
                     {editOpen && editBlog && (
@@ -233,11 +202,8 @@ export default function Blog() {
                                     ×
                                 </button>
 
-                                {/* ✅ Pass editBlog and onClose as props */}
                                 <EditBlogForm
                                     selectedBlog={editBlog}
-                                    onClose={() => setEditOpen(false)}
-                                    onSuccess={() => { setEditOpen(false) }}
                                 />
                             </div>
                         </div>

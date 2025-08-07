@@ -1,10 +1,11 @@
 import AppLayout from '@/layouts/app-layout';
 import { type BreadcrumbItem } from '@/types';
 import { Head } from '@inertiajs/react';
-import CKEditorComponent from '@/components/CKEditorManual';
 import { useState } from 'react';
 import Swal from 'sweetalert2';
 import devURL from '@/pages/constent/devURL';
+import CKEditorClassic from '@/components/CKEditorClassic';
+
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -127,10 +128,9 @@ export default function AddBlog() {
                         </div>
                         <div className="md:col-span-2">
                             <label className="block font-medium">Description</label>
-                            <CKEditorComponent
+                            <CKEditorClassic
                                 value={form.description}
                                 onChange={(value) => setForm({ ...form, description: value })}
-                                className="block w-full text-sm text-gray-700 border border-gray-300 rounded px-3 py-2"
                             />
                         </div>
                         <div className="md:col-span-2">

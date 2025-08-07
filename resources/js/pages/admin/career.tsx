@@ -7,6 +7,7 @@ import devURL from '../constent/devURL';
 import Logo from '../../assets/Logo.webp'
 import Edit from './career/edit';
 import Swal from 'sweetalert2';
+import Show from './career/show';
 
 
 
@@ -105,9 +106,24 @@ export default function Career() {
                             <span className="ml-2 text-blue-600 font-medium">Loading data...</span>
                         </div>
                     ) : post.length === 0 ? (
-                        <tr>
-                            <div className="text-gray-500 py-4 flex justify-self-center">Data No found.</div>
-                        </tr>
+                        <div className="flex flex-col items-center justify-center py-20 text-center text-gray-500">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-16 w-16 mb-4 text-blue-400 animate-bounce"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                strokeWidth={1.5}
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M9.75 9.75L14.25 14.25M9.75 14.25L14.25 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                />
+                            </svg>
+                            <h2 className="text-xl font-semibold">No Data Found</h2>
+                            <p className="text-sm mt-2">We're sorry, but there’s nothing to display here right now.</p>
+                        </div>
                     ) : (
                         post.map((item, index) => (
                             <div
@@ -118,7 +134,7 @@ export default function Career() {
 
                                 </div>
                                 <img
-                                    src={item.image ? `http://localhost:8000/storage/${item.image}` : Logo}
+                                    src={item.image ? `${devURL}/storage/${item.image}` : Logo}
                                     alt="Gallery item"
                                     className="rounded-md object-cover h-90 w-full relative"
                                 />
@@ -159,69 +175,11 @@ export default function Career() {
                             </div>
                         )))}
                     {openModel && selectCareer && (
-                        <div className="fixed inset-0 bg-opacity-30 flex items-center justify-center z-50">
-                            <div className="bg-white p-6 rounded-lg shadow-lg max-w-5xl w-full max-h-[90vh] overflow-y-auto relative border-2 border-blue-700">
-                                {/* Close Button */}
-                                <button
-                                    className="absolute top-3 right-4 text-red-600 text-xl font-bold"
-                                    onClick={() => setOpenModel(false)}
-                                >
-                                    ×
-                                </button>
-
-                                {/* Header */}
-                                <h2 className="text-2xl font-bold text-blue-800 mb-2">
-                                    {selectCareer.title}
-                                </h2>
-                                <div className="flex flex-wrap items-center text-sm text-gray-600 gap-4 mb-4">
-                                    <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">
-                                        {selectCareer.job_type}
-                                    </span>
-                                    <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">
-                                        {selectCareer.location}
-                                    </span>
-                                    <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full">
-                                        Deadline: {new Date(selectCareer.deadline).toLocaleDateString()}
-                                    </span>
-                                    <span className="text-gray-500 text-xs">
-                                        Posted: {new Date(selectCareer.created_at).toLocaleString()}
-                                    </span>
-                                </div>
-
-                                {/* Optional: Image */}
-                                {selectCareer.image && (
-                                    <div className="mt-6 items-center justify-items-center">
-                                        <img
-                                            src={`http://localhost:8000/storage/${selectCareer.image}`}
-                                            alt="Career"
-                                            className="w-100 h-100 rounded shadow-md"
-                                        />
-                                    </div>
-                                )}
-
-                                {/* Description */}
-                                <div className="mb-4">
-                                    <h3 className="text-lg font-semibold mb-1 text-blue-800">
-                                        Description
-                                    </h3>
-                                    <p className="text-gray-800 leading-relaxed">
-                                        {selectCareer.description}
-                                    </p>
-                                </div>
-
-                                {/* Requirements (HTML content) */}
-                                <div className="mb-6">
-                                    <h3 className="text-lg font-semibold mb-1 text-blue-800">
-                                        Requirements & Responsibilities
-                                    </h3>
-                                    <div
-                                        className="prose max-w-none text-gray-700"
-                                        dangerouslySetInnerHTML={{ __html: selectCareer.requirements }}
-                                    />
-                                </div>
-
-                            </div>
-                        </div>
+                        <Show
+                            selectCareer={editCareer}
+                            onClose={() => setEditModel(false)}
+                            onSuccess={() => setEditModel(false)}
+                        />
                     )}
                     {editModel && editCareer && (
                         <>

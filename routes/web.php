@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Models\CareerPost;
+use App\Models\Blog;
+use App\Models\NewsEvent;
 use App\Http\Controllers\BlogController;
 
 Route::get('/', function () {
@@ -25,20 +27,9 @@ Route::get('/careers', function () {
     return Inertia::render('career');
 })->name('careers');
 
-Route::get('/terms-conditions', function () {
-    return Inertia::render('terms-conditions');
-})->name('terms-conditions');
-
-Route::get('/privacy-policy', function () {
-    return Inertia::render('privacy-policy');
-})->name('privacy-policy');
-
-Route::get('/cmo/{id}', function ($id) {
-    $job = CareerPost::findOrFail($id);
-    return Inertia::render('career/cmo', [
-        'job' => $job,
-    ]);
-})->name('cmo.show');
+Route::get('/cmo-job', function () {
+    return Inertia::render('career/cmoPost');
+})->name('cmo-job');
 
 Route::get('/field-officer', function () {
     return Inertia::render('career/fieldofficer');
@@ -51,11 +42,27 @@ Route::get('/pharmacist', function () {
 Route::get('/resident-doctors', function () {
     return Inertia::render('career/residentdoctors');
 })->name('resident-doctors');
+   
 
-Route::get('/careers-details', function () {
-    return Inertia::render('components/single');
-})->name('careers-details');
+Route::get('/aioct-post', function () {
+    return Inertia::render('blog/aioctpost');
+})->name('aioct-post');  
 
+
+Route::get('/cmo/{id}', function ($id) {
+    $job = CareerPost::findOrFail($id);
+    return Inertia::render('career/cmo', [
+        'job' => $job,
+    ]);
+})->name('cmo.show');
+
+Route::get('/terms-conditions', function () {
+    return Inertia::render('terms-conditions');
+})->name('terms-conditions');
+
+Route::get('/privacy-policy', function () {
+    return Inertia::render('privacy-policy');
+})->name('privacy-policy');
 // ==================mainpages end=======
 
 Route::get('/departments', function () {
@@ -113,10 +120,6 @@ Route::get('/blog', function () {
  Route::get('/blogs/{id}/edit', [BlogController::class, 'edit'])->name('blogs.edit');
 Route::put('/blogs/{id}', [BlogController::class, 'update'])->name('blogs.update');
 
-Route::get('/free-medical-camp', function () {
-    return Inertia::render('library/newsandevent/freemedicalcamp');
-})->name('free-medical-camp');
-
 Route::get('/ai-oct', function () {
     return Inertia::render('blog/aioct');
 })->name('ai-oct');  
@@ -132,6 +135,24 @@ Route::get('/ent-problems', function () {
 Route::get('/Gynaecologist-immediately', function () {
     return Inertia::render('blog/gynaecologistimmediately');
 })->name('Gynaecologist-immediately');
+
+Route::get('/ai-oct/{id}', function ($id) {
+    $blog = Blog::findOrFail($id);
+    return Inertia::render('blog/aioct', [
+        'blog' => $blog,
+    ]);
+})->name('ai-oct.show');
+
+Route::get('/free-medical{id}', function ($id) {
+    $newsEvent = NewsEvent::findOrFail($id);
+    return Inertia::render('newsandevent/freemedical', [
+    'newsevent' => $newsEvent,
+]);
+})->name('free-medical.show');
+
+Route::get('/free-medical-camp', function () {
+    return Inertia::render('newsandevent/freemedicalcamp');
+})->name('free-medical-camp');
 
 Route::get('/news-and-event', function () {
     return Inertia::render('library/newsandevent');

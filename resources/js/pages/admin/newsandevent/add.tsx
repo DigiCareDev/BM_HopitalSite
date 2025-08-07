@@ -3,7 +3,7 @@ import AppLayout from '@/layouts/app-layout';
 import { type BreadcrumbItem } from '@/types';
 import { Head } from '@inertiajs/react';
 import devURL from '@/pages/constent/devURL';
-import CKEditorComponent from '@/components/CKEditorManual';
+import CKEditorComponent from '@/components/CKEditorClassic';
 import Swal from 'sweetalert2';
 
 

@@ -2,20 +2,20 @@ import React, { useEffect, useState } from 'react';
 import Navbar from '../components/home/navbar'
 import Footer from '../components/Footer'
 import Treatment from '../components/Treatment';
-import {
-    FaHeartbeat,
-    FaUserNurse,
-    FaBaby,
-    FaLungs,
-    FaShieldVirus,
-    FaUsers,
-    FaRegClock,
-    FaMedkit,
-    FaProcedures
-} from "react-icons/fa";
 import BackToTop from "../components/BackToTopButton"
 import Subnav from "../components/subnav";
-import Logo from "@/assets/Logo.webp"
+import Banner from "@/assets/services/Neonatal Intensive Care Unit/Neonatal Intensive Care Unit.svg"
+import CNC from "@/assets/services/Neonatal Intensive Care Unit/24x7 Critical Newborn Care.svg"
+import ALSS from "@/assets/services/Neonatal Intensive Care Unit/Advanced Life Support Systems.svg"
+import ANM from "@/assets/services/Neonatal Intensive Care Unit/Advanced Neonatal Monitoring.svg"
+import NICUT from "@/assets/services/Neonatal Intensive Care Unit/Experienced NICU Team.svg"
+import ENN from "@/assets/services/Neonatal Intensive Care Unit/Expert Neonatologists & Nurses.svg"
+import FCS from "@/assets/services/Neonatal Intensive Care Unit/Family-Centered Support.svg"
+import ICP from "@/assets/services/Neonatal Intensive Care Unit/Infection Control Protocols.svg"
+import LBWC from "@/assets/services/Neonatal Intensive Care Unit/Premature & Low Birth Weight Care.svg"
+import RSS from "@/assets/services/Neonatal Intensive Care Unit/Respiratory Support Systems.svg"
+import NICUS from "@/assets/services/Neonatal Intensive Care Unit/Neonatal Intensive Care Unit (NICU) Services.svg"
+
 
 export default function Neonatalintensivecareunit() {
        const [translations, setTranslations] = useState({});
@@ -31,7 +31,7 @@ export default function Neonatalintensivecareunit() {
             "hero": {
                 "heading": translations?.nicu_heading || " बीएम अस्पताल में नवजात गहन चिकित्सा इकाई (NICU) – गंभीर स्थिति में नवजातों के लिए संवेदनशील देखभाल ",
                 "paragraph": translations?.nicu_title || "बीएम अस्पताल की नवजात गहन चिकित्सा इकाई (NICU) एक विशेष सुविधा है जो समय से पहले जन्मे और गंभीर रूप से बीमार नवजात शिशुओं को उन्नत चिकित्सा सहायता प्रदान करने के लिए डिज़ाइन की गई है। अत्याधुनिक तकनीक जैसे इनक्यूबेटर, वेंटिलेटर, फोटोथैरेपी यूनिट और सतत निगरानी प्रणालियों से सुसज्जित हमारा NICU, स्वास्थ्य चुनौतियों का सामना कर रहे नवजातों को सर्वोच्च स्तर की देखभाल प्रदान करता है। हमारे विशेषज्ञ नवजात रोग विशेषज्ञों, बाल रोग नर्सों और सहायक स्टाफ की टीम श्वसन कष्ट, कम जन्म वजन, पीलिया, सेप्सिस और जन्मजात विकारों जैसी स्थितियों का प्रबंधन करने के लिए प्रशिक्षित है। हम एक परिवार-केंद्रित देखभाल दृष्टिकोण का पालन करते हैं, जिससे माता-पिता को अपने शिशु की रिकवरी के प्रत्येक चरण में शामिल किया जाता है। बीएम अस्पताल का NICU स्वच्छता और सुरक्षा के कड़े मानकों का पालन करता है ताकि उपचार और बेहतर परिणाम सुनिश्चित हो सकें।",
-                "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
+                "image": Banner,
                 "alt": "BM Hospital logo"
             },
             "ambulance_services": {
@@ -41,32 +41,32 @@ export default function Neonatalintensivecareunit() {
                     {
                         title: translations?.nicu_services_title || "उन्नत नवजात निगरानी",
                         desc: translations?.nicu_services_desc || "गंभीर नवजात देखभाल के लिए इनक्यूबेटर, वेंटिलेटर और हाई-एंड मॉनिटर का उपयोग करते हुए सतत महत्वपूर्ण संकेतों की निगरानी।",
-                        icon: <FaHeartbeat className="text-4xl text-[#80CAC7]" />
+                        icon: ANM,
                     },
                     {
                         title: translations?.nicu_services_title02 || "विशेषज्ञ नवजात रोग विशेषज्ञ और नर्सें",
                         desc: translations?.nicu_services_desc02 || "नवजात रोग विशेषज्ञों और NICU प्रशिक्षित नर्सों की कुशल टीम द्वारा चौबीसों घंटे विशेष देखभाल।",
-                        icon: <FaUserNurse className="text-4xl text-[#80CAC7]" />
+                        icon: ENN,
                     },
                     {
                         title: translations?.nicu_services_title04 || "श्वसन सहायता प्रणालियाँ",
                         desc: translations?.nicu_services_desc04 || "श्वसन कठिनाई या RDS वाले नवजातों के लिए CPAP, वेंटिलेटर और ऑक्सीजन थेरेपी से सुसज्जित।",
-                        icon: <FaBaby className="text-4xl text-[#80CAC7]" />
+                        icon: RSS,
                     },
                     {
                         title: translations?.nicu_services_title05 || "संक्रमण नियंत्रण प्रोटोकॉल",
                         desc: translations?.nicu_services_desc05 || "संवेदनशील शिशुओं के लिए संक्रमण जोखिम को न्यूनतम करने हेतु स्वच्छ NICU वातावरण।",
-                        icon: <FaLungs className="text-4xl text-[#80CAC7]" />
+                        icon: ICP,
                     },
                     {
                         title: translations?.nicu_services_title06 || "परिवार-केंद्रित समर्थन",
                         desc: translations?.nicu_services_desc06 || "माता-पिता को अपने शिशु की रिकवरी में शामिल रखने के लिए भावनात्मक, शैक्षिक और विजिटिंग समर्थन।",
-                        icon: <FaShieldVirus className="text-4xl text-[#80CAC7]" />
+                        icon: FCS,
                     },
                     {
                         title: translations?.nicu_services_title03 || "समय से पूर्व और कम वजन वाले शिशुओं की देखभाल",
                         desc: translations?.nicu_services_desc03 || "समय से पहले या कम वजन में जन्मे शिशुओं के लिए समर्पित सहायता और तकनीक, जो स्वस्थ विकास को प्रोत्साहित करती है।",
-                        icon: <FaUsers className="text-4xl text-[#80CAC7]" />
+                        icon: LBWC,
                     },
                 ],
                 "cta": {
@@ -83,21 +83,21 @@ export default function Neonatalintensivecareunit() {
                     {
                         title: translations?.nicu_services_title1 || "24x7 गंभीर नवजात देखभाल",
                         desc: translations?.nicu_services_desc1 || "समय से पूर्व और बीमार नवजातों के लिए विशेष निगरानी और जीवनरक्षक उपकरण द्वारा चौबीसों घंटे देखभाल।",
-                        icon: <FaRegClock className="text-4xl text-[#80CAC7]" />
+                        icon: CNC,
                     },
                     {
                         title: translations?.nicu_services_title2 || "अनुभवी NICU टीम",
                         desc: translations?.nicu_services_desc2 || "नवजात रोग विशेषज्ञ, नर्सें और श्वसन चिकित्सक कमजोर नवजातों को विशेषज्ञ देखभाल प्रदान करते हैं।",
-                        icon: <FaMedkit className="text-4xl text-[#80CAC7]" />
+                        icon: NICUT,
                     },
                     {
                         title: translations?.nicu_services_title3 || "उन्नत जीवन समर्थन प्रणाली",
                         desc: translations?.nicu_services_desc3 || "उच्च जोखिम वाले शिशुओं को स्थिर और पोषित करने हेतु इनक्यूबेटर, वेंटिलेटर और फीडिंग सहायता से सुसज्जित।",
-                        icon: <FaProcedures className="text-4xl text-[#80CAC7]" />
+                        icon: ALSS,
                     },
                 ],
                     "cta": {
-                        "image": Logo,
+                        "image": NICUS,
                         "alt": 'Blood Donation',
                         "title": translations?.nicu_cta_title || "भरोसा करें बीएम अस्पताल की नवजात गहन चिकित्सा इकाई (NICU) सेवाओं पर",
                         "description": translations?.nicu_cta_desc || "हर 2 सेकंड में किसी को रक्त की आवश्यकता होती है। एक डोनर बनकर हमें एक मजबूत और सुरक्षित रक्त आपूर्ति बनाए रखने में सहायता करें।",

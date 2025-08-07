@@ -2,20 +2,19 @@ import React, { useEffect, useState } from 'react';
 import Navbar from '../components/home/navbar'
 import Footer from '../components/Footer'
 import Treatment from '../components/Treatment';
-import {
-    FaVials,
-    FaMicroscope,
-    FaFlask,
-    FaVirus,
-    FaProcedures,
-    FaHome,
-    FaTint,
-    FaUserMd,
-    FaClock
-} from "react-icons/fa";
 import BackToTop from "../components/BackToTopButton"
 import Subnav from "../components/subnav";
-import Logo from "@/assets/Logo.webp"
+import Availability from '@/assets/services/Pathology/24x7 Availability.svg';
+import ALT from '@/assets/services/Pathology/Accurate Lab Testing.svg';
+import ADT from '@/assets/services/Pathology/Advanced Diagnostic Technology.svg';
+import APS from '@/assets/services/Pathology/Advanced Pathology Services.svg';
+import BM from '@/assets/services/Pathology/Biochemistry & Hematology.svg';
+import CTM from '@/assets/services/Pathology/Comprehensive Test Menu.svg';
+import EP from '@/assets/services/Pathology/Expert Pathologists.svg';
+import HC from '@/assets/services/Pathology/Histopathology & Cytology.svg';
+import HSC from '@/assets/services/Pathology/Home Sample Collection.svg';
+import MS from '@/assets/services/Pathology/Microbiology & Serology.svg';
+import CPS from '@/assets/services/Pathology/Choose BM Hospital’s Pathology Services.svg';
 
 export default function Pathlogy() {
        const [translations, setTranslations] = useState({});
@@ -30,7 +29,7 @@ export default function Pathlogy() {
             "hero": {
                 "heading": translations?.pathlogy_heading || "बीएम अस्पताल में उन्नत पैथोलॉजी सेवाएं – सटीक निदान, भरोसेमंद परिणाम",
                 "paragraph": translations?.pathlogy_title || "बीएम अस्पताल का पैथोलॉजी विभाग उन्नत परीक्षण और विश्लेषण के माध्यम से व्यापक डायग्नोस्टिक समाधान प्रदान करता है। हमारी प्रयोगशाला आधुनिक तकनीक और स्वचालित सिस्टम से सुसज्जित है, जो रक्त परीक्षण, मूत्र परीक्षण, बायोप्सी, साइटोलॉजी और हिस्टोपैथोलॉजी सहित विभिन्न परीक्षणों में सटीक, समय पर और विश्वसनीय परिणाम सुनिश्चित करती है। योग्य पैथोलॉजिस्ट और लैब तकनीशियनों की टीम कठोर गुणवत्ता नियंत्रण और सुरक्षा मानकों का पालन करती है। हम सभी क्लीनिकल विभागों को तेजी से और विस्तृत रिपोर्ट देकर निदान, उपचार योजना और स्वास्थ्य निगरानी में सहायता प्रदान करते हैं।",
-                "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
+                "image": APS,
                 "alt": "BM Hospital logo"
             },
             "ambulance_services": {
@@ -40,32 +39,32 @@ export default function Pathlogy() {
                     {
                         title:  translations?.pathlogy_services_title || "व्यापक परीक्षण मेनू",
                         desc:  translations?.pathlogy_services_desc || "सटीक निदान और उपचार योजना के लिए रक्त, मूत्र, मल और ऊतक परीक्षणों की पूरी श्रृंखला।",
-                        icon: <FaVials className="text-4xl text-[#80CAC7]" />
+                        icon: CTM,
                     },
                     {
                         title:  translations?.pathlogy_services_title02 || "उन्नत डायग्नोस्टिक तकनीक",
                         desc:  translations?.pathlogy_services_desc02 || "पूरी तरह से स्वचालित विश्लेषकों से सुसज्जित, जो तेज, सटीक और विश्वसनीय परिणाम प्रदान करते हैं।",
-                        icon: <FaMicroscope className="text-4xl text-[#80CAC7]" />
+                        icon: ADT,
                     },
                     {
                         title:  translations?.pathlogy_services_title04 || "माइक्रोबायोलॉजी और सेरोलॉजी",
                         desc:  translations?.pathlogy_services_desc04 || "उन्नत तकनीकों के माध्यम से संक्रमण, वायरस और प्रतिरक्षा प्रतिक्रिया का सटीक पता लगाना।",
-                        icon: <FaFlask className="text-4xl text-[#80CAC7]" />
+                        icon: MS,
                     },
                     {
                         title:  translations?.pathlogy_services_title05 || "हिस्टोपैथोलॉजी और साइटोलॉजी",
                         desc:  translations?.pathlogy_services_desc05 || "कैंसर और रोगों का पता लगाने के लिए बायोप्सी और ऊतक नमूनों का विशेषज्ञ विश्लेषण।",
-                        icon: <FaVirus className="text-4xl text-[#80CAC7]" />
+                        icon: HC,
                     },
                     {
                         title:  translations?.pathlogy_services_title06 || "होम सैंपल कलेक्शन",
                         desc:  translations?.pathlogy_services_desc06 || "जो मरीज अस्पताल नहीं आ सकते, उनके लिए सुविधाजनक डोरस्टेप सेवा।",
-                        icon: <FaProcedures className="text-4xl text-[#80CAC7]" />
+                        icon: HSC,
                     },
                     {
                         title: translations?.pathlogy_services_title03 || "बायोकैमिस्ट्री और हीमैटोलॉजी",
                         desc:  translations?.pathlogy_services_desc03 || "लीवर फंक्शन, किडनी फंक्शन, सीबीसी और ब्लड ग्लूकोज जैसे महत्वपूर्ण परीक्षण चौबीसों घंटे उपलब्ध।",
-                        icon: <FaHome className="text-4xl text-[#80CAC7]" />
+                        icon: BM,
                     },
                 ],
                 "cta": {
@@ -82,21 +81,21 @@ export default function Pathlogy() {
                     {
                         title: translations?.pathlogy_services_title1 || "सटीक लैब परीक्षण",
                         desc: translations?.pathlogy_services_desc1 || "हमारी NABL-मान्यता प्राप्त लैब रक्त, मूत्र और ऊतक परीक्षणों के सटीक और समय पर परिणाम प्रदान करती हैं।",
-                        icon: <FaTint className="text-4xl text-[#80CAC7]" />
+                        icon: ALT,
                     },
                     {
                         title: translations?.pathlogy_services_title2 || "विशेषज्ञ पैथोलॉजिस्ट",
                         desc: translations?.pathlogy_services_desc2 || "उच्च योग्य पेशेवर यह सुनिश्चित करते हैं कि प्रत्येक रिपोर्ट विश्वसनीय और क्लीनिकली महत्वपूर्ण हो।",
-                        icon: <FaUserMd className="text-4xl text-[#80CAC7]" />
+                        icon: EP,
                     },
                     {
                         title: translations?.pathlogy_services_title3 || "24x7 उपलब्धता",
                         desc: translations?.pathlogy_services_desc3 || "दिन हो या रात, हमारी पैथोलॉजी सेवाएं हमेशा तत्काल परीक्षण आवश्यकताओं के लिए उपलब्ध हैं।",
-                        icon: <FaClock className="text-4xl text-[#80CAC7]" />
+                        icon: Availability,
                     }
                 ],
                 "cta": {
-                    "image": Logo,
+                    "image": CPS,
                     "alt": 'Blood Donation',
                     "title": translations?.pathlogy_cta_title || "बीएम अस्पताल की पैथोलॉजी सेवाएं चुनें",
                     "description": translations?.pathlogy_cta_desc || "हर 2 सेकंड में किसी को रक्त की आवश्यकता होती है। डोनर बनकर एक मजबूत और सुरक्षित रक्त आपूर्ति बनाए रखने में मदद करें।",

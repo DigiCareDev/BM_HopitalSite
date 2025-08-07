@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import CKEditorComponent from '../../../components/CKEditorManual';
+import CKEditorComponent from '../../../components/CKEditorClassic';
 import { useForm } from '@inertiajs/react';
 
-const EditBlogForm = ({ selectedBlog, onClose, onSuccess }) => {
+const EditBlogForm = ({ selectedBlog }) => {
 
     const { data, setData, post, progress, processing, errors } = useForm({
         title: selectedBlog.title || '',

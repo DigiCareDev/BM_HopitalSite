@@ -218,7 +218,7 @@ function Gallery() {
                                         <tr key={i} className="hover:bg-blue-50 transition">
                                             <td className="px-4 py-2 font-semibold text-blue-600">{i + 1}</td>
                                             <td className="px-4 py-2">
-                                                <img src={`http://localhost:8000/storage/${item.image_path || Logo}`} alt={item.title} className="w-20 h-14 object-cover rounded shadow" />
+                                                <img src={`${devURL}/storage/${item.image_path || Logo}`} alt={item.title} className="w-20 h-14 object-cover rounded shadow" />
                                             </td>
                                             <td className="px-4 py-2">{item.title}</td>
                                             <td className="px-4 py-2">{item.category}</td>

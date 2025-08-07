@@ -5,6 +5,7 @@ import { PiTranslate } from "react-icons/pi";
 import { ImLocation, ImPhone } from "react-icons/im";
 import Logo from "@/assets/Logo.webp"
 import axios from 'axios';
+import devURL from '../constent/devURL';
 
 const useTranslations = (lang) => {
   const [languageDropdown, setLanguageDropdown] = useState(false);
@@ -16,8 +17,9 @@ const useTranslations = (lang) => {
 
   useEffect(() => {
     setLoading(true);
-    axios.get(`http://emarketplace.progatetechnology.com/api/translations/${lang}`)
+    // axios.get(`http://emarketplace.progatetechnology.com/api/translations/${lang}`)
     // axios.get(`http://localhost:8000/api/translations/${lang}`)
+    axios.get(`${devURL}/api/translations/${lang}`)
       .then(res => {
         // console.log('API Response:', res.data);
         if (res.data.error) {
@@ -41,14 +43,8 @@ const useTranslations = (lang) => {
 
 const TopNotificationBar = ({ onTranslations }) => {
   const [languageDropdown, setLanguageDropdown] = useState(false);
-  // const [language, setLanguage] = useState('hi');
   const [language, setLanguage] = useState(localStorage.getItem('selectedLanguage') || 'hi'); // Use a default like 'en' if not found
   const { translations, loading } = useTranslations(language);
-
-  const setAndStoreLanguage = (newLang) => {
-    setLanguage(newLang);
-    localStorage.setItem('selectedLanguage', newLang); 
-};
 
 
   useEffect(() => {
@@ -114,16 +110,17 @@ const TopNotificationBar = ({ onTranslations }) => {
               onClick={() => setLanguageDropdown(!languageDropdown)}
               className="flex py-1 px-2 border border-white rounded-sm text-white text-sm md:text-base bg-blue-800 hover:bg-white hover:text-blue-800 transition-all duration-300 w-full md:w-auto"
             >
-                <PiTranslate  className='text-[#80CAC7] mt-0.5 mr-1 font-bold text-xl' /> {translations?.Languages || 'भाषाएँ'}
+              <PiTranslate className='text-[#80CAC7] mt-0.5 mr-1 font-bold text-xl' /> {translations?.Languages || 'भाषाएँ'}
             </button>
 
             {/* Dropdown */}
             {languageDropdown && (
               <ul className="absolute right-0 mt-2 w-45 bg-white border rounded shadow-md z-50 text-left">
                 <button onClick={() => setLanguage('en')} className="block px-4 py-2 text-sm text-blue-800 hover:bg-gray-100">English (English)</button>
-                 <button onClick={() => setLanguage('bn')} className="block px-4 py-2 text-sm text-blue-800 hover:bg-gray-100">বাংলা (Bangali)</button>
+                <button onClick={() => setLanguage('bn')} className="block px-4 py-2 text-sm text-blue-800 hover:bg-gray-100">বাংলা (Bangali)</button>
                 <button onClick={() => setLanguage('hi')} className="block px-4 py-2 text-sm text-blue-800 hover:bg-gray-100">हिन्दी (Hindi) </button>
                 <button onClick={() => setLanguage('ori')} className="block px-4 py-2 text-sm text-blue-800 hover:bg-gray-100"> ଓଡ଼ିଆ(Odia) </button>
+                <button onClick={() => setLanguage('pb')} className="block px-4 py-2 text-sm text-blue-800 hover:bg-gray-100"> ਪੰਜਾਬੀ(Panjabi) </button>
               </ul>
             )}
           </div>

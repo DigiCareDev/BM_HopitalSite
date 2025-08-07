@@ -21,7 +21,7 @@ function Treatment({ TreatmentData }) {
                             <img
                                 src={data.hero.image}
                                 alt={data.hero.alt}
-                                className="rounded-3xl shadow-2xl w-full object-cover"
+                                className="rounded-3xl w-full object-cover"
                             />
                         </div>
                     </section>
@@ -44,7 +44,8 @@ function Treatment({ TreatmentData }) {
                                     key={i}
                                     className="p-6 bg-gray-50 border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition"
                                 >
-                                    <div className="text-4xl mb-4">{icon}</div>
+                                    {/* <div className="text-4xl mb-4">{icon}</div> */}
+                                    <img src={icon} alt={title} className="h-10 my-2" />
                                     <h3 className="text-xl font-semibold text-blue-900 mb-2">{title}</h3>
                                     <p className="text-gray-600">{desc}</p>
                                 </div>
@@ -59,7 +60,7 @@ function Treatment({ TreatmentData }) {
                             >
                                 {data.ambulance_services.cta.label}
                             </a>
-                            <p className="mt-2 text-sm text-gray-500">Or call our 24x7 Helpline: <a href={data.ambulance_services.cta.link} className="href"><strong>{data.ambulance_services.cta.helpline}</strong></a></p>
+                            <p className="mt-2 text-sm text-gray-500"><a href={data.ambulance_services.cta.link} className="href"><strong>{data.ambulance_services.cta.helpline}</strong></a></p>
                         </div>
                     </div>
                 </section>
@@ -76,7 +77,7 @@ function Treatment({ TreatmentData }) {
                         <div className="grid md:grid-cols-3 gap-8">
                             {data.blood_bank.services.map((item, idx) => (
                                 <div key={idx} className="bg-white p-6 rounded-xl shadow-md text-center">
-                                    <div className="text-5xl mb-4">{item.icon}</div>
+                                    <img src={item.icon} alt={item.title} className="h-10 my-2" />
                                     <h3 className="text-xl font-semibold text-blue-700 mb-2">{item.title}</h3>
                                     <p className="text-gray-600">{item.desc}</p>
                                 </div>
@@ -91,7 +92,7 @@ function Treatment({ TreatmentData }) {
                             <img
                                 src={data.blood_bank.cta.image}
                                 alt={data.blood_bank.cta.alt}
-                                className="rounded-lg shadow-xl"
+                                className="rounded-lg"
                             />
                         </div>
                         <div>

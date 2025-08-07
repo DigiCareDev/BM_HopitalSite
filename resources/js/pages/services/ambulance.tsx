@@ -1,21 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Navbar from '../components/home/navbar'
 import Footer from '../components/Footer';
 import Treatment from '../components/Treatment';
-import {
-    FaAmbulance,
-    FaHeartbeat,
-    FaBaby,
-    FaTruckMoving,
-    FaSyringe,
-    FaMapMarkedAlt,
-    FaPhoneAlt,
-    FaRegAddressCard,
-    FaCheckCircle
-} from "react-icons/fa";
 import BackToTop from "../components/BackToTopButton"
 import Subnav from "../components/subnav";
-import Logo from "@/assets/Logo.webp"
+import AdvancedLifeSupport from "@/assets/services/Ambulance/Advanced Life Support (ALS).svg"
+import AmbulanceServices from "@/assets/services/Ambulance/Ambulance Services.svg"
+import BLS from "@/assets/services/Ambulance/Basic Life Support (BLS).svg"
+import DBA from "@/assets/services/Ambulance/Dead Body Ambulance.svg"
+import ER from "@/assets/services/Ambulance/Emergency Response.svg"
+import LDT from "@/assets/services/Ambulance/Long Distance Transfer.svg"
+import NA from "@/assets/services/Ambulance/Neonatal Ambulance.svg"
+import PFE from "@/assets/services/Ambulance/Preparing for Emergencies.svg"
+import PPD from "@/assets/services/Ambulance/Provide Patient Details.svg"
+import CallHelpline from "@/assets/services/Ambulance/Call the Helpline.svg"
+import ConfirmDispatch from "@/assets/services/Ambulance/Confirm & Dispatch.svg"
 
 
 
@@ -32,7 +31,7 @@ export default function Ambulance() {
             "hero": {
                 "heading": translations?.Ambulance_heading || 'बीएम अस्पताल की 24/7 आपातकालीन एम्बुलेंस सेवा – त्वरित, सुरक्षित और विश्वसनीय चिकित्सा परिवहन',
                 "paragraph": translations?.Ambulance_title || "बीएम अस्पताल चौबीसों घंटे एम्बुलेंस सेवाएं प्रदान करता है ताकि गंभीर परिस्थितियों में तुरंत चिकित्सा सहायता मिल सके। हमारी एम्बुलेंस सुविधाओं से लैस होती हैं और इनमें प्रशिक्षित पैरामेडिक्स व आपातकालीन चिकित्सा तकनीशियन होते हैं जो अस्पताल पहुंचने तक जीवन रक्षक देखभाल प्रदान करते हैं। चाहे सड़क दुर्घटना हो, हृदय आपातकाल, ट्रॉमा, या किसी अन्य अस्पताल में स्थानांतरण की आवश्यकता हो – हमारी एम्बुलेंस सेवा त्वरित प्रतिक्रिया और हमारे आपातकालीन विभाग से समन्वय सुनिश्चित करती है। प्रत्येक एम्बुलेंस में ऑक्सीजन सपोर्ट, डिफाइब्रिलेटर, स्ट्रेचर और आवश्यक आपातकालीन दवाएं उपलब्ध होती हैं।",
-                "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
+                "image": AmbulanceServices,
                 "alt": "BM Hospital logo"
             },
             "ambulance_services": {
@@ -42,32 +41,32 @@ export default function Ambulance() {
                     {
                         title: translations?.services_title || "बेसिक लाइफ सपोर्ट (BLS)",
                         desc: translations?.services_desc || "ऑक्सीजन सप्लाई, सक्शन यूनिट, स्ट्रेचर, सामान्य दवाएं, प्रशिक्षित चिकित्सा स्टाफ।",
-                        icon: <FaAmbulance className="text-3xl text-red-600" />
+                        icon: BLS
                     },
                     {
                         title: translations?.services_title2 || "एडवांस्ड लाइफ सपोर्ट (ALS)",
                         desc: translations?.services_desc2 || "वेंटिलेटर, डिफाइब्रिलेटर, ईसीजी मॉनिटर, आईवी पंप, ऑक्सीजन, सक्शन, आपातकालीन दवाएं।",
-                        icon: <FaHeartbeat className="text-3xl text-red-600" />
+                        icon: AdvancedLifeSupport,
                     },
                     {
                         title: translations?.services_title3 || "नवजात शिशु एम्बुलेंस",
                         desc: translations?.services_desc3 || "इनक्यूबेटर, वेंटिलेटर, ऑक्सीजन सपोर्ट, इन्फ्यूजन पंप, रैडिएंट वॉर्मर, प्रशिक्षित नवजात देखभाल स्टाफ।",
-                        icon: <FaBaby className="text-3xl text-pink-500" />
+                        icon: NA,
                     },
                     {
                         title: translations?.services_title4 || "मृत शरीर के लिए एम्बुलेंस",
                         desc: translations?.services_desc4 || "सम्मानपूर्वक व्यवस्था वाली शववाहन सेवा।",
-                        icon: <FaTruckMoving className="text-3xl text-gray-600" />
+                        icon: DBA,
                     },
                     {
                         title: translations?.services_title5 || "लंबी दूरी की ट्रांसफर सेवा",
                         desc: translations?.services_desc5 || "आरामदायक स्ट्रेचर, ऑक्सीजन, वेंटिलेटर, निगरानी उपकरण, आईवी सपोर्ट, चिकित्सा एस्कॉर्ट टीम।",
-                        icon: <FaSyringe className="text-3xl text-red-500" />
+                        icon: LDT,
                     },
                     {
                         title: translations?.services_title6 || "आपातकालीन प्रतिक्रिया",
                         desc: translations?.services_desc6 || "त्वरित डिस्पैच, जीपीएस ट्रैकिंग, प्रशिक्षित पैरामेडिक्स, मेडिकल उपकरण, 24/7 उपलब्धता, समन्वय।",
-                        icon: <FaMapMarkedAlt className="text-3xl text-blue-600" />
+                        icon: ER,
                     },
                 ],
                 "cta": {
@@ -84,22 +83,22 @@ export default function Ambulance() {
                     {
                         title: translations?.ambulance_services_services_title || "हेल्पलाइन पर कॉल करें",
                         desc: translations?.ambulance_services_services_desc || "तत्काल एम्बुलेंस सहायता के लिए कभी भी +91-7318000751 – 55 पर कॉल करें।",
-                        icon: <FaPhoneAlt className="text-3xl text-green-600" />
+                        icon: CallHelpline,
                     },
                     {
                         title: translations?.ambulance_services_services_title2 || "रोगी का विवरण दें",
                         desc: translations?.ambulance_services_services_desc2 || "तेजी से सेवा के लिए स्थान, स्थिति और आवश्यक एम्बुलेंस प्रकार की जानकारी साझा करें।",
-                        icon: <FaRegAddressCard className="text-3xl text-blue-700" />
+                        icon: PPD,
                     },
                     {
                         title: translations?.ambulance_services_services_title3 || "पुष्टि और डिस्पैच",
                         desc: translations?.ambulance_services_services_desc3 || "बुकिंग की पुष्टि और एम्बुलेंस की लोकेशन का रीयल-टाइम अपडेट प्राप्त करें।",
-                        icon: <FaCheckCircle className="text-3xl text-green-500" />
+                        icon: ConfirmDispatch,
                     }
 
                 ],
                 "cta": {
-                    "image": Logo,
+                    "image": PFE,
                     "alt": 'Blood Donation',
                     "title": translations?.ambulance_cta_title || "आपात स्थिति के लिए तैयारी – बीएम अस्पताल एम्बुलेंस सेवा के साथ सुरक्षित रहें",
                     "description": translations?.ambulance_cta_desc || "तेजी से की गई कार्रवाई जीवन बचा सकती है। आपातकाल से पहले कैसे तैयार रहें – जानिए",

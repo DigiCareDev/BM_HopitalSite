@@ -1,4 +1,4 @@
-import CKEditorComponent from '@/components/CKEditorManual';
+import CKEditorComponent from '@/components/CKEditorClassic';
 import AppLayout from '@/layouts/app-layout';
 import devURL from '@/pages/constent/devURL';
 import { type BreadcrumbItem } from '@/types';
