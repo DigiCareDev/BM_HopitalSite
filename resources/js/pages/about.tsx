@@ -2,9 +2,12 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from './components/home/navbar'
 import Footer from './components/Footer';
-import ContactImage from '@/assets/images/About.png'
-import AboutHeader from '@/assets/images/aboutHeader.jpg'
 import Subnav from "./components/subnav";
+import AboutUs from "@/assets/About/About Us.svg";
+import Emergency from "@/assets/About/24-7 Emergency.svg";
+import Modernlabs from "@/assets/About/Modern Labs.svg";
+import PCC from "@/assets/About/Patient Centered Care.svg";
+import Qualified from "@/assets/About/Qualified Doctors.svg";
 
 export default function About() {
     const [translations, setTranslations] = useState({});
@@ -28,9 +31,9 @@ export default function About() {
                         </div>
                         <div className="flex-1">
                             <img
-                                src={AboutHeader}
+                                src={AboutUs}
                                 alt="BM hopital about"
-                                className="rounded-3xl shadow-2xl w-full object-cover"
+                                className="rounded-3xl w-full object-cover"
                             />
                         </div>
                     </section>
@@ -64,14 +67,14 @@ export default function About() {
 
                         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
                             {[
-                                { title: translations?.Emergency || '24/7 आपातकालीन ', icon: '⏰' },
-                                { title: translations?.Qualified_Doctors || 'योग्य डॉक्टर', icon: '🩺' },
-                                { title: translations?.Modern_Labs || 'मॉडर्न_लैब्स', icon: '🔬' },
-                                { title: translations?.Patient_Centered_Care || 'रोगी केंद्रित देखभाल', icon: '❤️' }
+                                { title: translations?.Emergency || '24/7 आपातकालीन ', icon: Emergency },
+                                { title: translations?.Qualified_Doctors || 'योग्य डॉक्टर', icon: Qualified },
+                                { title: translations?.Modern_Labs || 'मॉडर्न_लैब्स', icon: Modernlabs },
+                                { title: translations?.Patient_Centered_Care || 'रोगी केंद्रित देखभाल', icon: PCC }
                             ].map((item, idx) => (
-                                <div key={idx} className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
-                                    <div className="text-4xl mb-2">{item.icon}</div>
-                                    <h4 className="text-xl font-semibold text-blue-700">{item.title}</h4>
+                                <div key={idx}  className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition flex flex-col items-center text-center">
+                                    <img src={item.icon} alt="" className='h-15'/>
+                                    <h4 className="text-xl font-semibold text-blue-700 mt-4">{item.title}</h4>
                                 </div>
                             ))}
                         </div>

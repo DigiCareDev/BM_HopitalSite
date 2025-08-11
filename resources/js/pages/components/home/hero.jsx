@@ -1,5 +1,5 @@
 import React from 'react';
-import AboutHeader from '@/assets/images/aboutHeader.jpg';
+import HomeBanner from "@/assets/About/About Us.svg";
 
 function Hero({ translations }) {
   return (
@@ -17,9 +17,9 @@ function Hero({ translations }) {
                         </div>
                         <div className="flex-1 mt-10">
                             <img
-                                src={AboutHeader}
+                                src={HomeBanner}
                                 alt="BM hopital about"
-                                className="rounded-3xl shadow-2xl w-full object-cover"
+                                className="rounded-3xl w-full object-cover"
                             />
                         </div>
                     </section>

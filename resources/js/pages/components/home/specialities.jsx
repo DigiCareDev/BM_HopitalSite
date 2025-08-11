@@ -138,7 +138,7 @@ function Specialities({ translations }) {
 
                 {/* Right Section */}
                 <div
-                    className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[350px] lg:w-[400px] rounded-xl relative overflow-hidden shadow-sm bg-no-repeat bg-cover bg-center"
+                    className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[350px] lg:w-[400px] rounded-xl relative overflow-hidden bg-no-repeat bg-cover bg-center"
                     style={{
                         backgroundImage: `url(${hoveredSpeciality?.backgroundImage || CardiologyBanner})`
                     }}

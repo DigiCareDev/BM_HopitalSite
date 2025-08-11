@@ -17,9 +17,9 @@ const useTranslations = (lang) => {
 
   useEffect(() => {
     setLoading(true);
-    // axios.get(`http://emarketplace.progatetechnology.com/api/translations/${lang}`)
+    axios.get(`http://emarketplace.progatetechnology.com/api/translations/${lang}`)
     // axios.get(`http://localhost:8000/api/translations/${lang}`)
-    axios.get(`${devURL}/api/translations/${lang}`)
+    // axios.get(`${devURL}/api/translations/${lang}`)
       .then(res => {
         // console.log('API Response:', res.data);
         if (res.data.error) {
@@ -43,7 +43,7 @@ const useTranslations = (lang) => {
 
 const TopNotificationBar = ({ onTranslations }) => {
   const [languageDropdown, setLanguageDropdown] = useState(false);
-  const [language, setLanguage] = useState(localStorage.getItem('selectedLanguage') || 'hi'); // Use a default like 'en' if not found
+  const [language, setLanguage] = useState(localStorage.getItem('selectedLanguage') || 'hi'); 
   const { translations, loading } = useTranslations(language);
 
 
