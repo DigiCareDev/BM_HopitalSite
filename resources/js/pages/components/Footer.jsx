@@ -120,15 +120,15 @@ const Footer = ({ translations }) => {
                                 <a href="mailto:info@bmswtrust.org" className="hover:text-[#82CAC7] font-semibold hover:underline hover:underline">info@bmswtrust.org</a>
                             </li>
                             <li className="flex items-center gap-2">
-                                <FaMapMarkerAlt className="text-[#82CAC7] text-4xl" />
+                                <FaMapMarkerAlt className="text-[#82CAC7] text-6xl" />
                                 <a href="#" className="hover:text-[#82CAC7] font-semibold hover:underline hover:underline">{translations?.Address || 'प्लाट गाटा संख्या 2322,2323,2324 मौजा, कोला गहबड़ी, परगना सतरिख, तहसील नवाबगंज, जिला-बाराबंकी में स्थित है। 225414'}</a>
                             </li>
                             <div>
                                 <h4 className="text-lg font-semibold mt-4 text-blue-800">{translations?.Head_office || 'प्रधान कार्यालय'}</h4>
                                 <ul>
                                     <li className="flex items-center gap-2">
-                                        <FaMapMarkerAlt className="text-[#82CAC7] text-xl" />
-                                        <a href="#" className="hover:text-[#82CAC7] text-sm hover:underline font-semibold text-blue-900">{translations?.main_Address || '07, खसरा नं. 426एसए, लौलाई, मल्हौर, लखनऊ - 226028'}</a>
+                                        <FaMapMarkerAlt className="text-[#82CAC7] text-4xl" />
+                                        <a href="#" className="hover:text-[#82CAC7] text-sm hover:underline font-semibold text-blue-900">{translations?.main_Address || '06 & 07, खसरा नं. 426एसए, लौलाई, मल्हौर, लखनऊ - 226028'}</a>
                                     </li>
                                 </ul>
                             </div>

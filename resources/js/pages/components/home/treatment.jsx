@@ -14,12 +14,19 @@ import ImmunizationsandVaccinations from '@/assets/Treatment/Immunizations and V
 import MinorInjuryCare from '@/assets/Treatment/Minor Injury Care (Cuts, Burns, Sprains).svg';
 import NutritionalCounseling from '@/assets/Treatment/Nutritional Counseling.svg';
 import PainManagement from '@/assets/Treatment/Pain Management (Headache, Body Pain, Migraine).svg';
+import More from '@/assets/images/More Treatments.svg';
 
-function treatment({translations}) {
-    //  console.log('translations', translations.allergy_treatment_title)
+function treatment({ translations }) {
+    //  console.log('translations-====', translations.allergy_treatment_title)
 
-     const treatments = [
-    
+    const treatments = [
+        {
+            id: 1,
+            label: translations?.allergy_treatment || 'एलर्जी उपचार',
+            link: '/treatment',
+            icon: AllergyTreatment,
+            desc: translations?.allergy_treatment_title || 'बीएम अस्पताल में एलर्जी से राहत के लिए विशेषज्ञ देखभाल—आज ही व्यक्तिगत उपचार के साथ बेहतर सांस लें।',
+        },
         {
             id: 2,
             label: translations?.anemia_treatment || 'एनीमिया उपचार',
@@ -53,14 +60,14 @@ function treatment({translations}) {
             label: translations?.dehydration_and_iv_fluids || 'डिहाइड्रेशन और IV तरल पदार्थ',
             link: '/treatment',
             icon: DehydrationandIVFluids,
-            desc: translations?.dehydration_and_iv_fluids_title ||  'बीएम अस्पताल संतुलन बहाल करने और शीघ्र स्वास्थ्य लाभ सुनिश्चित करने के लिए IV तरल पदार्थ के साथ त्वरित निर्जलीकरण देखभाल प्रदान करता है।',
+            desc: translations?.dehydration_and_iv_fluids_title || 'बीएम अस्पताल संतुलन बहाल करने और शीघ्र स्वास्थ्य लाभ सुनिश्चित करने के लिए IV तरल पदार्थ के साथ त्वरित निर्जलीकरण देखभाल प्रदान करता है।',
         },
         {
             id: 7,
             label: translations?.diabetes_treatment || 'मधुमेह (डायबिटीज) उपचार',
             link: '/treatment',
             icon: DiabetesManagement,
-            desc: translations?.diabetes_treatment_title ||'बीएम अस्पताल व्यक्तिगत उपचार योजनाओं और उन्नत निगरानी के साथ विशेषज्ञ मधुमेह देखभाल प्रदान करता है।',
+            desc: translations?.diabetes_treatment_title || 'बीएम अस्पताल व्यक्तिगत उपचार योजनाओं और उन्नत निगरानी के साथ विशेषज्ञ मधुमेह देखभाल प्रदान करता है।',
         },
         {
             id: 8,
@@ -68,13 +75,6 @@ function treatment({translations}) {
             link: '/treatment',
             icon: FeverManagement,
             desc: translations?.fever_treatment_title || 'बीएम अस्पताल विशेषज्ञ डॉक्टरों और 24/7 देखभाल के साथ सटीक बुखार निदान और प्रभावी उपचार प्रदान करता है।',
-        },
-         {
-            id: 10,
-            label: translations?.allergy_treatment || 'एलर्जी उपचार',
-            link: '/treatment',
-            icon: AllergyTreatment,
-            des: translations?.allergy_treatment_title ||  'बीएम अस्पताल में एलर्जी से राहत के लिए विशेषज्ञ देखभाल—आज ही व्यक्तिगत उपचार के साथ बेहतर सांस लें।',
         },
         {
             id: 11,
@@ -95,21 +95,21 @@ function treatment({translations}) {
             label: translations?.hypertension_high_blood_pressure_treatment || 'हाइपरटेंशन (उच्च रक्तचाप) उपचार',
             link: '/treatment',
             icon: Hypertension,
-            desc: translations?.hypertension_high_blood_pressure_treatment_title ||  'बीएम अस्पताल सटीक निदान और व्यक्तिगत उपचार के साथ उच्च रक्तचाप के लिए विशेषज्ञ देखभाल प्रदान करता है।',
+            desc: translations?.hypertension_high_blood_pressure_treatment_title || 'बीएम अस्पताल सटीक निदान और व्यक्तिगत उपचार के साथ उच्च रक्तचाप के लिए विशेषज्ञ देखभाल प्रदान करता है।',
         },
         {
             id: 14,
             label: translations?.immunizations_and_vaccinations || 'टीकाकरण और वैक्सीनेशन',
             link: '/treatment',
             icon: ImmunizationsandVaccinations,
-            desc: translations?.immunizations_and_vaccinations_title ||  'बीएम अस्पताल आपके स्वास्थ्य की रक्षा के लिए सभी उम्र के लोगों के लिए आवश्यक टीकाकरण और टीकाकरण प्रदान करता है।',
+            desc: translations?.immunizations_and_vaccinations_title || 'बीएम अस्पताल आपके स्वास्थ्य की रक्षा के लिए सभी उम्र के लोगों के लिए आवश्यक टीकाकरण और टीकाकरण प्रदान करता है।',
         },
         {
             id: 15,
             label: translations?.minor_injury_care || 'मामूली चोटों की देखभाल (काटने, जलने, मोच आने पर)',
             link: '/treatment',
             icon: MinorInjuryCare,
-            desc: translations?.minor_injury_care_title ||  'बीएम अस्पताल कटने, जलने और मोच जैसी छोटी चोटों के लिए विशेषज्ञ ध्यान के साथ त्वरित देखभाल प्रदान करता है।',
+            desc: translations?.minor_injury_care_title || 'बीएम अस्पताल कटने, जलने और मोच जैसी छोटी चोटों के लिए विशेषज्ञ ध्यान के साथ त्वरित देखभाल प्रदान करता है।',
 
         },
         {
@@ -124,16 +124,16 @@ function treatment({translations}) {
             label: translations?.pain_management || 'दर्द उपचार',
             icon: PainManagement,
             link: '/treatment',
-            desc: translations?.pain_management_title ||'बीएम अस्पताल सिरदर्द, शरीर दर्द और माइग्रेन के लिए स्थायी राहत के साथ विशेषज्ञ दर्द उपचार प्रदान करता है।',
+            desc: translations?.pain_management_title || 'बीएम अस्पताल सिरदर्द, शरीर दर्द और माइग्रेन के लिए स्थायी राहत के साथ विशेषज्ञ दर्द उपचार प्रदान करता है।',
         },
         {
             id: 18,
             label: "More Treatment →",
             link: '/treatment',
-            icon: "https://static.vecteezy.com/system/resources/previews/020/291/170/non_2x/see-more-icon-see-more-typography-logo-vector.jpg",
+            icon: More,
             desc: translations?.more_treatment_title || 'अधिक उपचारों के बारे में पढ़ें →',
         },
-        
+
     ];
 
     return (

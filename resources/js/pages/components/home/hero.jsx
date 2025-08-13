@@ -1,5 +1,5 @@
 import React from 'react';
-import HomeBanner from "@/assets/About/About Us.svg";
+import HomeBanner from "@/assets/images/Trusted Healthcare.svg";
 
 function Hero({ translations }) {
   return (

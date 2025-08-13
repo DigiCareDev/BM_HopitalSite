@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+    import React, { useEffect, useState } from 'react';
 import Navbar from '../components/home/navbar'
 import Footer from '../components/Footer';
 import HeaderHero from '../components/HeaderHero';
@@ -47,7 +47,7 @@ export default function Ent() {
                 image: {
                     src: WhyChooseUs,
                     alt: "ENT",
-                    classes: "rounded-xl shadow"
+                    classes: "rounded-xl "
                 },
                 content: {
                     title: translations?.ENT_whyChoose_content_title || "बीएम अस्पताल का ईएनटी विभाग क्यों चुनें?",
@@ -75,17 +75,17 @@ export default function Ent() {
                 image: {
                     src: Condition,
                     alt: "ENT",
-                    classes: "rounded-xl shadow"
+                    classes: "rounded-xl "
                 },
                 content: {
                     title: translations?.ENT_conditions_title || "बीएम अस्पताल में प्रमुख ईएनटी सेवाएं",
                     titleClasses: "text-2xl font-semibold text-blue-800 mb-4",
                     points: [
                         translations?.ENT_content_points_one || "कान विकारों का निदान और उपचार",
-                        translations?.ENT_content_points_one || "नाक और साइनस की स्थितियों के लिए चिकित्सा और शल्य चिकित्सा देखभाल",
-                        translations?.ENT_content_points_one || "Voice, speech, and throat treatments",
-                        translations?.ENT_content_points_one || "संक्रमण, ट्यूमर और थायरॉइड समस्याओं का प्रबंधन",
-                        translations?.ENT_content_points_one || "उन्नत तकनीकों का उपयोग करके विशेषज्ञ ईएनटी सर्जरी"
+                        translations?.ENT_content_points_two || "नाक और साइनस की स्थितियों के लिए चिकित्सा और शल्य चिकित्सा देखभाल",
+                        translations?.ENT_content_points_three || "Voice, speech, and throat treatments",
+                        translations?.ENT_content_points_four || "संक्रमण, ट्यूमर और थायरॉइड समस्याओं का प्रबंधन",
+                        translations?.ENT_content_points_five || "उन्नत तकनीकों का उपयोग करके विशेषज्ञ ईएनटी सर्जरी"
                     ],
                     listClasses: "text-gray-700 space-y-3 list-disc list-inside"
                 },

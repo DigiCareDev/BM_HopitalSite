@@ -18,7 +18,9 @@ import CTPA from "@/assets/services/Insurance and TPA/Choose BM Hospital’s Ins
 
 export default function Tpa() {
        const [translations, setTranslations] = useState({});
-   
+
+
+
        const handletranslate = (data) => {
            setTranslations(data);
        }

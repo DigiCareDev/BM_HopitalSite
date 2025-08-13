@@ -128,7 +128,7 @@ export default function Blog() {
                                             href={post.redirect}
                                             className="inline-block text-sm text-blue-600 hover:underline font-medium"
                                         >
-                                            {translations?.read_more || 'अधिक पढ़ें'} 
+                                            {translations?.view_all || 'अधिक पढ़ें'} 
                                         </a>
                                     </div>
                                 </div>

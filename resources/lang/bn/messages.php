@@ -112,7 +112,7 @@ return [
       'Follow_us' => 'আমাদের অনুসরণ করুন',
       'Requset_call' =>'কল ',
       'Languages' => 'বাংলা',
-      'main_Address'=>'০৭, খসড়া নং ৪২৬এসএ, লৌলাই, মালহৌর, লখনউ - ২২৬০২৮',
+      'main_Address'=>'06 & 07, খসড়া নং ৪২৬এসএ, লৌলাই, মালহৌর, লখনউ - ২২৬০২৮',
       'Add'=> 'ঠিকানা',
       'Emergency_Number' => 'জরুরি নম্বর',
       'Email'=> 'ইমেইল',
@@ -174,59 +174,58 @@ return [
         'dermatology' => 'ত্বকবিদ্যা',
         'orthopedics' => 'অর্থোপেডিকস ',
         'view_all' => 'সব দেখুন ',
-    //===========================
         'treatment' => 'চিকিৎসা',
         'all_treatments' => 'সমস্ত চিকিৎসা',
         'our_all_treatments' => 'আমাদের সমস্ত চিকিৎসা পরিষেবা',
         'comprehensive_health' => 'BM Hospital-এ সর্বাঙ্গীন স্বাস্থ্য সমাধান: দৈনন্দিন অসুস্থতার জন্য অভিজ্ঞ যত্ন',
         'treatment2' => 'BM Hospital দৈনন্দিন স্বাস্থ্য সমস্যা মোকাবিলার জন্য বিস্তৃত চিকিৎসা পরিষেবা প্রদান করে। অ্যালার্জি ও অ্যানিমিয়া চিকিৎসা থেকে শুরু করে হাঁপানি ও ব্রঙ্কাইটিস নিয়ন্ত্রণে আমাদের বিশেষজ্ঞ চিকিৎসকরা দক্ষতার সঙ্গে চিকিৎসা প্রদান করেন। ঠান্ডা, কাশি, জ্বর ও ব্যথার জন্য আমরা দ্রুত উপশম নিশ্চিত করি এবং কোলেস্টেরল, ডায়াবেটিস ও হাইপারটেনশন নিয়ন্ত্রণেও কার্যকর চিকিৎসা প্রদান করি। আমাদের পরিষেবায় রয়েছে ডিহাইড্রেশন ও IV ফ্লুইড থেরাপি, পরিপাকতন্ত্রের চিকিৎসা এবং প্রতিরোধমূলক স্বাস্থ্য পরীক্ষার জন্য সাধারণ স্বাস্থ্য পরীক্ষা। ছোটখাটো আঘাতের যত্ন, টিকাদান এবং পুষ্টি পরামর্শের মাধ্যমে আমরা দীর্ঘমেয়াদী স্বাস্থ্যকে উৎসাহ দিই। ',
         'read_about_more_treatments' => 'আরও চিকিৎসা সম্পর্কে পড়ুন →',
-       //===========treatments============
-        'allergy_treatment' => 'লার্জি চিকিৎসা',
-        'allergy_treatment_title' => 'Expert care for allergy relief at BM Hospital—breathe easier with personalized treatment today.',
-    //===================================
-        'anemia_treatment' => 'অ্যানিমিয়া চিকিৎসা',
-        'anemia_treatment_title' => 'BM Hospital offers expert anemia treatment to restore energy, improve health, and prevent complications.',  
-    //===================================
-    'asthma_and_bronchitis_treatment' => 'হাঁপানি ও ব্রঙ্কাইটিস চিকিৎসা',
-    'asthma_and_bronchitis_treatment_title' => 'BM Hospital provides expert care for asthma and bronchitis with advanced treatment and personalized support.',
-    //===================================
-    'cold_cough_fever_and_pain_relief' => ' ঠান্ডা, কাশি ও ফ্লু চিকিৎসা',
-    'cold_cough_fever_and_pain_relief_title' => 'BM Hospital offers effective Cold, Cough, and Flu treatment with expert care and 24/7 medical support.',
-    //===================================
-    'cholesterol_diabetes_and_hypertension_care' => ' কোলেস্টেরল ও লিপিড ডিজঅর্ডার চিকিৎসা',
-     'cholesterol_diabetes_and_hypertension_care_title' => 'BM Hospital provides expert care for cholesterol and lipid disorders with advanced treatment and diagnosis. ',
-    //===================================
-    'dehydration_and_iv_fluids' => 'ডিহাইড্রেশন ও IV ফ্লুইডস',
-    'dehydration_and_iv_fluids_title' => 'BM Hospital offers prompt dehydration care with IV fluids to restore balance and ensure quick recovery. ',
-    //===================================
-    'diabetes_treatment' => 'ডায়াবেটিস চিকিৎসা',
-     'diabetes_treatment_title' => 'BM Hospital provides expert diabetes care with personalized treatment plans and advanced monitoring.',
-    //===================================
-    'fever_treatment' => ' জ্বরের চিকিৎসা',
-    'fever_treatment_title' => 'BM Hospital offers accurate fever diagnosis and effective treatment with expert doctors and 24/7 care.',
-    //===================================
-    'gastrointestinal_treatment' => 'গ্যাস্ট্রোইনটেস্টাইনাল চিকিৎসা',
-    'gastrointestinal_treatment_title' => 'BM Hospital provides expert care for acidity, constipation, diarrhea with advanced gastrointestinal treatment.',
-    //===================================
-    'general_health_checkups' => 'সাধারণ স্বাস্থ্য পরীক্ষা,',
-    'general_health_checkups_title' => 'BM Hospital offers comprehensive general health check-ups for early detection and preventive care.',
-    //===================================
-    'hypertension_high_blood_pressure_treatment' => 'উচ্চ রক্তচাপ (উচ্চ রক্তচাপ) চিকিৎসা,',
-     'hypertension_high_blood_pressure_treatment_title' => 'BM Hospital provides expert care for hypertension with accurate diagnosis and personalized treatment.',
-    //===================================
-    'immunizations_and_vaccinations' => 'টিকাদান ও টিকাদান',
-     'immunizations_and_vaccinations_title' => 'BM Hospital offers essential immunizations and vaccinations for all ages to protect your health.',
-    //===================================
-    'nutritional_counseling' => 'পুষ্টি পরামর্শ,',
-     'nutritional_counseling_title' => 'BM Hospital offers expert nutritional counseling to support healthy eating, wellness, and disease prevention.',
-    //===================================
-    'pain_management' => 'ব্যথা ব্যবস্থাপনা চিকিৎসা,',
-    'pain_management_title' => 'BM Hospital provides expert pain treatment for headaches, body pain, and migraines with lasting relief.',
-    //===================================
-    'minor_injury_care' => 'ছোটখাটো আঘাতের চিকিৎসা (কাটা, পোড়া, মচকে যাওয়া)',
-     'minor_injury_care_title' => 'BM Hospital provides prompt care for minor injuries like cuts, burns, and sprains with expert attention.',
-    //===================================
+ //===========treatments============
+'allergy_treatment' => 'অ্যালার্জি চিকিৎসা',
+'allergy_treatment_title' => 'BM হাসপাতাল-এ অ্যালার্জি রিলিফের জন্য বিশেষজ্ঞ যত্ন—আজই ব্যক্তিগতকৃত চিকিৎসা নিয়ে সহজ শ্বাস নিন।',
+//===================================
+'anemia_treatment' => 'অ্যানিমিয়া চিকিৎসা',
+'anemia_treatment_title' => 'BM হাসপাতাল বিশেষজ্ঞ অ্যানিমিয়া চিকিৎসা প্রদান করে শক্তি পুনঃস্থাপন, স্বাস্থ্যের উন্নতি এবং জটিলতা প্রতিরোধে।',
+//===================================
+'asthma_and_bronchitis_treatment' => 'হাঁপানি ও ব্রঙ্কাইটিস চিকিৎসা',
+'asthma_and_bronchitis_treatment_title' => 'BM হাসপাতাল হাঁপানি ও ব্রঙ্কাইটিসের জন্য উন্নত চিকিৎসা এবং ব্যক্তিগত সহায়তার মাধ্যমে বিশেষজ্ঞ যত্ন প্রদান করে।',
+//===================================
+'cold_cough_fever_and_pain_relief' => 'ঠান্ডা, কাশি ও জ্বর চিকিৎসা',
+'cold_cough_fever_and_pain_relief_title' => 'BM হাসপাতাল ঠান্ডা, কাশি এবং জ্বরের জন্য কার্যকর চিকিৎসা প্রদান করে বিশেষজ্ঞ যত্ন এবং ২৪/৭ মেডিকেল সাপোর্ট সহ।',
+//===================================
+'cholesterol_diabetes_and_hypertension_care' => 'কোলেস্টেরল, ডায়াবেটিস ও উচ্চ রক্তচাপ চিকিৎসা',
+'cholesterol_diabetes_and_hypertension_care_title' => 'BM হাসপাতাল কোলেস্টেরল এবং লিপিড সমস্যার জন্য উন্নত চিকিৎসা ও নির্ণয় প্রদান করে।',
+//===================================
+'dehydration_and_iv_fluids' => 'ডিহাইড্রেশন ও IV ফ্লুইডস',
+'dehydration_and_iv_fluids_title' => 'BM হাসপাতাল ডিহাইড্রেশনের জন্য দ্রুত যত্ন এবং IV ফ্লুইডের মাধ্যমে দ্রুত পুনরুদ্ধার নিশ্চিত করে।',
+//===================================
+'diabetes_treatment' => 'ডায়াবেটিস চিকিৎসা',
+'diabetes_treatment_title' => 'BM হাসপাতাল ব্যক্তিগতকৃত চিকিৎসা পরিকল্পনা এবং উন্নত পর্যবেক্ষণের মাধ্যমে বিশেষজ্ঞ ডায়াবেটিস যত্ন প্রদান করে।',
+//===================================
+'fever_treatment' => 'জ্বরের চিকিৎসা',
+'fever_treatment_title' => 'BM হাসপাতাল সঠিক জ্বর নির্ণয় এবং কার্যকর চিকিৎসা প্রদান করে বিশেষজ্ঞ ডাক্তার এবং ২৪/৭ যত্ন সহ।',
+//===================================
+'gastrointestinal_treatment' => 'পাচনতন্ত্রের চিকিৎসা',
+'gastrointestinal_treatment_title' => 'BM হাসপাতাল অ্যাসিডিটি, কোষ্ঠকাঠিন্য, ডায়রিয়ার জন্য উন্নত পাচনতন্ত্র চিকিৎসা প্রদান করে।',
+//===================================
+'general_health_checkups' => 'সাধারণ স্বাস্থ্য পরীক্ষা',
+'general_health_checkups_title' => 'BM হাসপাতাল প্রাথমিক সনাক্তকরণ এবং প্রতিরোধমূলক যত্নের জন্য বিস্তৃত সাধারণ স্বাস্থ্য পরীক্ষা প্রদান করে।',
+//===================================
+'hypertension_high_blood_pressure_treatment' => 'উচ্চ রক্তচাপ চিকিৎসা',
+'hypertension_high_blood_pressure_treatment_title' => 'BM হাসপাতাল সঠিক নির্ণয় এবং ব্যক্তিগত চিকিৎসার মাধ্যমে উচ্চ রক্তচাপের জন্য বিশেষজ্ঞ যত্ন প্রদান করে।',
+//===================================
+'immunizations_and_vaccinations' => 'টিকাদান ও ভ্যাকসিনেশন',
+'immunizations_and_vaccinations_title' => 'BM হাসপাতাল সব বয়সের জন্য গুরুত্বপূর্ণ টিকা প্রদান করে স্বাস্থ্য রক্ষা নিশ্চিত করতে।',
+//===================================
+'nutritional_counseling' => 'পুষ্টি পরামর্শ',
+'nutritional_counseling_title' => 'BM হাসপাতাল স্বাস্থ্যকর খাদ্যাভ্যাস, সুস্থতা এবং রোগ প্রতিরোধের জন্য বিশেষজ্ঞ পুষ্টি পরামর্শ প্রদান করে।',
+//===================================
+'pain_management' => 'ব্যথা ব্যবস্থাপনা',
+'pain_management_title' => 'BM হাসপাতাল মাথা ব্যথা, শরীরের ব্যথা ও মাইগ্রেনের জন্য দীর্ঘস্থায়ী উপশম সহ বিশেষজ্ঞ ব্যথা চিকিৎসা প্রদান করে।',
+//===================================
+'minor_injury_care' => 'ছোট আঘাতের যত্ন (কাটা, পোড়া, মচকে যাওয়া)',
+'minor_injury_care_title' => 'BM হাসপাতাল কাটা, পোড়া এবং মচকে যাওয়ার মতো ছোট আঘাতের জন্য দ্রুত এবং বিশেষজ্ঞ যত্ন প্রদান করে।',
+//===================================
     'more_treatment' => 'আরও চিকিৎসা।',
     'more_treatment_title' => 'আরও চিকিৎসা সম্পর্কে পড়ুন →',
     //==========================model ====================
@@ -1006,10 +1005,10 @@ return [
 'pp_lol_title' => "৮. দায় সীমাবদ্ধতা",
 'pp_lol_heading' => "বিএম হাসপাতাল, এর কর্মী এবং সংশ্লিষ্টরা সরাসরি, পরোক্ষ, আকস্মিক বা পরোক্ষ ক্ষতির জন্য দায়ী থাকবে না, যতক্ষণ না প্রমাণিত অবহেলা বা দুষ্টাচার ঘটে।",
 
-'pp_mtt_title' => "৯. শর্তাবলীতে পরিবর্তন",
+'pp_mtt_title' => "শর্তাবলীতে পরিবর্তন",
 'pp_mtt_heading' => "এই শর্তাবলী পূর্বে জানানো ছাড়াই পরিবর্তিত হতে পারে। সেবা ব্যবহার অব্যাহত রাখলে পরিবর্তনগুলি মেনে নেওয়া হিসেবে গণ্য হবে।",
 
-'pp_contact_title' => "১০. যোগাযোগ",
+'pp_contact_title' => "যোগাযোগ",
 'pp_contact_heading' => "যেকোনো প্রশ্ন বা উদ্বেগের জন্য:",
 'pp_constent_name' => "বিএম হাসপাতাল",
 'pp_constent_place' => "বারাবংকি, উত্তরপ্রদেশ",
@@ -1152,6 +1151,7 @@ return [
 'bloodback_services_desc06' => "সকল রক্ত ইউনিটের জন্য কঠোর স্ক্রিনিং, স্বাস্থ্যবিধি এবং সংরক্ষণ প্রোটোকল।",
 
 'bloodbank_services_cta_label' => "এখনই রক্তদান করুন",
+
 'Request_Now'=> "এখনই আবেদন করুন",
 
 'bloodbank_servicess_title' => "রক্ত ব্যাংক ও রক্তদান সেবা",
@@ -1205,8 +1205,6 @@ return [
 'icu_services_title06' => "মাল্টি-অর্গান সাপোর্ট সিস্টেম",
 'icu_services_desc06' => "মাল্টিপল অর্গান ডিসফাংশন রোগীদের জন্য ডায়ালাইসিস, কার্ডিয়াক মনিটরিং, এবং ভেন্টিলেটর সাপোর্ট।",
 
-'Request_Now'=> "অনুরোধ করুন",
-
 'icu_servicess_title' => "ইন্টেনসিভ কেয়ার ইউনিট (ICU) সেবা",
 'icu_servicess_description' => "ইন্টেনসিভ কেয়ার ইউনিট (ICU) – প্রতিটি অপারেশনের পর নিরবচ্ছিন্ন সেবা",
 
@@ -1258,8 +1256,6 @@ return [
 'tpa_services_title06' => "ছাড়পত্র সহায়তা",
 'tpa_services_desc06' => "সুস্থ হয়ে ওঠার পর দাবীর নির্বিঘ্ন নিষ্পত্তি এবং পরিচালিত ছাড়পত্র প্রক্রিয়া।",
 
-'Request_Now'=> "এখনই অনুরোধ করুন",
-
 'tpa_servicess_title' => "বীমা ও TPA সেবা",
 'tpa_servicess_description' => "বীমা ও TPA সেবা – সহজ, কার্যকর এবং সর্বদা উপলব্ধ বিএম হাসপাতালে",
 
@@ -1309,8 +1305,6 @@ return [
 
 'mot_services_title06' => "জরুরি ট্রমা ও ক্রিটিক্যাল কেয়ার সার্জারি",
 'mot_services_desc06' => "দুর্ঘটনা, অভ্যন্তরীণ আঘাত এবং প্রাণঘাতী জরুরি অবস্থায় দ্রুত শল্যচিকিৎসা প্রতিক্রিয়া – প্রতি সেকেন্ডেই গুরুত্ব রাখে।",
-
-'Request_Now'=> "এখনই অনুরোধ করুন",
 
 'mot_servicess_title' => "মডুলার অপারেশন থিয়েটার",
 'mot_servicess_description' => "বিএম হাসপাতাল অত্যাধুনিক মডুলার অপারেশন থিয়েটার সেবা প্রদান করে যা নির্ভুলতা, সুরক্ষা এবং দ্রুত পুনরুদ্ধারের জন্য ডিজাইন করা হয়েছে। আমাদের MOT গুলো ল্যামিনার এয়ারফ্লো, HEPA ফিল্টার এবং নিয়ন্ত্রিত পরিবেশে সজ্জিত যা সংক্রমণমুক্ত শল্যচিকিৎসা নিশ্চিত করে।",
@@ -1364,8 +1358,6 @@ return [
 'pharmacy_services_title06' => "সাশ্রয়ী মূল্য নির্ধারণ",
 'pharmacy_services_desc06' => "স্বচ্ছ ও যুক্তিসঙ্গত মূল্য যাতে কেউ আর্থিক বোঝা অনুভব না করে।",
 
-'Request_Now'=> "এখনই অনুরোধ করুন",
-
 'pharmacy_servicess_title' => "ফার্মেসি সেবা",
 'pharmacy_servicess_description' => "ফার্মেসি সেবা – বিএম হাসপাতালে বিশ্বাসযোগ্য ঔষধ সহায়তা, ২৪x৭",
 
@@ -1416,8 +1408,6 @@ return [
 
 'picu_services_title06' => "জরুরি প্রতিক্রিয়া দল",
 'picu_services_desc06' => "ট্রমা, মৃদু আকস্মিক সমস্যা, শ্বাসকষ্ট বা যেকোনো প্রাণঘাতী শিশু চিকিৎসা অবস্থায় দ্রুত পদক্ষেপ।",
-
-'Request_Now'=> "এখনই অনুরোধ করুন",
 
 'picu_servicess_title' => "শিশু নিবিড় পরিচর্যা বিভাগ (PICU) সেবা",
 'picu_servicess_description' => "শিশু নিবিড় পরিচর্যা বিভাগ (PICU) সেবা – পরিবারসদৃশ যত্ন প্রদানকারী গুরুতর পরিচর্যা",
@@ -1471,8 +1461,6 @@ return [
 'Patientcare_services_title06' => "পরিবার-কেন্দ্রিক যত্ন",
 'Patientcare_services_desc06' => "স্পষ্ট যোগাযোগ, সিদ্ধান্ত গ্রহণে অংশগ্রহণ, এবং সাক্ষাতের নমনীয়তা যাতে পরিবার অবগত ও সম্পৃক্ত থাকে।",
 
-'Request_Now'=> "এখনই অনুরোধ করুন",
-
 'Patientcare_servicess_title' => "রোগী যত্ন সেবা",
 'Patientcare_servicess_description' => "রোগী যত্ন সেবা – প্রতিটি ধাপে আরাম, সহানুভূতি ও চিকিৎসাগত উৎকর্ষতা",
 
@@ -1525,8 +1513,6 @@ return [
 'pathlogy_services_title06' => "হোম স্যাম্পল কালেকশন",
 'pathlogy_services_desc06' => "যারা হাসপাতাল আসতে পারেন না তাদের জন্য সুবিধাজনক দরজায় সেবা।",
 
-'Request_Now'=> "এখনই অনুরোধ করুন",
-
 'pathlogy_servicess_title' => "প্যাথলজি সেবা",
 'pathlogy_servicess_description' => "প্যাথলজি সেবা – নির্ভুল নির্ণয় যা উন্নত চিকিৎসার শক্তি",
 
@@ -1577,8 +1563,6 @@ return [
 
 'nicu_services_title06' => "পরিবার-কেন্দ্রিক সহায়তা",
 'nicu_services_desc06' => "পিতামাতার জন্য আবেগগত, শিক্ষামূলক এবং দর্শনার্থী সহায়তা যাতে তারা নবজাতকের আরোগ্যে সম্পৃক্ত থাকতে পারেন।",
-
-'Request_Now'=> "এখনই অনুরোধ করুন",
 
 'nicu_servicess_title' => "নবজাতক নিবিড় পরিচর্যা ইউনিট (NICU) সেবা",
 'nicu_servicess_description' => "নবজাতক নিবিড় পরিচর্যা ইউনিট (NICU) সেবা – আপনার নবজাতকের প্রথম গুরুত্বপূর্ণ মুহূর্তের জন্য বিশেষজ্ঞ যত্ন",

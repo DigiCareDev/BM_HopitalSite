@@ -27,6 +27,7 @@ export default function Career() {
 
     useEffect(() => {
         const response = async () => {
+               // await fetch('http://emarketplace.progatetechnology.com/api/jobs')
             // await fetch('http://localhost:8000/api/jobs')
             await fetch(`${devURL}/api/jobs`)
                 .then(res => res.json())

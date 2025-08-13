@@ -40,7 +40,7 @@ return [
     'transfer'=> 'You can donate via bank transfer, online payment portals, or by contacting our donation support team. Reach out to us for more details.',
     'Donation_Info' => 'Get Donation Info',
     //==================navbar=======================
-       'Departments' =>'Departments',
+    'Departments' =>'Departments',
     'Cardiology'=> 'Cardiology',
     'emergency_medicine'=> 'Emergency Medicine',
     'ENT'=> 'Ear, Nose, and Throat(ENT)',
@@ -52,8 +52,7 @@ return [
     'Orthopedics'=>'Orthopedics',
     'picu'=> 'Pediatric Intensive Care Unit (PICU)',
     'Respiratory'=> 'Respiratory',
-
-
+    //================================
     'Treatment'=> 'Treatment',
      'Allergy_Treatment'=> 'Allergy Treatment',
      'Anemia_Treatment'=> 'Anemia Treatment',
@@ -74,7 +73,7 @@ return [
       'Skin_Conditions'=> 'Skin Conditions (Rashes, Eczema, Acne)',
       'Thyroid_Disorder_Treatment'=> 'Thyroid Disorder Treatment',
       'Urinary_Tract_Infection_Treatment'=> 'Urinary Tract Infection',
-
+    //=============================
       'Services'=> 'Services',
       'Ambulance'=> 'Ambulance',
       'Blood_Bank'=> 'Blood Bank',
@@ -82,13 +81,11 @@ return [
       'tpa'=> ' Insurance and TPA',
       'mot'=> 'Modular Operation Theatre',
       'NICU'=> ' Neonatal Intensive Care Unit (NICU)',
-      'Pathlogy'=> 'Pathlogy',
+      'Pathlogy'=> 'Pathology',
       'Patient_Care'=> 'Patient Care 24/7',
       'Pharmacy'=> 'Pharmacy',
       'PICU'=> 'Pediatric Intensive Care Unit (PICU)',
-
-
-      
+//====================================
       'BM_Media'=> 'BM Media',
       'Blog'=> 'Blog',
       'News_and_Events'=> 'News and Events',
@@ -103,19 +100,19 @@ return [
       'Our_Departments'=> 'Our Departments',
       'Other_Treatments'=>'Other Treatments',
       'Our_Treatments'=> 'Our Treatments',
-      'Address' => 'Plot Gata No. 2322,2323,2324 Situated at Mauja, Kola Gahbadi, Pargana Satrikh, Tehsil Nawabganj, Dist - Barabanki. 225414',
+      'Address' => 'Plot Gata No. 2322,2323,2324 Kola Gahbadi, Near Bangla Bazar, Zaidpur Road, Dist - Barabanki. Pincode – 225414',
       'Head_office'=> 'Head office',
       'Follow_us' => 'Follow us',
       'Requset_call' =>'Requset call',
        'Languages' => 'Languages',
-       'main_Address'=>'07, Khasra No. 426SA, Laulai, Malhaur, Lucknow - 226028',
+       'main_Address'=>'Plot no. 06 & 07, Khasra No. 426SA, Laulai, Malhaur, Lucknow - 226028',
         'Add'=> 'Address',
         'Emergency_Number' => 'Emergency Number',
         'Email'=> 'Email',
-         'About_title'=> 'Our Hospital stands out for advanced infrastructure, a team of dedicated specialists, and state-of-the-art equipment. We’re dedicated to providing personalized care in a comfortable environment.',
+        'About_title'=> 'Our Hospital stands out for advanced infrastructure, a team of dedicated specialists, and state-of-the-art equipment. We’re dedicated to providing personalized care in a comfortable environment.',
         'Send_Inquiry' => 'Send Inquiry',
         'Get_In_Touch' => "Get In Touch",
-           'Name' => 'Name',
+        'Name' => 'Name',
         'Phone_Number' => 'Phone Number',
         'Email' => 'Email',
         'Subject' => 'Subject',
@@ -135,7 +132,7 @@ return [
         'Patient_Centered_Care' => 'Patient Centered Care',
         //===========carrer============
         'Current_Openings'=> 'Current Openings',
-        'Apply_Now' => 'Apply_Now',
+        'Apply_Now' => 'Apply Now',
         'Chief_Medical_Officer' => 'Chief Medical Officer',
         'Barabanki' => 'Barabanki (U. P.)',
         'Full_time' => 'Full time',
@@ -159,7 +156,6 @@ return [
     'gynecology' => 'Gynecology',
     'general_surgery' => 'General Surgery',
     'respiratory' => 'Respiratory Medicine',
-
     'dermatology' => 'Dermatology',
     'orthopedics' => 'Orthopedics',
     'gynecology' => 'Gynecology',
@@ -167,58 +163,57 @@ return [
     //===========================
     'treatment' => 'Treatment',
     'all_treatments' => 'All Treatments',
-    'view_all' => 'View All',
     'our_all_treatments' => 'OUR ALL TREATMENTS',
     'comprehensive_health' => 'Comprehensive Health Solutions at BM Hospital: Expert Care for Everyday Ailments ',
     'treatment2' => 'BM Hospital offers a comprehensive range of treatments tailored to everyday health concerns. From Allergy Treatment and Anemia Treatment to managing Asthma and Bronchitis, our specialists provide expert care. We ensure fast relief for Cold, Cough, Fever, and Pain, while also offering effective care for Cholesterol, Diabetes, and Hypertension. Our services include Dehydration and IV Fluids, Gastrointestinal Treatment, and General Health Check-ups for preventive wellness. With Minor Injury Care, Immunizations, and Nutritional Counseling, we promote long-term health. At BM Hospital, every treatment is delivered with compassion, advanced technology, and a patient-first approach to keep you and your family healthy.',
     'read_about_more_treatments' => 'Read about more treatments →',
        //===========treatments============
-    'allergy_treatment' => 'allergy treatment',
+    'allergy_treatment' => 'Allergy treatment',
     'allergy_treatment_title' => 'Expert care for allergy relief at BM Hospital—breathe easier with personalized treatment today.',
     //===================================
-    'anemia_treatment' => 'anemia treatment',
+    'anemia_treatment' => 'Anemia treatment',
     'anemia_treatment_title' => 'BM Hospital offers expert anemia treatment to restore energy, improve health, and prevent complications.',  
     //===================================
-    'asthma_and_bronchitis_treatment' => 'asthma and bronchitis treatment',
+    'asthma_and_bronchitis_treatment' => 'Asthma and bronchitis treatment',
     'asthma_and_bronchitis_treatment_title' => 'BM Hospital provides expert care for asthma and bronchitis with advanced treatment and personalized support.',
     //===================================
-    'cold_cough_fever_and_pain_relief' => 'cold cough fever and pain relief',
+    'cold_cough_fever_and_pain_relief' => 'Cold, cough, fever, and pain relief',
     'cold_cough_fever_and_pain_relief_title' => 'BM Hospital offers effective Cold, Cough, and Flu treatment with expert care and 24/7 medical support.',
     //===================================
-    'cholesterol_diabetes_and_hypertension_care' => 'cholesterol diabetes and hypertension care',
+    'cholesterol_diabetes_and_hypertension_care' => 'Cholesterol, diabetes, and hypertension care',
      'cholesterol_diabetes_and_hypertension_care_title' => 'BM Hospital provides expert care for cholesterol and lipid disorders with advanced treatment and diagnosis. ',
     //===================================
-    'dehydration_and_iv_fluids' => 'dehydration and iv fluids',
+    'dehydration_and_iv_fluids' => 'Dehydration and IV fluids',
     'dehydration_and_iv_fluids_title' => 'BM Hospital offers prompt dehydration care with IV fluids to restore balance and ensure quick recovery. ',
     //===================================
-    'diabetes_treatment' => 'diabetes treatment',
+    'diabetes_treatment' => 'Diabetes treatment',
      'diabetes_treatment_title' => 'BM Hospital provides expert diabetes care with personalized treatment plans and advanced monitoring.',
     //===================================
-    'fever_treatment' => 'fever treatment',
+    'fever_treatment' => 'Fever treatment',
     'fever_treatment_title' => 'BM Hospital offers accurate fever diagnosis and effective treatment with expert doctors and 24/7 care.',
     //===================================
-    'gastrointestinal_treatment' => 'gastrointestinal treatment',
+    'gastrointestinal_treatment' => 'Gastrointestinal treatment',
     'gastrointestinal_treatment_title' => 'BM Hospital provides expert care for acidity, constipation, diarrhea with advanced gastrointestinal treatment.',
     //===================================
-    'general_health_checkups' => 'general health checkups',
+    'general_health_checkups' => 'General health checkups',
     'general_health_checkups_title' => 'BM Hospital offers comprehensive general health check-ups for early detection and preventive care.',
     //===================================
-    'hypertension_high_blood_pressure_treatment' => 'hypertension high blood pressure treatment',
+    'hypertension_high_blood_pressure_treatment' => 'Hypertension high blood pressure treatment',
      'hypertension_high_blood_pressure_treatment_title' => 'BM Hospital provides expert care for hypertension with accurate diagnosis and personalized treatment.',
     //===================================
-    'immunizations_and_vaccinations' => 'immunizations and vaccinations',
+    'immunizations_and_vaccinations' => 'Immunizations and vaccinations',
      'immunizations_and_vaccinations_title' => 'BM Hospital offers essential immunizations and vaccinations for all ages to protect your health.',
     //===================================
-    'nutritional_counseling' => 'nutritional counseling',
+    'nutritional_counseling' => 'Nutritional counseling',
      'nutritional_counseling_title' => 'BM Hospital offers expert nutritional counseling to support healthy eating, wellness, and disease prevention.',
     //===================================
-    'pain_management' => 'pain management',
+    'pain_management' => 'Pain management',
     'pain_management_title' => 'BM Hospital provides expert pain treatment for headaches, body pain, and migraines with lasting relief.',
     //===================================
-    'minor_injury_care' => 'minor injury care',
+    'minor_injury_care' => 'Minor injury care',
      'minor_injury_care_title' => 'BM Hospital provides prompt care for minor injuries like cuts, burns, and sprains with expert attention.',
     //===================================
-    'more_treatment' => 'more treatment',
+    'more_treatment' => 'More treatment',
       'more_treatment_title' => 'Read about more treatments →',
 
     //==========================model ====================
@@ -356,7 +351,7 @@ return [
       'emergency_medicine_threedSection_subheading' => 'From chest pain and stroke to trauma, burns, and severe infections, our Emergency Medicine team ensures stabilisation, diagnosis, and treatment without delay. We are equipped with advanced monitoring systems, ventilators, defibrillators, and a dedicated triage zone to assess and prioritize patients based on urgency.',
        'emergency_medicine_ctaSection_title' => 'Your heart health matters.',
         'emergency_medicine_ctaSection_subtitle' => 'Don’t wait for symptoms.',
-          'emergency_medicine_ctaSection_description' => 'Book an appointment with our Cardiology Department today.',
+          'emergency_medicine_ctaSection_description' => 'Book an appointment with our Emergency Department today.',
 'emergency_medicine_footerNote' => 'BM Hospital – Delivering expert Emergency Medicine, when every second saves a life.',
     ///======================ENT ==============
  'ENT_question'=> " What conditions are treated by the ENT department at BM Hospital?",
@@ -452,7 +447,7 @@ return [
 'Respiratory_question2'=> "When should I see a respiratory specialist?",
 'Respiratory_answer2'=>    "Visit a respiratory doctor if you experience shortness of breath, chronic cough, wheezing, chest tightness, or frequent lung infections.",
 
-'Respiratory_question3'=> "When should I consult a gastroenterologist?",
+'Respiratory_question3'=> "When should I consult a Respiratory specialist?",
 'Respiratory_answer3'=>   "We use Pulmonary Function Tests (PFTs), chest X-rays, CT scans, bronchoscopy, and blood oxygen monitoring to assess your respiratory condition.",
 
 'Respiratory_question4'=> "Is asthma curable?",
@@ -939,7 +934,7 @@ return [
 'pp_mtt_title'=>"9. Modifications to Terms",
 'pp_mtt_heading'=>"These terms may be updated without prior notice. Continued use of services implies acceptance of changes.",
 
-'pp_contact_title'=>"10. Contact",
+'pp_contact_title'=>"Contact",
 'pp_contact_heading'=>"For any queries or concerns:",
 'pp_constent_name'=>"BM Hospital",
 'pp_constent_place'=>"Barabanki, Uttar Pradesh",
@@ -1078,7 +1073,8 @@ return [
 'bloodback_services_title06' =>  "Safe Transfusion Practices",
 'bloodback_services_desc06' =>"Strict screening, hygiene, and storage protocols for all blood units.",
 
-'bloodbank_services_cta_label' => "अब एम्बुलेंस बुक करें",
+'bloodbank_services_cta_label' => "Book Now an ambulance",
+
 'Request_Now'=> "Request Now",
 
 'bloodbank_servicess_title' => "Blood Bank & Donation Services ",
@@ -1131,8 +1127,6 @@ return [
 'icu_services_title06' =>  "Multi-Organ Support Systems",
 'icu_services_desc06' =>"Dialysis, cardiac monitoring, and ventilator support for patients with multiple organ dysfunctions.",
 
-'Request_Now'=> "अनुरोध करें",
-
 'icu_servicess_title' => "Intensive Care Unit (ICU) Services ",
 'icu_servicess_description' => "Intensive Care Unit (ICU) – Seamless Support After Every Surgery ",
 
@@ -1182,7 +1176,6 @@ return [
 'tpa_services_title06' =>  "Discharge Assistance ",
 'tpa_services_desc06' =>"Smooth claim settlements and guided discharge process after recovery. ",
 
-'Request_Now'=> "अभी अनुरोध करें",
 
 'tpa_servicess_title' => "Insurance and TPA Services ",
 'tpa_servicess_description' => "Insurance and TPA Services – Easy, Efficient & Always Available at BM Hospital ",
@@ -1231,8 +1224,6 @@ return [
 
 'mot_services_title06' => "Emergency Trauma & Critical Care Surgery",
 'mot_services_desc06' =>"Immediate surgical response to accidents, internal injuries, and life-threatening emergencies—saving lives when every second counts.",
-
-'Request_Now'=> "अभी अनुरोध करें",
 
 'mot_servicess_title' => "Modular Operation Theater",
 'mot_servicess_description' => "BM Hospital offers cutting-edge Modular Operation Theater Services designed for precision, safety, and faster recovery. Our MOTs are equipped with laminar airflow, HEPA filters, and controlled environments to ensure infection-free surgeries. ",
@@ -1283,8 +1274,6 @@ return [
 'pharmacy_services_title06' => "Affordable Pricing",
 'pharmacy_services_desc06' =>"Transparent and reasonable pricing to ensure access without financial burden.",
 
-'Request_Now'=> "अभी अनुरोध करें",
-
 'pharmacy_servicess_title' => "Pharmacy Services  ",
 'pharmacy_servicess_description' => "Pharmacy Services – Trusted Medication Support, 24x7 at BM Hospital ",
 
@@ -1333,8 +1322,6 @@ return [
 
 'picu_services_title06' => "Emergency Response Team",
 'picu_services_desc06' =>"Rapid action during trauma, seizures, respiratory distress, or any life-threatening pediatric condition. ",
-
-'Request_Now'=> "अभी अनुरोध करें",
 
 'picu_servicess_title' => "Pediatric Intensive Care Unit(PICU) Services ",
 'picu_servicess_description' =>"Pediatric Intensive Care Unit (PICU) Services – Critical Care That Cares Like Family ",
@@ -1385,8 +1372,6 @@ return [
 'Patientcare_services_title06' => "Family-Centered Care",
 'Patientcare_services_desc06' =>"Clear communication, involvement in decisions, and visiting flexibility ensure families stay informed and engaged.",
 
-'Request_Now'=> "अभी अनुरोध करें",
-
 'Patientcare_servicess_title' =>  "Patient Care Services ",
 'Patientcare_servicess_description' =>"Patient Care Services – Comfort, Compassion & Clinical Excellence at Every Step",
 
@@ -1436,8 +1421,6 @@ return [
 'pathlogy_services_title06' => "Home Sample Collection",
 'pathlogy_services_desc06' => "Convenient doorstep service for patients unable to visit the Hospital.",
 
-'Request_Now'=> "अभी अनुरोध करें",
-
 'pathlogy_servicess_title' => "Pathology Services ",
 'pathlogy_servicess_description' => "Pathology Services – Precision Diagnostics That Power Better Treatment ",
 
@@ -1486,8 +1469,6 @@ return [
 
 'nicu_services_title06' => "Family-Centered Support",
 'nicu_services_desc06' => "Emotional, educational, and visiting support for parents to stay involved in their baby’s recovery.",
-
-'Request_Now'=> "अभी अनुरोध करें",
 
 'nicu_servicess_title' =>  "Neonatal Intensive Care Unit (NICU) Services ",
 'nicu_servicess_description' => "Neonatal Intensive Care Unit (NICU) Services – Expert Care for Your Newborn’s First Critical Moments ",
@@ -1956,7 +1937,7 @@ return [
 'Generalhealth_cards_title2' => "Physical Examination",
 'Generalhealth_cards_content2' => "Vital signs, BMI, and general health evaluation by physicians.",
 
-'Generalhealth_cards_title3' => "speciality Screenings",
+'Generalhealth_cards_title3' => "Speciality Screenings",
 'Generalhealth_cards_content3' => "Cardiac, diabetes, thyroid, and cancer risk assessments for early detection.",
 
 'Generalhealth_helpline_title' => "24/7 Help Line for Assistance – General Health Checkups Treatment ",

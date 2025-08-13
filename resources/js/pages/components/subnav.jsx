@@ -17,9 +17,9 @@ const useTranslations = (lang) => {
 
   useEffect(() => {
     setLoading(true);
-    axios.get(`http://emarketplace.progatetechnology.com/api/translations/${lang}`)
+    // axios.get(`http://emarketplace.progatetechnology.com/api/translations/${lang}`)
     // axios.get(`http://localhost:8000/api/translations/${lang}`)
-    // axios.get(`${devURL}/api/translations/${lang}`)
+    axios.get(`${devURL}/api/translations/${lang}`)
       .then(res => {
         // console.log('API Response:', res.data);
         if (res.data.error) {
@@ -69,7 +69,7 @@ const TopNotificationBar = ({ onTranslations }) => {
 
   return (
     <div className="bg-blue-800 top-0 relative z-100">
-      <div className="max-w-screen-xl mx-auto py-1 px-3 sm:px-6 lg:px-8">
+      <div className="max-w-screen-2xl mx-auto py-1 px-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <div className="w-0 flex-1 items-center">
             <p className="ml-3 font-medium text-white truncate ">
@@ -116,11 +116,26 @@ const TopNotificationBar = ({ onTranslations }) => {
             {/* Dropdown */}
             {languageDropdown && (
               <ul className="absolute right-0 mt-2 w-45 bg-white border rounded shadow-md z-50 text-left">
-                <button onClick={() => setLanguage('en')} className="block px-4 py-2 text-sm text-blue-800 hover:bg-gray-100">English (English)</button>
-                <button onClick={() => setLanguage('bn')} className="block px-4 py-2 text-sm text-blue-800 hover:bg-gray-100">বাংলা (Bangali)</button>
-                <button onClick={() => setLanguage('hi')} className="block px-4 py-2 text-sm text-blue-800 hover:bg-gray-100">हिन्दी (Hindi) </button>
-                <button onClick={() => setLanguage('ori')} className="block px-4 py-2 text-sm text-blue-800 hover:bg-gray-100"> ଓଡ଼ିଆ(Odia) </button>
-                <button onClick={() => setLanguage('pb')} className="block px-4 py-2 text-sm text-blue-800 hover:bg-gray-100"> ਪੰਜਾਬੀ(Panjabi) </button>
+                <button onClick={() => {
+                  setLanguageDropdown(false);
+                  // localStorage.setItem('selectedLanguage', 'en');
+                  setLanguage('en')}} className="block px-4 py-2 text-sm text-blue-800 hover:bg-gray-100">English (English)</button>
+                <button onClick={() => {
+                  setLanguageDropdown(false);
+                  // localStorage.setItem('selectedLanguage', 'en');
+                  setLanguage('bn')}} className="block px-4 py-2 text-sm text-blue-800 hover:bg-gray-100">বাংলা (Bangali)</button>
+                <button onClick={() => {
+                  setLanguageDropdown(false);
+                  // localStorage.setItem('selectedLanguage', 'en');
+                  setLanguage('hi')}} className="block px-4 py-2 text-sm text-blue-800 hover:bg-gray-100">हिन्दी (Hindi) </button>
+                <button onClick={() => {
+                  setLanguageDropdown(false);
+                  // localStorage.setItem('selectedLanguage', 'en');
+                  setLanguage('ori')}} className="block px-4 py-2 text-sm text-blue-800 hover:bg-gray-100"> ଓଡ଼ିଆ(Odia) </button>
+                <button onClick={() => {
+                  setLanguageDropdown(false);
+                  // localStorage.setItem('selectedLanguage', 'pnb');
+                  setLanguage('pnb')}} className="block px-4 py-2 text-sm text-blue-800 hover:bg-gray-100"> ਪੰਜਾਬੀ(Panjabi) </button>
               </ul>
             )}
           </div>

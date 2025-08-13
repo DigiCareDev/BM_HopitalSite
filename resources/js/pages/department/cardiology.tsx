@@ -134,7 +134,7 @@ export default function cardiology() {
                 },
                 footerNote: translations?.footerNote_title || 'बीएम अस्पताल - क्योंकि हर दिल की धड़कन अमूल्य है।',
                 button: {
-                    label: "Book Appointment",
+                    label: translations?.cta_label || 'अपॉइंटमेंट बुक करें',
                     link: "/cardiology",
                     backgroundColor: "#80CAC7",
                     hoverColor: "#1D4ED8",

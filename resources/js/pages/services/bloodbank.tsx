@@ -50,7 +50,7 @@ export default function Bloodbank() {
                     },
                     {
                         title: translations?.bloodback_services_title03 || "स्वैच्छिक रक्तदान",
-                        desc: translations?.bloodback_services_desc0 || "नियमित डोनर ड्राइव और जीवन रक्षक सहायता के लिए वॉक-इन विकल्प।",
+                        desc: translations?.bloodback_services_desc03 || "नियमित डोनर ड्राइव और जीवन रक्षक सहायता के लिए वॉक-इन विकल्प।",
                         icon: DB,
                     },
                     {

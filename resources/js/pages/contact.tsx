@@ -234,7 +234,7 @@ export default function Contact() {
                                 {
                                     icon: <ImLocation2 className='text-4xl text-[#80CAC7]' />,
                                     title: translations?.Head_office || 'प्रधान कार्यालय',
-                                    linkText: translations?.main_Address || '07, खसरा नं. 426एसए, लौलाई, मल्हौर, लखनऊ - 226028',
+                                    linkText: translations?.main_Address || '6&7, खसरा नं. 426एसए, लौलाई, मल्हौर, लखनऊ - 226028',
                                 },
                                 {
                                     icon: <BiEnvelope className='text-4xl text-[#80CAC7]' />,

@@ -2,9 +2,14 @@ import React from 'react';
 import Heart from '@/assets/images/heart.png'
 import Diabetes from '@/assets/images/diabetes.png'
 import Vaccine from '@/assets/images/Vaccine.png'
-import Logo from '@/assets/Logo.webp'
+import Logo from '@/assets/Logo.webp';
+
 
 function HomeBlog({ translations }) {
+
+
+    // console.log('translations====',translations)
+
     const blogPosts = [
         {
             title: translations?.blog_title || 'एआई-ओसीटी और प्रिसिशन एंजियोप्लास्टी: हृदय देखभाल में क्रांति',
@@ -86,7 +91,7 @@ function HomeBlog({ translations }) {
                             href='/blog'
                             className="inline-block mt-4 text-white bg-blue-700 hover:bg-blue-900 px-4 py-2 rounded-lg transition"
                         >
-                            {translations?.read_more || 'अधिक पढ़ें'} 
+                            {translations?.view_all || 'अधिक पढ़ें →'} 
                         </a>
                     </div>
 

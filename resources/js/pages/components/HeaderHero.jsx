@@ -26,7 +26,7 @@ const HeaderHero = ({ HeaderData, translations }) => {
 
           {/* Right - Form (Visible on all screens) */}
           <div className="px-4">
-            <h2 className="text-2xl font-bold text-blue-700 mb-3 ml-3"> {header.department} {translations?.Appointment || ''}  </h2>
+            <h2 className="text-2xl font-bold text-blue-700 mb-3 ml-3"> {header.department} <span className="ml-1">{translations?.Appointment || ''}</span>  </h2>
             <div className=" ">
               <HomeAppointmentFrom header={header} />
             </div>
@@ -100,7 +100,7 @@ const HeaderHero = ({ HeaderData, translations }) => {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
 
           {/* Left Text Content */}
-          <div className="md:w-2/3">
+          <div className="md:w-1/2">
             <h2 className="text-3xl font-bold text-blue-800 mb-2">{header.ctaSection.title}</h2>
             <p className="text-lg text-gray-700 mb-4">
               {header.ctaSection.description}
@@ -116,14 +116,9 @@ const HeaderHero = ({ HeaderData, translations }) => {
           </div>
 
           {/* Right Action Button */}
-          <div className="md:w-1/3 flex justify-center md:justify-end">
-            <a
-              href={header.ctaSection.button.link}
-              className="inline-block  hover:bg-[#80CAC7] bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition duration-300"
-            >
-              {header.ctaSection.button.label}
-            </a>
-          </div>
+          <div className="md:w-1/2 flex justify-center md:justify-end">
+               <HomeAppointmentFrom header={header} />
+            </div>
         </div>
       </section>
 

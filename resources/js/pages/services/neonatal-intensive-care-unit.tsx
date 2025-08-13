@@ -19,6 +19,8 @@ import NICUS from "@/assets/services/Neonatal Intensive Care Unit/Neonatal Inten
 
 export default function Neonatalintensivecareunit() {
        const [translations, setTranslations] = useState({});
+              console.log('translations', translations?.Request_Now)
+              console.log('translations', translations)
    
        const handletranslate = (data) => {
            setTranslations(data);
@@ -70,7 +72,7 @@ export default function Neonatalintensivecareunit() {
                     },
                 ],
                 "cta": {
-                    "label": translations?.Request_Now || "अभी अनुरोध करें",
+                    "label": translations?.Request_Now || "अनुरोध करें",
                     "href": "/book-ambulance",
                     "helpline": "+917318000753",
                     "link": "tel:+7318000753"
